@@ -30,7 +30,7 @@
                 </div> --}} 
                 <h2>Customer</h2>
                 {{----------- box -----------}}
-                <a href="tuk">
+                <a href="#">
                     <div class="col-md-4">
                         <div class="info-box bg-red col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="Skema">
+                <a href="#">
                     <div class="col-md-4">
                         <div class="info-box bg-blue col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="unit">
+                <a href="#">
                     <div class="col-md-4">
                         <div class="info-box bg-green col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="elemen">
+                <a href="#">
                     <div class="col-md-4">
                         <div class="info-box bg-yellow col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="question">
+                <a href="#">
                     <div class="col-md-4">
                         <div class="info-box bg-purple col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
