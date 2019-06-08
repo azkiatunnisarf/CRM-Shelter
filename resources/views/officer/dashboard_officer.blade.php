@@ -1,11 +1,11 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_officer')
 
 @section('content_header')
 <div class="row">
     <div class="col-md-12">
         <div class="panel block">
             <div class="panel-body">
-                <h1> Dashboard Admin</h1>
+                <h1>Dashboard Officer CRM</h1>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-dashboard"></i> Home</li>
                     

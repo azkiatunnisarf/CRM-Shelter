@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('admin.dashboard_admin');
 });
-
+Route::get('/officer', function () {
+    return view('officer.dashboard_officer');
+});
 Auth::routes();
 //--------- bisnis unit
 Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert

@@ -54,7 +54,7 @@
     <!-- Logo -->
     <a href="{{asset('#')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>L</b>SP</span>
+      <span class="logo-mini"><b>C</b>RM</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>CRM</b> Shelter</span>
     </a>
@@ -268,16 +268,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="admin_lte/dist/img/avatar5.png" class="user-image" alt="User Image">
-              <span class="hidden-xs"> Admin</span>
+              <img src="admin_lte/dist/img/avatar2.png" class="user-image" alt="User Image">
+              <span class="hidden-xs"> Officer CRM</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="admin_lte/dist/img/avatar5.png" class="img-circle" alt="User Image">
+                <img src="admin_lte/dist/img/avatar2.png" class="img-circle" alt="User Image">
 
                 <p>
-                    Admin
+                    Officer CRM
                   <small></small>
                 </p>
               </li>
@@ -334,10 +334,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="admin_lte/dist/img/avatar5.png" class="img-circle" alt="User Image">
+          <img src="admin_lte/dist/img/avatar2.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Admin</p>
+          <p>Officer CRM</p>
           <a href=""><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -371,49 +371,21 @@
         
         <li class="treeview">
           <a href="">
-            <i class="fa fa-plus"></i> <span>Master</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="insert_bisnis_unit"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Area</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input User</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Customer</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-          <a href="">
             <i class="fa fa-plus"></i> <span>Insert Laporan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Closing Rekontrak</a></li>
+
             </ul>
         </li>
-
-        <li class="treeview">
-            <a href="">
-              <i class="fa fa-database"></i> <span>Wilayah dan Bisnis Unit</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-              <ul class="treeview-menu">
-                <li class="active"><a href="bisnis_unit"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
-                <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
-                <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Daftar area</a></li>
-              </ul>
-          </li>
 
         <li class="treeview">
           <a href="">
@@ -423,67 +395,14 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
-
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-database"></i> <span>Kelola User</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Admin</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Officer CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Manager CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Manager Non CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Direktur</a></li>
-          </ul>
-        </li>
-
         
-        
-        {{-- <li class="treeview">
-          <a href="">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li class="treeview">
-              <a href=""><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href=""><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
-        </li> --}}
-
       </ul>
     </section>
     <!-- /.sidebar -->
