@@ -371,14 +371,14 @@
         
         <li class="treeview">
           <a href="">
-            <i class="fa fa-plus"></i> <span>Master</span>
+            <i class="fa fa-plus"></i> <span>Master CRM Shelter</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
             <ul class="treeview-menu">
               <li class="active"><a href="insert_bisnis_unit"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Area</a></li>
+              <li class="active"><a href="insert_area"><i class="fa fa-circle-o"></i> Input Area</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input User</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Customer</a></li>
@@ -386,7 +386,7 @@
         </li>
         <li class="treeview">
           <a href="">
-            <i class="fa fa-plus"></i> <span>Insert Laporan</span>
+            <i class="fa fa-plus"></i> <span>Master Laporan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -410,8 +410,8 @@
             </a>
               <ul class="treeview-menu">
                 <li class="active"><a href="bisnis_unit"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
+                <li class="active"><a href="area"><i class="fa fa-circle-o"></i> Daftar area</a></li>
                 <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
-                <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Daftar area</a></li>
               </ul>
           </li>
 

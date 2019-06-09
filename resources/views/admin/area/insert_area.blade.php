@@ -5,11 +5,11 @@
     <div class="col-md-12">
         <div class="panel block">
             <div class="panel-body">
-                <h1>Form Insert Bisnis Unit</h1>
+                <h1>Form Insert Area</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="bisnis_unit"></i>Bisnis Unit</a></li>
-                    <li class="active">Insert Bisnis Unit</li>
+                    <li><a href="area"></i>Area</a></li>
+                    <li class="active">Insert Area</li>
                 </ol>
             </div>
         </div>
@@ -35,19 +35,19 @@
 
                   <br>
 
-                <form action="{{route('store.bisnis_unit')}}" method="post">
+                <form action="{{route('store.area')}}" method="post">
                     {{ csrf_field() }}
                     
 
                     <div class="form-group">
-                      <label>Nama Bisnis Unit :</label>
+                      <label>Nama Area :</label>
                       <div>          
-                        <input type="text" class="form-control"  name="bisnis_unit">
+                        <input type="text" class="form-control"  name="nama_area">
                       </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary ">Submit</button>
-                    <a href="bisnis_unit" class="btn btn-secondary"> Cancel</a>
+                    <a href="area" class="btn btn-secondary"> Cancel</a>
                 </form>
               </div>
             </div>
