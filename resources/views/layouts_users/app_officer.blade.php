@@ -377,11 +377,11 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
+              <li class="active"><a href="/insertcall"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="/insertvisit"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="/insertkeluhan"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="/insertkontrak"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="/insertMoU"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Closing Rekontrak</a></li>
 
             </ul>
@@ -395,11 +395,11 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
+              <li class="active"><a href="/call"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="/visit"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="/keluhan"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="/kontrak"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="/MoU"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
         

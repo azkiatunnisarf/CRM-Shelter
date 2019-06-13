@@ -19,6 +19,31 @@ Route::get('/officer', function () {
     return view('officer.dashboard_officer');
 });
 
+Route::get('/call', function () {
+    return view('officer.call');
+});
+Route::get('/visit', function () {
+    return view('officer.visit');
+});
+Route::get('/keluhan', function () {
+    return view('officer.keluhan');
+});
+Route::get('/kontrak', function () {
+    return view('officer.kontrak');
+});
+Route::get('/insertcall', function () {
+    return view('officer.insertcall');
+});
+Route::get('/insertvisit', function () {
+    return view('officer.insertvisit');
+});
+Route::get('/insertkeluhan', function () {
+    return view('officer.insertkeluhan');
+});
+Route::get('/insertkontrak', function () {
+    return view('officer.insertkontrak');
+});
+
 Auth::routes();
 //--------- bisnis unit
 Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert
@@ -37,3 +62,4 @@ Route::get('/edit/area{id}','AreaController@edit')->name('edit.area');
 Route::put('/update/area{id}','AreaController@update')->name('update.area');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
