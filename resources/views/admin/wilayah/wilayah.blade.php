@@ -26,21 +26,22 @@
 
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
                                 <thead>
-                                    <th style="width:10%">ID Wilayah</th>
-                                    <th style="width:75%">Wilayah</th>
+                                    <th style="width:10%">No</th>
                                     <th style="width:75%">Area</th>
+                                    <th style="width:75%">wilayah</th>
                                     <th style="width:15%">aksi</th>
                                 </thead>
                                 <tbody>
-                                    @foreach($bisnis_units as $bisnis_unit)
+                                    @foreach($wilayahs as $wilayah)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $bisnis_unit->bisnis_unit }}</td>
+                                        <td>{{ $wilayah->area->nama_area }}</td>
+                                        <td>{{ $wilayah->nama_wilayah }}</td>
                                         <td>
-                                            <a href="{{route('edit.bisnis_unit',$bisnis_unit->bu_id)}}" class="btn btn-info btn-sm">
+                                            <a href="{{route('edit.wilayah',$wilayah->wilayah_id)}}" class="btn btn-info btn-sm">
                                                 <span class="fa fa-pencil">Edit</span>
                                             </a>
-                                            <a href="{{route('delete.bisnis_unit',$bisnis_unit->bu_id)}}" class="btn btn-danger btn-sm">
+                                            <a href="{{route('delete.wilayah',$wilayah->wilayah_id)}}" class="btn btn-danger btn-sm">
                                                 <span class="fa fa-trash">Delete</span>
                                             </a>
                                         </td>

@@ -13,4 +13,10 @@ class area extends Model
        ,'created_at'
        ,'updated_at'
     ];
+    public function wilayah()
+    {
+
+        return $this->hasMany(wilayah::class);
+
+    }
 }
