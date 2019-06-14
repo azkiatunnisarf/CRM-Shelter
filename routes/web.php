@@ -45,6 +45,9 @@ Route::get('/insertkontrak', function () {
 });
 
 Auth::routes();
+
+// {{--------------------------------------- halaman admin ---------------------------------------}}
+// {{--------------------------------------- ------------- ---------------------------------------}}
 //--------- bisnis unit
 Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert
 Route::get('/bisnis_unit', 'BisnisController@index')->name('index.bisnis_unit');
@@ -60,6 +63,14 @@ Route::post('/store/area', 'AreaController@store')->name('store.area');
 Route::get('/delete/area{id}','AreaController@delete')->name('delete.area');
 Route::get('/edit/area{id}','AreaController@edit')->name('edit.area');
 Route::put('/update/area{id}','AreaController@update')->name('update.area');
+
+// --------- wilayah
+Route::get('/insert_wilayah', 'WilayahController@insert')->name('insert.wilayah'); //show form insert
+Route::get('/wilayah', 'WilayahController@index')->name('index.wilayah');
+Route::post('/store/wilayah', 'WilayahController@store')->name('store.wilayah');
+Route::get('/delete/wilayah{id}','WilayahController@delete')->name('delete.wilayah');
+Route::get('/edit/wilayah{id}','WilayahController@edit')->name('edit.wilayah');
+Route::put('/update/wilayah{id}','WilayahController@update')->name('update.wilayah');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
