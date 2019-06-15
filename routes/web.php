@@ -74,3 +74,4 @@ Route::put('/update/wilayah{id}','WilayahController@update')->name('update.wilay
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('officer.call','callController');
