@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
@@ -24,32 +25,32 @@ class UserController extends Controller
         // $data['users'] = user::all();
         if ($request->rule == 'admin')
         {
-            $data['users'] = DB::table('user')->where('rule', 'admin')->get();
+            $data['users'] = DB::table('users')->where('rule', 'admin')->get();
             $data['no'] = 1;
             return view('admin/user/user', $data);
             
         }
         elseif ($request->rule == 'officer')
         {
-            $data['users'] = DB::table('user')->where('rule', 'officer')->get();
+            $data['users'] = DB::table('users')->where('rule', 'officer')->get();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
         elseif ($request->rule == 'manager')
         {
-            $data['users'] = DB::table('user')->where('rule', 'manager')->get();
+            $data['users'] = DB::table('users')->where('rule', 'manager')->get();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
         elseif ($request->rule == 'manager_non_crm')
         {
-            $data['users'] = DB::table('user')->where('rule', 'manager_non_crm')->get();
+            $data['users'] = DB::table('users')->where('rule', 'manager_non_crm')->get();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
         elseif ($request->rule == 'direktur')
         {
-            $data['users'] = DB::table('user')->where('rule', 'direktur')->get();
+            $data['users'] = DB::table('users')->where('rule', 'direktur')->get();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
@@ -68,24 +69,24 @@ class UserController extends Controller
         'nama_depan'    =>['required', 'string'],
         'nama_belakang' =>['required', 'string'],
         'password'      =>['required', 'string'],
-        'email'         =>['required', 'string','unique:user'],
+        'email'         =>['required', 'string','unique:users'],
         'no_hp'         =>['required', 'string'],
         'username'      =>['required', 'string']
       ]);
 
-      $user = new user;
-      $user->username       = $request->username;
-      $user->nama_depan     = $request->nama_depan;
-      $user->nama_belakang  = $request->nama_belakang;
-      $user->password       = $request->password;
-      $user->email          = $request->email;
-      $user->wilayah_id     = $request->wilayah_id;
-      $user->no_hp          = $request->no_hp;
-      $user->nama_area      = $request->nama_area;
-      $user->nama_wilayah   = $request->nama_wilayah;
-      $user->rule           = $request->rule;
+      $users = new user;
+      $users->username       = $request->username;
+      $users->nama_depan     = $request->nama_depan;
+      $users->nama_belakang  = $request->nama_belakang;
+      $users->password       = $request->password;
+      $users->email          = $request->email;
+      $users->wilayah_id     = $request->wilayah_id;
+      $users->no_hp          = $request->no_hp;
+      $users->nama_area      = $request->nama_area;
+      $users->nama_wilayah   = $request->nama_wilayah;
+      $users->rule           = $request->rule;
 
-      if ($user->save()){
+      if ($users->save()){
         return redirect('/insert_user')->with('success', 'item berhasil ditambahkan');
       }
       else{

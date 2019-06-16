@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->string('username');
             $table->string('nama_depan');
             $table->string('nama_belakang');
@@ -27,7 +27,7 @@ class CreateUserTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        Schema::table('user', function($table)
+        Schema::table('users', function($table)
         {
             $table->foreign('wilayah_id')
                 ->references('wilayah_id')
