@@ -9,14 +9,20 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    protected $table = 'user';
+    protected $primaryKey = 'email';
     protected $fillable = [
-        'name', 'email', 'password',
+         'username'
+        ,'nama_depan' 
+        ,'nama_belakang'
+        ,'password'
+        ,'email'
+        ,'wilayah_id'
+        ,'no_hp'
+        ,'nama_area'
+        ,'nama_wilayah'
+        ,'rule'
+        ,
     ];
 
     /**
@@ -25,15 +31,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password'
+        ,'remember_token'
     ];
+    public $incrementing = false;
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function wilayah()
+    {
+        return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
+    }
 }

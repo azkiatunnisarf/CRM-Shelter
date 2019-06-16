@@ -19,4 +19,10 @@ class wilayah extends Model
     {
         return $this->belongsTo(\App\Area::class,'area_id','area_id');
     }
+    public function user()
+    {
+
+        return $this->hasMany(user::class);
+
+    }
 }

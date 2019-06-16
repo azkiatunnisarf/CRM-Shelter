@@ -72,5 +72,13 @@ Route::get('/delete/wilayah{id}','WilayahController@delete')->name('delete.wilay
 Route::get('/edit/wilayah{id}','WilayahController@edit')->name('edit.wilayah');
 Route::put('/update/wilayah{id}','WilayahController@update')->name('update.wilayah');
 
+// user
+Route::get('/insert_user', 'UserController@insert')->name('insert.user'); //show form insert
+Route::get('/user', 'UserController@index')->name('index.user');
+Route::post('/store/user', 'UserController@store')->name('store.user');
+Route::get('/delete/user{id}','UserController@delete')->name('delete.user');
+Route::get('/edit/user{id}','UserController@edit')->name('edit.user');
+Route::put('/update/user{id}','UserController@update')->name('update.user');
+
 Route::get('/home', 'HomeController@index')->name('home');
 

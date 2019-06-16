@@ -380,7 +380,7 @@
               <li class="active"><a href="insert_bisnis_unit"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
               <li class="active"><a href="insert_area"><i class="fa fa-circle-o"></i> Input Area</a></li>
               <li class="active"><a href="insert_wilayah"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input User</a></li>
+              <li class="active"><a href="insert_user"><i class="fa fa-circle-o"></i> Input User</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Customer</a></li>
             </ul>
         </li>
@@ -440,7 +440,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Admin</a></li>
+            <li><a href="user"><i class="fa fa-circle-o"></i> Admin</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Officer CRM</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Manager CRM</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Manager Non CRM</a></li>
