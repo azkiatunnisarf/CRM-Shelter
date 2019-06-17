@@ -27,9 +27,9 @@
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
                                 <thead>
                                     <th style="width:10%">No</th>
-                                    <th style="width:75%">Area</th>
-                                    <th style="width:75%">wilayah</th>
-                                    <th style="width:15%">aksi</th>
+                                    <th style="width:40%">Area</th>
+                                    <th style="width:40%">wilayah</th>
+                                    <th style="width:10%">aksi</th>
                                 </thead>
                                 <tbody>
                                     @foreach($wilayahs as $wilayah)
@@ -39,10 +39,10 @@
                                         <td>{{ $wilayah->nama_wilayah }}</td>
                                         <td>
                                             <a href="{{route('edit.wilayah',$wilayah->wilayah_id)}}" class="btn btn-info btn-sm">
-                                                <span class="fa fa-pencil">Edit</span>
+                                                <span class="fa fa-pencil"></span>
                                             </a>
                                             <a href="{{route('delete.wilayah',$wilayah->wilayah_id)}}" class="btn btn-danger btn-sm">
-                                                <span class="fa fa-trash">Delete</span>
+                                                <span class="fa fa-trash"></span>
                                             </a>
                                         </td>
                                     </tr>

@@ -440,11 +440,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="user"><i class="fa fa-circle-o"></i> Admin</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Officer CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Manager CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Manager Non CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Direktur</a></li>
+            <li><a href="user"><i class="fa fa-circle-o"></i> User</a></li>
           </ul>
         </li>
 

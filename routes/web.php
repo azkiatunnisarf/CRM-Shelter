@@ -50,6 +50,8 @@ Auth::routes();
     Route::get('/home', function () {
         return view('admin.dashboard_admin');
     });
+    Route::get('/home', 'AdminController@index')->name('home'); //Dashboard Admin
+
     //--------- bisnis unit
     Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert
     Route::get('/bisnis_unit', 'BisnisController@index')->name('index.bisnis_unit');
@@ -87,10 +89,3 @@ Route::get('/insert_user', 'UserController@insert')->name('insert.user'); //show
 
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
