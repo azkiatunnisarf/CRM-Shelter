@@ -16,7 +16,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+         'username'
+        ,'nama_depan' 
+        ,'nama_belakang'
+        ,'email'
+        ,'password'
+        ,'email'
+        ,'wilayah_id'
+        ,'no_hp'
+        ,'nama_area'
+        ,'nama_wilayah'
+        ,'rule'
+        ,
     ];
 
     /**
@@ -36,4 +47,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function wilayah()
+    {
+        return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
+    }
+
+    const ADMIN_TYPE = 'admin';
+    const OFFICER_TYPE = 'officer';
+  
+
+    public function isAdmin()    {        
+        return $this->type === self::ADMIN_TYPE;    
+    }
+
+    public function isAsessor()    {        
+        return $this->type === self::ASESSOR_TYPE;    
+    }
+    public function setPasswordAttribute($password)
+{
+    $this->attributes['password'] = \Hash::make($password);
+}
+
 }
