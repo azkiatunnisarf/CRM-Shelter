@@ -17,9 +17,7 @@ Route::get('/officer', function () {
     return view('officer.dashboard_officer');
 });
 
-Route::get('/call', function () {
-    return view('officer.call');
-});
+
 Route::get('/visit', function () {
     return view('officer.visit');
 });
@@ -41,6 +39,7 @@ Route::get('/insertkeluhan', function () {
 Route::get('/insertkontrak', function () {
     return view('officer.insertkontrak');
 });
+Route::resource('call','callController');
 
 Auth::routes();
 

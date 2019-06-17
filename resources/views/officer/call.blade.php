@@ -38,7 +38,7 @@
                                     <th style="width:15%">Aksi</th>
                                 </thead>
                                 <tbody id="call_crud">
-                                @foreach($call as $c)
+                                @foreach($calls as $c)
                                 <tr id="call_id_{{ $c->call_id }}">
                                     <td>{{ $c->call_id  }}</td>
                                     <td>{{ $c->nama_customer }}</td>
@@ -121,7 +121,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="btn-save" value="create">Save changes
+            <button type="button" class="btn btn-primary" id="btn-save" value="create-call">Save changes
             </button>
         </div>
     </div>

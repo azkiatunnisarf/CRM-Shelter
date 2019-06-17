@@ -14,8 +14,8 @@ class callController extends Controller
      */
     public function index()
     {
-        $data['call'] = Call::orderBy('call_id','desc');
-        return view('officer.call', compact('data'));
+        $data['calls'] = Call::orderBy('call_id','desc');
+        return view('officer/call', $data);
     }
 
     /**
