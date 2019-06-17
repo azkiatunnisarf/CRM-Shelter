@@ -35,8 +35,8 @@
                         <div class="info-box bg-red col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Customer</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-text">bisnis unit</span>
+                                <span class="info-box-number">{{$bisnis_unit}}</span>
                             </div>     
                         </div>
                     </div>
@@ -46,8 +46,8 @@
                         <div class="info-box bg-blue col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Customer</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-text">Area</span>
+                                <span class="info-box-number">{{$area}}</span>
                             </div>     
                         </div>
                     </div>
@@ -57,8 +57,8 @@
                         <div class="info-box bg-green col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Customer</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-text">Wilayah</span>
+                                <span class="info-box-number">{{$wilayah}}</span>
                             </div>     
                         </div>
                     </div>
@@ -68,8 +68,8 @@
                         <div class="info-box bg-yellow col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Customer</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-text">User</span>
+                                <span class="info-box-number">{{$users}}</span>
                             </div>     
                         </div>
                     </div>
