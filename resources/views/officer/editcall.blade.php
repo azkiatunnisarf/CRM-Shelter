@@ -35,7 +35,7 @@
 
                   <br>
 
-                <form action="{{route('call.store')}}">
+                <form>
                     {{ csrf_field() }}
                     
 

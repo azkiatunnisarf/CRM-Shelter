@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Call;
 
 class callController extends Controller
@@ -16,6 +17,11 @@ class callController extends Controller
     {
         $data['calls'] = Call::orderBy('call_id','desc');
         return view('officer/call', $data);
+    }
+
+    public function insert()
+    {
+      return view('officer/insertcall');
     }
 
     /**
@@ -32,6 +38,16 @@ class callController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nama_customer'=>['required', 'string'],
+            'spv_pic'=>['required', 'string'],
+            'tanggal_call'=>['required', 'date'],
+            'jam_call'=>['required', 'time'],
+            'pembicaraan'=>['required', 'string'],
+            'pic_called'=>['required', 'string'],
+            'hal_menonjol'=>['required', 'string']
+          ]);
+
         $callId = $request->call_id;
         $call   =   Call::updateOrCreate(['call_id' => $callId],
                     ['nama_customer' => $request->nama_customer, 
@@ -43,7 +59,12 @@ class callController extends Controller
                     'hal_menonjol' => $request->hal_menonjol
                     ]);
     
-        return Response::json($call);
+        if ($call->save()){
+            return redirect('/insertcall')->with('success', 'item berhasil ditambahkan');
+        }
+        else{
+            return redirect('/insertcall')->with('error', 'item gagal ditambahkan');
+        }
     }
 
     /**
@@ -68,7 +89,7 @@ class callController extends Controller
         $where = array('call_id' => $call_id);
         $call  = Call::where($where)->first();
  
-        return Response::json($call);
+        return view('officer/editcall');
     }
 
     /**
@@ -78,9 +99,29 @@ class callController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $call_id)
     {
-        //
+        $this->validate($request,[
+            'nama_customer'=>['required', 'string'],
+            'spv_pic'=>['required', 'string'],
+            'tanggal_call'=>['required', 'date'],
+            'jam_call'=>['required', 'time'],
+            'pembicaraan'=>['required', 'string'],
+            'pic_called'=>['required', 'string'],
+            'hal_menonjol'=>['required', 'string']
+          ]);
+        $call   =   Call::findorFail(['call_id' => $callId],
+                    ['nama_customer' => $request->nama_customer, 
+                    'spv_pic' => $request->spv_pic,
+                    'tanggal_call' => $request->tanggal_call, 
+                    'jam_call' => $request->jam_call,
+                    'pembicaraan' => $request->pembicaraan, 
+                    'pic_called' => $request->pic_called,
+                    'hal_menonjol' => $request->hal_menonjol
+                    ]);
+  
+        if ($call->save())
+          return redirect()->route('call.index')->with(['success'=>'edit sukses']);
     }
 
     /**
@@ -92,6 +133,6 @@ class callController extends Controller
     public function destroy($call_id)
     {
         $call = Call::where('call_id',$call_id)->delete();
-        return Response::json($call);
+        return redirect()->route('call.index')->with('success', 'delete sukses');
     }
 }

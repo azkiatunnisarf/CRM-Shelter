@@ -18,7 +18,7 @@ class CreateCallsTable extends Migration
             $table->string('nama_customer');
             $table->string('spv_pic');
             $table->datetime('tanggal_call');
-            $table->datetime('jam_call');
+            $table->time('jam_call');
             $table->string('pembicaraan');
             $table->string('pic_called');
             $table->string('hal_menonjol');

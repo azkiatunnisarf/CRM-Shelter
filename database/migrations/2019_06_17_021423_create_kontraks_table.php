@@ -29,6 +29,13 @@ class CreateKontraksTable extends Migration
             $table->string('closing');
             $table->timestamps();
         });
+        // Schema::table('kontraks', function($table)
+        // {
+        //     $table->foreign('kode_customer')
+        //         ->references('kode_customer')
+        //         ->on('customer')
+        //         ->onDelete('cascade');
+        // });
     }
 
     /**
