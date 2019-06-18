@@ -17,9 +17,7 @@ Route::get('/officer', function () {
     return view('officer.dashboard_officer');
 });
 
-Route::get('/call', function () {
-    return view('officer.call');
-});
+
 Route::get('/visit', function () {
     return view('officer.visit');
 });
@@ -41,6 +39,15 @@ Route::get('/insertkeluhan', function () {
 Route::get('/insertkontrak', function () {
     return view('officer.insertkontrak');
 });
+
+//------- laporan call
+    Route::get('/insertcall', 'callController@insert')->name('insert.call'); //show form insert
+    Route::get('/call', 'callController@index')->name('index.call');
+    Route::post('/store/call', 'callController@store')->name('store.call');
+    Route::get('/delete/call{call_id}','callController@delete')->name('delete.call');
+    Route::get('/edit/call{call_id}','callController@edit')->name('edit.call');
+    Route::put('/update/call{call_id}','callController@update')->name('update.call');
+
 
 Auth::routes();
 
