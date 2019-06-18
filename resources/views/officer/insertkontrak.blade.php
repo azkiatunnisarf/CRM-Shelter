@@ -35,58 +35,58 @@
 
                   <br>
 
-                <form>
+                <form action="{{route('store.kontrak')}}" method="post">
                     {{ csrf_field() }}
                     
 
                     <div class="form-group">
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Kode Customer</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="kode_customer" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Nama Perusahaan</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="nama_perusahaan" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Periode Kontrak</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="date" class="form-control" name="periode_kontrak" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Akhir Periode</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="date" class="form-control" name="akhir_periode" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Surat Pemberitahuan</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="srt_pemberitahuan" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal Surat Pemberitahuan</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="date" class="form-control" name="tgl_srt_pemberitahuan" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Surat Penawaran</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="srt_penawaran" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal Surat Penawaran</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="date" class="form-control" name="tgl_srt_penawaran" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Dealing</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="dealing" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal Dealing</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="date" class="form-control" name="tgl_dealing" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Posisi Pks</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="posisi_pks" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Closing</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="closing" required>
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-lg btn-info btn-block ">

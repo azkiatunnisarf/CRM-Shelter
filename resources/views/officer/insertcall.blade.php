@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">PIC Call</label>
-                	        <input type="text" class="form-control" name="pic_call" required>
+                	        <input type="text" class="form-control" name="pic_called" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Hal Menonjol</label>
