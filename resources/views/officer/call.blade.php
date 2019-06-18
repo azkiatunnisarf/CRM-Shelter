@@ -20,7 +20,6 @@
 <div class="row">
         <div class="col-md-12">
             <div class="panel block">
-            <a href="javascript:void(0)" class="btn btn-success mb-2" id="input-call">Input Call</a>
                 <div class="panel-body">
                             <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
                             @include('admin.shared.components.alert')
@@ -121,7 +120,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="btn-save" value="create-call">Save changes
+            <button type="submit" class="btn btn-primary">Save changes
             </button>
         </div>
     </div>
@@ -132,88 +131,5 @@
 
 @section('js')
 
-<script>
-  $(document).ready(function () {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    /*  When user click add user button */
-    $('#input-call').click(function () {
-        $('#btn-save').val("create-call");
-        $('#callForm').trigger("reset");
-        $('#callCrudModal').html("Add New call");
-        $('#ajax-crud-modal').modal('show');
-    });
- 
-   /* When click edit call */
-    $('body').on('click', '#edit-call', function () {
-      var call_id = $(this).data('id');
-      $.get('ajax-crud/' + call_id +'/edit', function (data) {
-         $('#callCrudModal').html("Edit call");
-          $('#btn-save').val("edit-call");
-          $('#ajax-crud-modal').modal('show');
-          $('#call_id').val(data.id);
-          $('#name').val(data.name);
-          $('#email').val(data.email);
-      })
-   });
-   //delete call login
-    $('body').on('click', '.delete-call', function () {
-        var call_id = $(this).data("id");
-        confirm("Are You sure want to delete !");
- 
-        $.ajax({
-            type: "DELETE",
-            url: "{{ url('ajax-crud')}}"+'/'+call_id,
-            success: function (data) {
-                $("#call_id_" + call_id).remove();
-            },
-            error: function (data) {
-                console.log('Error:', data);
-            }
-        });
-    });   
-  });
- 
- if ($("#callForm").length > 0) {
-      $("#callForm").validate({
- 
-     submitHandler: function(form) {
- 
-      var actionType = $('#btn-save').val();
-      $('#btn-save').html('Sending..');
-      
-      $.ajax({
-          data: $('#callForm').serialize(),
-          url: "https://www.tutsmake.com/laravel-example/ajax-crud/store",
-          type: "POST",
-          dataType: 'json',
-          success: function (data) {
-              var call = '<tr id="call_id_' + data.id + '"><td>' + data.id + '</td><td>' + data.name + '</td><td>' + data.email + '</td>';
-              call += '<td><a href="javascript:void(0)" id="edit-call" data-id="' + data.id + '" class="btn btn-info">Edit</a></td>';
-              call += '<td><a href="javascript:void(0)" id="delete-call" data-id="' + data.id + '" class="btn btn-danger delete-call">Delete</a></td></tr>';
-               
-              
-              if (actionType == "create-call") {
-                  $('#call-crud').prepend(call);
-              } else {
-                  $("#call_id_" + data.id).replaceWith(call);
-              }
- 
-              $('#callForm').trigger("reset");
-              $('#ajax-crud-modal').modal('hide');
-              $('#btn-save').html('Save Changes');
-              
-          },
-          error: function (data) {
-              console.log('Error:', data);
-              $('#btn-save').html('Save Changes');
-          }
-      });
-    }
-  })
-}
-</script>
+
 @endsection
