@@ -50,11 +50,11 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="date" class="form-control" name="nama_kuis" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Waktu Call</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="time" class="form-control" name="nama_kuis" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Pembicaraan</label>
