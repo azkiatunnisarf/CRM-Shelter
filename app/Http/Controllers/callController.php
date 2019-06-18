@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Call;
+use Validator;
 
 class callController extends Controller
 {
@@ -36,29 +37,40 @@ class callController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'nama_customer'=>['required', 'string'],
-            'spv_pic'=>['required', 'string'],
-            'tanggal_call'=>['required', 'date'],
-            'jam_call'=>['required', 'time'],
-            'pembicaraan'=>['required', 'string'],
-            'pic_called'=>['required', 'string'],
-            'hal_menonjol'=>['required', 'string']
-          ]);
+        $request->validate([
+            'nama_customer' => 'required',
+            'spv_pic' => 'required',
+            'tanggal_call' => 'required|date',
+            'jam_call' => 'required|time',
+            'pembicaraan' => 'required',
+            'pic_called' => 'required',
+            'hal_menonjol' =>'required',
+        ]);
 
-        $callId = $request->call_id;
-        $call   =   Call::updateOrCreate(['call_id' => $callId],
-                    ['nama_customer' => $request->nama_customer, 
-                    'spv_pic' => $request->spv_pic,
-                    'tanggal_call' => $request->tanggal_call, 
-                    'jam_call' => $request->jam_call,
-                    'pembicaraan' => $request->pembicaraan, 
-                    'pic_called' => $request->pic_called,
-                    'hal_menonjol' => $request->hal_menonjol
-                    ]);
-    
+        $call = new call;
+        $call->call_id = $request->call_id;
+        $call->nama_customer = $request->nama_customer;
+        $call->spv_pic = $request->spv_pic;
+        $call->tanggal_call = $request->tanggal_call;
+        $call->jam_call = $request->jam_call;
+        $call->pembicaraan = $request->pembicaraan;
+        $call->pic_called = $request->pic_called;
+        $call->hal_menonjol = $request->hal_menonjol;
+
+        // $callId = $request->call_id;
+        // $call   =   Call::updateOrCreate(['call_id' => $callId],
+        //             ['nama_customer' => $request->nama_customer, 
+        //             'spv_pic' => $request->spv_pic,
+        //             'tanggal_call' => $request->tanggal_call, 
+        //             'jam_call' => $request->jam_call,
+        //             'pembicaraan' => $request->pembicaraan, 
+        //             'pic_called' => $request->pic_called,
+        //             'hal_menonjol' => $request->hal_menonjol
+        //             ]);
+            
         if ($call->save()){
             return redirect('/insertcall')->with('success', 'item berhasil ditambahkan');
         }
