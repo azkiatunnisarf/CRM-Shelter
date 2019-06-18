@@ -46,10 +46,11 @@ Auth::routes();
 // Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     // {{--------------------------------------- halaman admin ---------------------------------------}}
     // {{--------------------------------------- ------------- ---------------------------------------}}
-    Route::get('/home', function () {
-        return view('admin.dashboard_admin');
+    Route::get('/manager_crm', function () {
+        return view('/manager_crm/dashboard_manager_crm');
     });
     Route::get('/home', 'AdminController@index')->name('home'); //Dashboard Admin
+    
 
     //--------- bisnis unit
     Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert
