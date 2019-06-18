@@ -13,6 +13,7 @@ class keluhan extends Model
        ,'spv_pic'
        ,'tanggal_keluhan'
        ,'jam_keluhan'
+       ,'keluhan'
        ,'pic'
        ,'jam_follow'
        ,'follow_up'

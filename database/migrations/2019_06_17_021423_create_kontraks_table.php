@@ -13,18 +13,18 @@ class CreateKontraksTable extends Migration
      */
     public function up()
     {
-        Schema::create('kontraks', function (Blueprint $table) {
+        Schema::create('kontrak', function (Blueprint $table) {
             $table->increments('id_kontrak');
             $table->string('kode_customer');
             $table->string('nama_perusahaan');
-            $table->datetime('periode_kontrak');
-            $table->datetime('akhir_periode');
+            $table->date('periode_kontrak');
+            $table->date('akhir_periode');
             $table->string('srt_pemberitahuan');
-            $table->datetime('tgl_srt_pemberitahuan');
+            $table->date('tgl_srt_pemberitahuan');
             $table->string('srt_penawaran');
-            $table->datetime('tgl_srt_penawaran');
+            $table->date('tgl_srt_penawaran');
             $table->string('dealing');
-            $table->datetime('tgl_dealing');
+            $table->date('tgl_dealing');
             $table->string('posisi_pks');
             $table->string('closing');
             $table->timestamps();
@@ -45,6 +45,6 @@ class CreateKontraksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kontraks');
+        Schema::dropIfExists('kontrak');
     }
 }

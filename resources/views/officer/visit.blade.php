@@ -37,9 +37,21 @@
                                     <th style="width:15%">Aksi</th>
                                 </thead>
                                 <tbody>
-
-
-                                    
+                                @foreach($visit as $v)
+                                <tr>
+                                    <td>{{ $v->visit_id  }}</td>
+                                    <td>{{ $v->nama_customer }}</td>
+                                    <td>{{ $v->spv_pic }}</td>
+                                    <td>{{ $v->tanggal_visit }}</td>
+                                    <td>{{ $v->waktu_in }}</td>
+                                    <td>{{ $v->waktu_out }}</td>
+                                    <td>{{ $v->pic_meeted }}</td>
+                                    <td>{{ $v->kegiatan }}</td>
+                                    <td><a href="{{route('edit.visit',$visit->visit_id)}}" class="btn btn-info btn-sm">Ubah</a></td>
+                                    <td>
+                                    <a href="{{route('delete.visit',$visit->visit_id)}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                                </tr>
+                                @endforeach 
                                 </tbody>
                             </table>
                             </div>

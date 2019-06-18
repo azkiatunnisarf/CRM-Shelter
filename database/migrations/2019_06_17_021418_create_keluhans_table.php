@@ -17,11 +17,11 @@ class CreateKeluhansTable extends Migration
             $table->increments('id_keluhan');
             $table->string('nama_customer');
             $table->string('spv_pic');
-            $table->datetime('tanggal_keluhan');
-            $table->datetime('jam_keluhan');
+            $table->date('tanggal_keluhan');
+            $table->time('jam_keluhan');
             $table->string('keluhan');
             $table->string('pic');
-            $table->datetime('jam_follow');
+            $table->time('jam_follow');
             $table->string('follow_up');
             $table->string('closing_case');
             $table->string('via');
