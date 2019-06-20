@@ -5,11 +5,11 @@
     <div class="col-md-12">
         <div class="panel block">
             <div class="panel-body">
-                <h1>Form Edit Call</h1>
+                <h1>Edit Visit</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="area"></i>Call</a></li>
-                    <li class="active">Edit Call</li>
+                    <li><a href="area"></i>Visit</a></li>
+                    <li class="active">Edit Visit</li>
                 </ol>
             </div>
         </div>
@@ -35,7 +35,7 @@
 
                   <br>
 
-                <form action="{{route('store.call')}}" method="post">
+                <form action="{{route('store.visit')}}" method="post">
                     {{ csrf_field() }}
                     
 
@@ -50,23 +50,23 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal</label>
-                	        <input type="date" class="form-control" name="tanggal_call" required>
+                	        <input type="date" class="form-control" name="tanggal_visit" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Waktu Call</label>
-                	        <input type="time" class="form-control" name="jam_call" required>
+                	        <label class="font-weight-bold">Waktu In</label>
+                	        <input type="time" class="form-control" name="waktu_in" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Pembicaraan</label>
-                	        <input type="text" class="form-control" name="pembicaraan" required>
+                	        <label class="font-weight-bold">Waktu Out</label>
+                	        <input type="time" class="form-control" name="waktu_out" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">PIC Call</label>
-                	        <input type="text" class="form-control" name="pic_called" required>
+                	        <label class="font-weight-bold">PIC Visit</label>
+                	        <input type="text" class="form-control" name="pic_meeted" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Hal Menonjol</label>
-                	        <input type="text" class="form-control" name="hal_menonjol" required>
+                	        <label class="font-weight-bold">Kegiatan</label>
+                	        <input type="text" class="form-control" name="kegiatan" required>
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-lg btn-info btn-block ">
