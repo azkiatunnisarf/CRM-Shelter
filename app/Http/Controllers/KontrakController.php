@@ -11,6 +11,7 @@ class KontrakController extends Controller
     public function index()
     {
         $data['kontrak'] = Kontrak::orderBy('id_kontrak','desc');
+        
         return view('officer/kontrak', $data);
     }
 
