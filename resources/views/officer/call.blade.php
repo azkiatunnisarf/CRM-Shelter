@@ -49,12 +49,11 @@
                                     <td>{{ $c->hal_menonjol }}</td>
                                     <td><a href="{{route('edit.call',$call->call_id)}}" class="btn btn-info btn-sm">Ubah</a></td>
                                     <td>
-                                    <a href="{{route('delete.call',$call->call_id)}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                                    <a href="{{route('destroy.call',$call->call_id)}}" class="btn btn-danger btn-sm">Hapus</a></td>
                                 </tr>
                                 @endforeach    
                                 </tbody>
                             </table>
-                            </div>
                         </div>
                     </div>
                 </div>
