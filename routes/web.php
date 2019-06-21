@@ -92,7 +92,4 @@ Auth::routes();
     Route::get('/edit/user{id}','UserController@edit')->name('edit.user');
     Route::put('/update/user{id}','UserController@update')->name('update.user');
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/insert_user', 'UserController@insert')->name('insert.user'); //show form insert
-
 

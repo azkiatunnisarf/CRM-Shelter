@@ -76,17 +76,48 @@
                 </div> --}} 
                 <h2>Customer</h2>
                 {{----------- box -----------}}
-                <a href="bisnis_unit">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box bg-aqua">
-                          <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
-                          <div class="info-box-content">
-                            <span class="info-box-text">bisnis_unit</span>
-                            <span class="info-box-number">{{$bisnis_unit}}</span>
+                <div class="col-md-6">
+                        <!-- LINE CHART -->
+                        <div class="box box-info">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">Line Chart</h3>
+              
+                            <div class="box-tools pull-right">
+                              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                              </button>
+                              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
                           </div>
+                          <div class="box-body">
+                            <div class="chart">
+                              <canvas id="lineChart" style="height:250px"></canvas>
+                            </div>
+                          </div>
+                          <!-- /.box-body -->
                         </div>
-                    </div>
-                </a>
+                        <!-- /.box -->
+              
+                        <!-- BAR CHART -->
+                        <div class="box box-success">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">Bar Chart</h3>
+              
+                            <div class="box-tools pull-right">
+                              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                              </button>
+                              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                          <div class="box-body">
+                            <div class="chart">
+                              <canvas id="barChart" style="height:230px"></canvas>
+                            </div>
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+              
+                      </div>
                 
                 {{----------- end box -----------}}
                 </div>
