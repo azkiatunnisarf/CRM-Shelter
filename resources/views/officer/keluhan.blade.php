@@ -41,9 +41,25 @@
                                     <th style="width:15%">Aksi</th>
                                 </thead>
                                 <tbody>
-
-
-                                    
+                                @foreach($keluhan as $ke)
+                                <tr>
+                                    <td>{{ $ke->id_keluhan  }}</td>
+                                    <td>{{ $ke->nama_customer }}</td>
+                                    <td>{{ $ke->spv_pic }}</td>
+                                    <td>{{ $ke->tanggal_keluhan }}</td>
+                                    <td>{{ $ke->jam_keluhan }}</td>
+                                    <td>{{ $ke->keluhan }}</td>
+                                    <td>{{ $ke->pic }}</td>
+                                    <td>{{ $ke->jam_follow }}</td>
+                                    <td>{{ $ke->follow_up }}</td>
+                                    <td>{{ $ke->closing_case }}</td>
+                                    <td>{{ $ke->via }}</td>
+                                    <td>{{ $ke->status }}</td>
+                                    <td><a href="{{route('edit.keluhan',$keluhan->id_keluhan)}}" class="btn btn-info btn-sm">Ubah</a></td>
+                                    <td>
+                                    <a href="{{route('delete.keluhan',$keluhan->id_keluhan)}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                                </tr>
+                                @endforeach 
                                 </tbody>
                             </table>
                             </div>

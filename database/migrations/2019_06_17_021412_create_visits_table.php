@@ -17,9 +17,9 @@ class CreateVisitsTable extends Migration
             $table->increments('visit_id');
             $table->string('nama_customer');
             $table->string('spv_pic');
-            $table->datetime('tanggal_visit');
-            $table->datetime('waktu_in');
-            $table->datetime('waktu_out');
+            $table->date('tanggal_visit');
+            $table->time('waktu_in');
+            $table->time('waktu_out');
             $table->string('pic_meeted');
             $table->string('kegiatan');
             $table->timestamps();

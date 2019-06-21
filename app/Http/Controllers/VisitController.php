@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Visit;
+use Validator;
 
 class VisitController extends Controller
 {
@@ -15,10 +18,11 @@ class VisitController extends Controller
     {
         $data['visit'] = Visit::orderBy('visit_id','desc');
         return view('officer/visit', $data);
-        
     }
-    public function insert(){
-        return view('officer/insertvisit');
+
+    public function insert()
+    {
+      return view('officer/insertvisit');
     }
 
     /**
@@ -26,10 +30,6 @@ class VisitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -37,9 +37,35 @@ class VisitController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_customer' => 'required',
+            'spv_pic' => 'required',
+            'tanggal_visit' => 'required|date',
+            'waktu_in' => 'required',
+            'waktu_out' => 'required',
+            'pic_meeted' => 'required',
+            'kegiatan' =>'required',
+        ]);
+
+        $visit = new visit;
+        $visit->visit_id = $request->visit_id;
+        $visit->nama_customer = $request->nama_customer;
+        $visit->spv_pic = $request->spv_pic;
+        $visit->tanggal_visit = $request->tanggal_visit;
+        $visit->waktu_in = $request->waktu_in;
+        $visit->waktu_out = $request->waktu_out;
+        $visit->pic_meeted = $request->pic_meeted;
+        $visit->kegiatan = $request->kegiatan;
+
+        if ($visit->save()){
+            return redirect('/insertvisit')->with('success', 'item berhasil ditambahkan');
+        }
+        else{
+            return redirect('/insertvisit')->with('error', 'item gagal ditambahkan');
+        }
     }
 
     /**
@@ -48,10 +74,6 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -59,9 +81,12 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($visit_id)
     {
-        //
+        $where = array('visit_id' => $visit_id);
+        $visit  = Visit::where($where)->first();
+ 
+        return view('officer/editvisit');
     }
 
     /**
@@ -71,9 +96,29 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $visit_id)
     {
-        //
+        $visit = visit::findorFail($visit_id);
+        $request->validate([
+            'nama_customer' => 'required',
+            'spv_pic' => 'required',
+            'tanggal_visit' => 'required|date',
+            'waktu_in' => 'required',
+            'waktu_out' => 'required',
+            'pic_meeted' => 'required',
+            'kegiatan' =>'required',
+        ]);
+
+        $visit->nama_customer = $request->nama_customer;
+        $visit->spv_pic = $request->spv_pic;
+        $visit->tanggal_visit = $request->tanggal_visit;
+        $visit->waktu_in = $request->waktu_in;
+        $visit->waktu_out = $request->waktu_out;
+        $visit->pic_meeted = $request->pic_meeted;
+        $visit->kegiatan = $request->kegiatan;
+        
+        if ($visit->save())
+          return redirect()->route('visit.index')->with(['success'=>'edit sukses']);
     }
 
     /**
@@ -82,8 +127,9 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($visit_id)
     {
-        //
+        $visit = Visit::where('visit_id',$visit_id)->delete();
+        return redirect()->route('visit.index')->with('success', 'delete sukses');
     }
 }

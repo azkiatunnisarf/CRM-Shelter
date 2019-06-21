@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Call;
 use Validator;
 
@@ -16,7 +17,7 @@ class callController extends Controller
      */
     public function index()
     {
-        $data['calls'] = Call::orderBy('call_id','desc');
+        $data['call'] = Call::orderBy('call_id','desc');
         return view('officer/call', $data);
     }
 
@@ -60,17 +61,6 @@ class callController extends Controller
         $call->pic_called       = $request->pic_called;
         $call->hal_menonjol     = $request->hal_menonjol;
 
-        // $callId = $request->call_id;
-        // $call   =   Call::updateOrCreate(['call_id' => $callId],
-        //             ['nama_customer' => $request->nama_customer, 
-        //             'spv_pic' => $request->spv_pic,
-        //             'tanggal_call' => $request->tanggal_call, 
-        //             'jam_call' => $request->jam_call,
-        //             'pembicaraan' => $request->pembicaraan, 
-        //             'pic_called' => $request->pic_called,
-        //             'hal_menonjol' => $request->hal_menonjol
-        //             ]);
-            
         if ($call->save()){
             return redirect('/insertcall')->with('success', 'item berhasil ditambahkan');
         }
@@ -85,10 +75,6 @@ class callController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
