@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use App\Wilayah;
 use App\Area;
 use App\User;
+
 
 class UserController extends Controller
 {
@@ -19,6 +21,13 @@ class UserController extends Controller
     }
     public function index(Request $request)
     {   
+        // if(!Session::get('login')){
+        //     return redirect('login')->with('alert','Kamu harus login dulu');
+        // }
+        // else{
+        //     return view('user');
+        // }
+
         $data['areas'] = area::all();
         $data['wilayahs'] = wilayah::all();
         $data['no'] = 1;
@@ -62,6 +71,38 @@ class UserController extends Controller
         }
         // return view('admin/user/user', $data);
     }
+
+    // public function login(){
+    //     return view('auth.login');
+    // }
+    // public function loginPost(Request $request){
+
+    //     $email = $request->email;
+    //     $password = $request->password;
+
+    //     $data = User::where('email',$email)->first();
+    //     if($data){ //apakah email tersebut ada atau tidak
+    //         if(Hash::check($password,$data->password)){
+    //             Session::put('name',$data->name);
+    //             Session::put('email',$data->email);
+    //             Session::put('login',TRUE);
+    //             return redirect('home_user');
+    //         }
+    //         else{
+    //             return redirect('login')->with('alert','Password atau Email, Salah !');
+    //         }
+    //     }
+    //     else{
+    //         return redirect('login')->with('alert','Password atau Email, Salah!');
+    //     }
+    // }
+    // public function logout(){
+    //     Session::flush();
+    //     return redirect('login')->with('alert','Kamu sudah logout');
+    // }
+    // public function register(Request $request){
+    //     return view('register');
+    // }
     public function store(Request $request)
     {
       $this->validate($request,[

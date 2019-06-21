@@ -9,7 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    protected $table = 'users';
+    protected $primaryKey = 'email';
     /**
      * The attributes that are mass assignable.
      *
@@ -47,6 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public $incrementing = false;
     public function wilayah()
     {
         return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
