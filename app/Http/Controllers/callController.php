@@ -44,21 +44,21 @@ class callController extends Controller
             'nama_customer' => 'required',
             'spv_pic' => 'required',
             'tanggal_call' => 'required|date',
-            'jam_call' => 'required|time',
+            'jam_call' => 'required',
             'pembicaraan' => 'required',
             'pic_called' => 'required',
             'hal_menonjol' =>'required',
         ]);
 
         $call = new call;
-        $call->call_id = $request->call_id;
-        $call->nama_customer = $request->nama_customer;
-        $call->spv_pic = $request->spv_pic;
-        $call->tanggal_call = $request->tanggal_call;
-        $call->jam_call = $request->jam_call;
-        $call->pembicaraan = $request->pembicaraan;
-        $call->pic_called = $request->pic_called;
-        $call->hal_menonjol = $request->hal_menonjol;
+        $call->call_id          = $request->call_id;
+        $call->nama_customer    = $request->nama_customer;
+        $call->spv_pic          = $request->spv_pic;
+        $call->tanggal_call     = $request->tanggal_call;
+        $call->jam_call         = $request->jam_call;
+        $call->pembicaraan      = $request->pembicaraan;
+        $call->pic_called       = $request->pic_called;
+        $call->hal_menonjol     = $request->hal_menonjol;
 
         // $callId = $request->call_id;
         // $call   =   Call::updateOrCreate(['call_id' => $callId],

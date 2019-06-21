@@ -96,4 +96,3 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/insert_user', 'UserController@insert')->name('insert.user'); //show form insert
 
 
-

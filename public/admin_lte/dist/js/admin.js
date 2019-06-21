@@ -1,3 +1,5 @@
 $(document).ready(function(){
-    $('#mydatatables').DataTable();
+    $('#mydatatables').DataTable({
+        "sScrollX": "100%",
+        "sScrollXInner": "110%",    });
 })

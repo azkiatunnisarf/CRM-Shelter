@@ -11,7 +11,19 @@
         </div>
         <div class="col-12 col-md-4 peer pX-80 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
             <h4 class="fw-300 c-grey-900 mB-40 text-center">Login</h4>
-            <form method="POST" action="{{ route('login') }}">
+            
+            @if(\Session::has('alert'))
+                <div class="alert alert-danger">
+                    <div>{{Session::get('alert')}}</div>
+                </div>
+            @endif
+            @if(\Session::has('alert-success'))
+                <div class="alert alert-success">
+                    <div>{{Session::get('alert-success')}}</div>
+                </div>
+            @endif
+            {{-- <form method="POST" action="{{ route('login') }}"> --}}
+            <form action="{{ url('/loginPost') }}" method="post">
                 {{ csrf_field() }}
 
                 <div class="form-group">
