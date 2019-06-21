@@ -2,8 +2,6 @@
 <html>
   <head>
     <!-- DataTables -->
-    
-      
       {{-- <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')}}"></script> --}}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -517,12 +515,14 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}"></script>
 
+{{-- js ku --}}
+<script src="{{asset('admin_lte/dist/js/admin.js')}}"></script>
 <!-- jQuery 3 -->
 {{-- <script src="{{asset('admin_lte/bower_components/jquery/dist/jquery.min.js')}}"></script> --}}
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('admin_lte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
-{{-- <script src="{{asset('admin_lte/bower_components/fastclick/lib/fastclick.js')}}"></script> --}}
+<script src="{{asset('admin_lte/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('admin_lte/dist/js/adminlte.min.js')}}"></script>
 <!-- Sparkline -->
@@ -533,12 +533,11 @@
 <!-- SlimScroll -->
 {{-- <script src="{{asset('admin_lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script> --}}
 <!-- ChartJS -->
-{{-- <script src="{{asset('admin_lte/bower_components/chart.js/Chart.js')}}"></script> --}}
+<script src="{{asset('admin_lte/bower_components/chart.js/Chart.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('admin_lte/dist/js/pages/dashboard2.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin_lte/dist/js/demo.js')}}"></script>
-<script src="{{asset('admin_lte/dist/js/admin.js')}}"></script>
 @yield('date_pick')
 @yield('js')
 </body>
