@@ -18,7 +18,6 @@ class VisitController extends Controller
     {
         // $data['visit'] = Visit::orderBy('visit_id','desc');
         $data['visits'] = visit::all();
-
         return view('officer/visit', $data);
     }
 
@@ -85,10 +84,9 @@ class VisitController extends Controller
      */
     public function edit($visit_id)
     {
-        $where = array('visit_id' => $visit_id);
-        $visit  = Visit::where($where)->first();
- 
-        return view('officer/editvisit');
+        //$where = array('visit_id' => $visit_id);
+        $visit  = Visit::findOrFail($visit_id);
+        return view('officer/editvisit')->with('visit', $visit);
     }
 
     /**
@@ -98,9 +96,9 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $visit_id)
+    public function update(Request $request, $id)
     {
-        $visit = visit::findorFail($visit_id);
+        $visit = Visit::findorFail($id);
         $request->validate([
             'nama_customer' => 'required',
             'spv_pic' => 'required',
@@ -120,7 +118,7 @@ class VisitController extends Controller
         $visit->kegiatan = $request->kegiatan;
         
         if ($visit->save())
-          return redirect()->route('visit.index')->with(['success'=>'edit sukses']);
+          return redirect()->route('index.visit')->with(['success'=>'edit sukses']);
     }
 
     /**
@@ -132,6 +130,6 @@ class VisitController extends Controller
     public function destroy($visit_id)
     {
         $visit = Visit::where('visit_id',$visit_id)->delete();
-        return redirect()->route('visit.index')->with('success', 'delete sukses');
+        return redirect()->route('index.visit')->with('success', 'delete sukses');
     }
 }

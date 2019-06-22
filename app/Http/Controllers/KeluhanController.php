@@ -10,7 +10,7 @@ class KeluhanController extends Controller
 {
     public function index()
     {
-        $data['keluhan'] = Keluhan::orderBy('id_keluhan','desc');
+        $data['keluhans'] = Keluhan::all();
         return view('officer/keluhan', $data);
     }
 
@@ -85,10 +85,10 @@ class KeluhanController extends Controller
      */
     public function edit($id_keluhan)
     {
-        $where = array('id_keluhan' => $id_keluhan);
-        $keluhan  = Keluhan::where($where)->first();
+        //$where = array('id_keluhan' => $id_keluhan);
+        $keluhan  = Keluhan::findOrFail($id_keluhan);
  
-        return view('officer/editkeluhan');
+        return view('officer/editkeluhan')->with('keluhan', $keluhan);
     }
 
     /**
@@ -98,9 +98,9 @@ class KeluhanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $visit_id)
+    public function update(Request $request, $id)
     {
-        $visit = visit::findorFail($visit_id);
+        $keluhan = Keluhan::findOrFail($id);
         $request->validate([
             'nama_customer' => 'required',
             'spv_pic' => 'required',
@@ -127,7 +127,7 @@ class KeluhanController extends Controller
         $keluhan->status = $request->status;
         
         if ($keluhan->save())
-          return redirect()->route('keluhan.index')->with(['success'=>'edit sukses']);
+          return redirect()->route('index.keluhan')->with(['success'=>'edit sukses']);
     }
 
     /**
@@ -139,6 +139,6 @@ class KeluhanController extends Controller
     public function destroy($id_keluhan)
     {
         $keluhan = Keluhan::where('id_keluhan',$id_keluhan)->delete();
-        return redirect()->route('keluhan.index')->with('success', 'delete sukses');
+        return redirect()->route('index.keluhan')->with('success', 'delete sukses');
     }
 }

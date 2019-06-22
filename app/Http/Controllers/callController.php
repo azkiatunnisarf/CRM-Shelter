@@ -85,10 +85,11 @@ class callController extends Controller
      */
     public function edit($call_id)
     {
-        $where = array('call_id' => $call_id);
-        $call  = Call::where($where)->first();
+        // $where = array('call_id' => $call_id);
+        // $call  = Call::where($where)->first();
+        $call = Call::findOrFail($call_id);
  
-        return view('officer/editcall');
+        return view('officer/editcall')->with('call', $call);
     }
 
     /**
@@ -98,29 +99,29 @@ class callController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $call_id)
+    public function update(Request $request, $id)
     {
+        $call   =   Call::findorFail($id);
         $this->validate($request,[
             'nama_customer'=>['required', 'string'],
             'spv_pic'=>['required', 'string'],
             'tanggal_call'=>['required', 'date'],
-            'jam_call'=>['required', 'time'],
+            'jam_call'=>['required'],
             'pembicaraan'=>['required', 'string'],
             'pic_called'=>['required', 'string'],
             'hal_menonjol'=>['required', 'string']
           ]);
-        $call   =   Call::findorFail(['call_id' => $callId],
-                    ['nama_customer' => $request->nama_customer, 
-                    'spv_pic' => $request->spv_pic,
-                    'tanggal_call' => $request->tanggal_call, 
-                    'jam_call' => $request->jam_call,
-                    'pembicaraan' => $request->pembicaraan, 
-                    'pic_called' => $request->pic_called,
-                    'hal_menonjol' => $request->hal_menonjol
-                    ]);
+        
+        $call->nama_customer    = $request->nama_customer;
+        $call->spv_pic          = $request->spv_pic;
+        $call->tanggal_call     = $request->tanggal_call;
+        $call->jam_call         = $request->jam_call;
+        $call->pembicaraan      = $request->pembicaraan;
+        $call->pic_called       = $request->pic_called;
+        $call->hal_menonjol     = $request->hal_menonjol;
   
         if ($call->save())
-          return redirect()->route('call.index')->with(['success'=>'edit sukses']);
+          return redirect()->route('index.call')->with(['success'=>'edit sukses']);
     }
 
     /**
@@ -132,6 +133,6 @@ class callController extends Controller
     public function destroy($call_id)
     {
         $call = Call::where('call_id',$call_id)->delete();
-        return redirect()->route('call.index')->with('success', 'delete sukses');
+        return redirect()->route('index.call')->with('success', 'delete sukses');
     }
 }
