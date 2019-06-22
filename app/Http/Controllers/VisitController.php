@@ -16,7 +16,9 @@ class VisitController extends Controller
      */
     public function index()
     {
-        $data['visit'] = Visit::orderBy('visit_id','desc');
+        // $data['visit'] = Visit::orderBy('visit_id','desc');
+        $data['visits'] = visit::all();
+
         return view('officer/visit', $data);
     }
 

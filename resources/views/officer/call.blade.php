@@ -26,30 +26,31 @@
                             <div style="overflow-x:auto;">
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
                                 <thead>
-                                    <th style="width:10%">ID Call</th>
-                                    <th style="width:75%">Nama Customer</th>
-                                    <th style="width:15%">SPV_PIC</th>
-                                    <th style="width:10%">Tanggal</th>
-                                    <th style="width:75%">Waktu Call</th>
-                                    <th style="width:10%">Pembicaraan</th>
-                                    <th style="width:75%">PIC Call</th>
-                                    <th style="width:15%">Hal Menonjol</th>
-                                    <th style="width:15%">Aksi</th>
+                                    <th>ID Call</th>
+                                    <th>Nama Customer</th>
+                                    <th>SPV_PIC</th>
+                                    <th>Tanggal</th>
+                                    <th>Waktu Call</th>
+                                    <th>Pembicaraan</th>
+                                    <th>PIC Call</th>
+                                    <th>Hal Menonjol</th>
+                                    <th>Aksi</th>
                                 </thead>
                                 <tbody>
-                                @foreach($call as $c)
+                                @foreach($calls as $call)
                                 <tr>
-                                    <td>{{ $c->call_id  }}</td>
-                                    <td>{{ $c->nama_customer }}</td>
-                                    <td>{{ $c->spv_pic }}</td>
-                                    <td>{{ $c->tanggal_call }}</td>
-                                    <td>{{ $c->jam_call }}</td>
-                                    <td>{{ $c->pembicaraan }}</td>
-                                    <td>{{ $c->pic_called }}</td>
-                                    <td>{{ $c->hal_menonjol }}</td>
-                                    <td><a href="{{route('edit.call',$call->call_id)}}" class="btn btn-info btn-sm">Ubah</a></td>
+                                    <td>{{ $call->call_id  }}</td>
+                                    <td>{{ $call->nama_customer }}</td>
+                                    <td>{{ $call->spv_pic }}</td>
+                                    <td>{{ $call->tanggal_call }}</td>
+                                    <td>{{ $call->jam_call }}</td>
+                                    <td>{{ $call->pembicaraan }}</td>
+                                    <td>{{ $call->pic_called }}</td>
+                                    <td>{{ $call->hal_menonjol }}</td>
                                     <td>
-                                    <a href="{{route('destroy.call',$call->call_id)}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                                        <a href="{{route('edit.call',$call->call_id)}}" class="btn btn-info btn-sm">Ubah</a>
+                                        <a href="{{route('delete.call',$call->call_id)}}" class="btn btn-danger btn-sm">Hapus</a>
+                                    </td>
                                 </tr>
                                 @endforeach    
                                 </tbody>
