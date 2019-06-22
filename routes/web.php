@@ -93,4 +93,10 @@ Auth::routes();
     Route::get('/edit/user{id}','UserController@edit')->name('edit.user');
     Route::put('/update/user{id}','UserController@update')->name('update.user');
 
-
+    // customer
+    Route::get('/insert_customer', 'CustomerController@insert')->name('insert.user'); //show form insert
+    Route::get('/customer', 'CustomerController@index')->name('index.customer');
+    Route::post('/store/customer', 'CustomerController@store')->name('store.customer');
+    Route::get('/delete/customer{id}','CustomerController@delete')->name('delete.customer');
+    Route::get('/edit/customer{id}','CustomerController@edit')->name('edit.customer');
+    Route::put('/update/customer{id}','CustomerController@update')->name('update.customer');
