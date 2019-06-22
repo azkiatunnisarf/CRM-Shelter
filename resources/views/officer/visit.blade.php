@@ -26,30 +26,31 @@
                             <div style="overflow-x:auto;">
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
                                 <thead>
-                                    <th style="width:10%">ID Visit</th>
-                                    <th style="width:75%">Nama Customer</th>
-                                    <th style="width:15%">SPV_PIC</th>
-                                    <th style="width:10%">Tanggal</th>
-                                    <th style="width:75%">Waktu In</th>
-                                    <th style="width:10%">Waktu Out</th>
-                                    <th style="width:75%">PIC Visit</th>
-                                    <th style="width:15%">Kegiatan</th>
-                                    <th style="width:15%">Aksi</th>
+                                    <th>ID Visit</th>
+                                    <th>Nama Customer</th>
+                                    <th>SPV_PIC</th>
+                                    <th>Tanggal</th>
+                                    <th>Waktu In</th>
+                                    <th>Waktu Out</th>
+                                    <th>PIC Visit</th>
+                                    <th>Kegiatan</th>
+                                    <th>Aksi</th>
                                 </thead>
                                 <tbody>
-                                @foreach($visit as $v)
+                                @foreach($visits as $visit)
                                 <tr>
-                                    <td>{{ $v->visit_id  }}</td>
-                                    <td>{{ $v->nama_customer }}</td>
-                                    <td>{{ $v->spv_pic }}</td>
-                                    <td>{{ $v->tanggal_visit }}</td>
-                                    <td>{{ $v->waktu_in }}</td>
-                                    <td>{{ $v->waktu_out }}</td>
-                                    <td>{{ $v->pic_meeted }}</td>
-                                    <td>{{ $v->kegiatan }}</td>
-                                    <td><a href="{{route('edit.visit',$visit->visit_id)}}" class="btn btn-info btn-sm">Ubah</a></td>
+                                    <td>{{ $visit->visit_id  }}</td>
+                                    <td>{{ $visit->nama_customer }}</td>
+                                    <td>{{ $visit->spv_pic }}</td>
+                                    <td>{{ $visit->tanggal_visit }}</td>
+                                    <td>{{ $visit->waktu_in }}</td>
+                                    <td>{{ $visit->waktu_out }}</td>
+                                    <td>{{ $visit->pic_meeted }}</td>
+                                    <td>{{ $visit->kegiatan }}</td>
                                     <td>
-                                    <a href="{{route('delete.visit',$visit->visit_id)}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                                        <a href="{{route('edit.visit',$visit->visit_id)}}" class="btn btn-info btn-sm">Ubah</a
+                                        <a href="{{route('delete.visit',$visit->visit_id)}}" class="btn btn-danger btn-sm">Hapus</a>
+                                    </td>
                                 </tr>
                                 @endforeach 
                                 </tbody>
