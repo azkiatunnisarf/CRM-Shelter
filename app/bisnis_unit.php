@@ -14,4 +14,10 @@ class bisnis_unit extends Model
        ,'updated_at'
     ];
     public $timestamps = false;
+    public function customer()
+    {
+
+        return $this->hasMany(customer::class);
+
+    }
 }

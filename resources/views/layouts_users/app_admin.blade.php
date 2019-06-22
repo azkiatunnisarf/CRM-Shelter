@@ -438,7 +438,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="user"><i class="fa fa-circle-o"></i> User</a></li>
+            <li><a href="user"><i class="fa fa-circle-o"></i> User CRM</a></li>
+            <li><a href="customer"><i class="fa fa-circle-o"></i> Customer</a></li>
           </ul>
         </li>
 
