@@ -27,7 +27,7 @@
                             <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
                             @include('admin.shared.components.alert')
 
-                            <table id="mydatatables" class="table table-collapse table-hover table-light table-striped cell-border">
+                            <table id="mydatatables" class="table table-collapse table-hover table-light table-striped cell-border table-responsive">
                                 <thead>
                                     <th>No</th>
                                     <th>Kode Customer</th>
@@ -56,14 +56,14 @@
                                         <td>{{ $customer->kabupaten }}</td>
                                         <td>{{ $customer->telpon }}</td>
                                         <td>{{ $customer->cp }}</td>
-                                        <td>{{ $customer->nama_area}}</td>
-                                        <td>{{ $customer->nama_wilayah}}</td>
-                                        <td>{{ $customer->email}}</td>
+                                        <td>{{ $customer->wilayah->area->nama_area}}</td>
+                                        <td>{{ $customer->wilayah->nama_wilayah}}</td>
+                                        <td>{{ $customer->nama_depan}}</td>
                                         <td>
-                                            <a href="{{route('edit.user',$user->email)}}" class="btn btn-info btn-sm">
+                                            <a href="{{route('edit.customer',$customer->kode_customer)}}" class="btn btn-info btn-sm">
                                                 <span class="fa fa-pencil"></span>
                                             </a>
-                                            <a href="{{route('delete.user',$user->email)}}" class="btn btn-danger btn-sm">
+                                            <a href="{{route('delete.customer',$customer->kode_customer)}}" class="btn btn-danger btn-sm">
                                                 <span class="fa fa-trash"></span>
                                             </a>
                                         </td>
