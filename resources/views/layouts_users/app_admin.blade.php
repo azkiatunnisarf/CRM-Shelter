@@ -390,7 +390,7 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Customer</a></li>
+              <li class="active"><a href="insert_customer"><i class="fa fa-circle-o"></i>Insert Laporan Customer</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Kontrak</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan visit</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Call</a></li>
@@ -421,11 +421,11 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="customer"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
+              <li class="active"><a href="kontrak"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="visit"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="call"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="keluhan"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
@@ -511,15 +511,15 @@
   
  
 <!-- ./wrapper -->
-
-<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<!-- jQuery 3 -->
+<script src="{{asset('admin_lte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('https://code.jquery.com/jquery-3.4.0.min.js')}}"></script>
+<script src="{{asset('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}"></script>
 
 {{-- js ku --}}
 <script src="{{asset('admin_lte/dist/js/admin.js')}}"></script>
-<!-- jQuery 3 -->
-{{-- <script src="{{asset('admin_lte/bower_components/jquery/dist/jquery.min.js')}}"></script> --}}
+
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('admin_lte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
@@ -539,6 +539,7 @@
 <script src="{{asset('admin_lte/dist/js/pages/dashboard2.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin_lte/dist/js/demo.js')}}"></script>
+
 @yield('date_pick')
 @yield('js')
 </body>

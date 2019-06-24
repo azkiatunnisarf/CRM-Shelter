@@ -1,7 +1,8 @@
 $(document).ready(function(){
     $('#mydatatables').DataTable({
         "sScrollX": "100%",
-        "sScrollXInner": "110%",    
+        "sScrollXInner": "100%",    
+        show: true,
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
       });
