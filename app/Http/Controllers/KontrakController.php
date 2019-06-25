@@ -146,4 +146,8 @@ class KontrakController extends Controller
         $kontrak = Kontrak::where('id_kontrak',$id_kontrak)->delete();
         return redirect()->route('index.kontrak')->with('success', 'delete sukses');
     }
+    public function exportExcel()
+	{
+		return Excel::download(new KontrakExport, 'Laporan-Kontrak-CRM.xlsx');
+	}
 }

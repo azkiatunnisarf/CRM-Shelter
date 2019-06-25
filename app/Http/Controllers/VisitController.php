@@ -132,4 +132,8 @@ class VisitController extends Controller
         $visit = Visit::where('visit_id',$visit_id)->delete();
         return redirect()->route('index.visit')->with('success', 'delete sukses');
     }
+    public function exportExcel()
+	{
+		return Excel::download(new VisitExport, 'Laporan-Visit-CRM.xlsx');
+	}
 }

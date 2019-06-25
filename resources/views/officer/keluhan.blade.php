@@ -25,6 +25,7 @@
                             @include('admin.shared.components.alert')
                             <div style="overflow-x:auto;">
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
+                            <a href="/keluhan/exportExcel" class="btn btn-success btn-sm" target="_blank">EXPORT EXCEL</a>
                                 <thead>
                                     <th style="width:10%">ID Keluhan</th>
                                     <th style="width:75%">Nama Customer</th>

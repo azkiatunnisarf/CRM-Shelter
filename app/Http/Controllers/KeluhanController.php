@@ -141,4 +141,8 @@ class KeluhanController extends Controller
         $keluhan = Keluhan::where('id_keluhan',$id_keluhan)->delete();
         return redirect()->route('index.keluhan')->with('success', 'delete sukses');
     }
+    public function exportExcel()
+	{
+		return Excel::download(new KeluhanExport, 'Laporan-Keluhan-CRM.xlsx');
+	}
 }

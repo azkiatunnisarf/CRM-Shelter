@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Call;
 use Validator;
+use App\Exports\CallExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class callController extends Controller
 {
@@ -135,4 +137,8 @@ class callController extends Controller
         $call = Call::where('call_id',$call_id)->delete();
         return redirect()->route('index.call')->with('success', 'delete sukses');
     }
+    public function exportExcel()
+	{
+		return Excel::download(new CallExport, 'Laporan-Call-CRM.xlsx');
+	}
 }
