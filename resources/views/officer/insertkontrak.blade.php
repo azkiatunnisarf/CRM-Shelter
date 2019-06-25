@@ -58,7 +58,10 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Surat Pemberitahuan</label>
-                	        <input type="text" class="form-control" name="srt_pemberitahuan" required>
+                          <select class ="form-control" name="srt_pemberitahuan" required>
+                            <option value="Sudah Dikirim">Sudah dikirim</option>
+                            <option value="Belum Dikirim">Belum dikirim</option>
+                          </select>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal Surat Pemberitahuan</label>
@@ -66,7 +69,10 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Surat Penawaran</label>
-                	        <input type="text" class="form-control" name="srt_penawaran" required>
+                	        <select class ="form-control" name="srt_penawaran" required>
+                            <option value="Sudah Dikirim">Sudah dikirim</option>
+                            <option value="Belum Dikirim">Belum dikirim</option>
+                          </select>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal Surat Penawaran</label>
@@ -74,7 +80,10 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Dealing</label>
-                	        <input type="text" class="form-control" name="dealing" required>
+                	        <select class ="form-control" name="dealing" required>
+                            <option value="Sudah Deal">Sudah deal</option>
+                            <option value="Belum Deal">Belum deal</option>
+                          </select>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal Dealing</label>
@@ -82,11 +91,23 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Posisi Pks</label>
-                	        <input type="text" class="form-control" name="posisi_pks" required>
+                	        <select class ="form-control" name="posisi_pks" required>
+                            <option value="di Shelter">di Shelter</option>
+                            <option value="di Client">di Client</option>
+                          </select>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Closing</label>
                 	        <input type="text" class="form-control" name="closing" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                	        <label class="font-weight-bold">Via</label>
+                	        <select class ="form-control" name="via" required>
+                            <option value="-">-</option>
+                            <option value="Langsung">Langsung</option>
+                            <option value="Email">Email</option>
+                            <option value="Post Kurir">Post Kurir</option>
+                          </select>
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-lg btn-info btn-block ">

@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Keluhan;
+use App\Exports\KeluhanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KeluhanController extends Controller
 {

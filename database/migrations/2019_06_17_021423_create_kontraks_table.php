@@ -27,6 +27,7 @@ class CreateKontraksTable extends Migration
             $table->date('tgl_dealing');
             $table->string('posisi_pks');
             $table->string('closing');
+            $table->string('via');
             $table->timestamps();
         });
         // Schema::table('kontraks', function($table)

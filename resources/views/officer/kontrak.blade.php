@@ -40,6 +40,7 @@
                                     <th style="width:10%">Tgl_Dealing</th>
                                     <th style="width:75%">Posisi Pks</th>
                                     <th style="width:15%">Closing</th>
+                                    <th style="width:15%">Via</th>
                                     <th style="width:15%">Aksi</th>
                                 </thead>
                                 <tbody>
@@ -58,6 +59,7 @@
                                     <td>{{ $kontrak->tgl_dealing }}</td>
                                     <td>{{ $kontrak->posisi_pks }}</td>
                                     <td>{{ $kontrak->closing }}</td>
+                                    <td>{{ $kontrak->via }}</td>
                                     <td>
                                     <a href="{{route('edit.kontrak',$kontrak->id_kontrak)}}" class="btn btn-info btn-sm">Ubah</a>
                                     <a href="{{route('destroy.kontrak',$kontrak->id_kontrak)}}" class="btn btn-danger btn-sm">Hapus</a></td>

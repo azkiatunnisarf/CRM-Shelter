@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Visit;
 use Validator;
+use App\Exports\VisitExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class VisitController extends Controller
 {

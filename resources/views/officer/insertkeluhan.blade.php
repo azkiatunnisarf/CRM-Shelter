@@ -43,7 +43,7 @@
                 	        <input type="text" class="form-control" name="nama_customer" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">SPV_PIC</label>
+                	        <label class="font-weight-bold">SPV/PIC</label>
                 	        <input type="text" class="form-control" name="spv_pic" required>
                         </div>
                         <div class="form-group col-md-6">
@@ -76,7 +76,13 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Via</label>
-                	        <input type="text" class="form-control" name="via" required>
+                	        <select class ="form-control" name="via" required>
+                            <option value="Telepon">Telepon</option>
+                            <option value="BBM">BBM</option>
+                            <option value="Email">Email</option>
+                            <option value="Meeting">Meeting</option>
+                            <option value="Other">Other</option>
+                          </select>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Status</label>
