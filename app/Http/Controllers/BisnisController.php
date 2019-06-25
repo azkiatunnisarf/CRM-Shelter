@@ -20,12 +20,12 @@ class BisnisController extends Controller
     public function store(Request $request)
     {
       $this->validate($request,[
-        'bisnis_unit'=>['required', 'string']
+        'nama_bisnis_unit'=>['required', 'string']
       ]);
 
       $bisnis_unit = new bisnis_unit;
-      $bisnis_unit->bu_id   = $request->bu_id;
-      $bisnis_unit->bisnis_unit = $request->bisnis_unit;
+      $bisnis_unit->bu_id             = $request->bu_id;
+      $bisnis_unit->nama_bisnis_unit  = $request->nama_bisnis_unit;
       
 
       if ($bisnis_unit->save()){
@@ -46,9 +46,9 @@ class BisnisController extends Controller
     public function update(Request $request, $id){
         $bisnis_unit = bisnis_unit::findorFail($id);
         $this->validate($request,[
-          'bisnis_unit'=>['required', 'string']
+          'nama_bisnis_unit'=>['required', 'string']
         ]);
-        $bisnis_unit->bisnis_unit = $request->bisnis_unit;
+        $bisnis_unit->nama_bisnis_unit = $request->nama_bisnis_unit;
   
         if ($bisnis_unit->save())
           return redirect()->route('index.bisnis_unit')->with(['success'=>'edit sukses']);

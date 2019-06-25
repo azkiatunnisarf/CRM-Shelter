@@ -18,9 +18,9 @@ class Customer extends Model
        ,'telpon'
        ,'fax'
        ,'cp'
-       ,'area_id'
+       ,'nama_area'
        ,'wilayah_id'
-       ,'email'
+       ,'nama_depan'
        
     ];
     public $incrementing = false;
@@ -29,6 +29,12 @@ class Customer extends Model
     {
 
         return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
+
+    }
+    public function bisnis_unit()
+    {
+
+        return $this->belongsTo(\App\bisnis_unit::class,'bu_id','bu_id');
 
     }
 }

@@ -54,7 +54,7 @@
                         <div>
                             <select class="form-control" name="bu_id">
                             @foreach($bisnis_units as $bisnis_unit)
-                                <option value="{{ $bisnis_unit->bu_id }}">{{ $bisnis_unit->bisnis_unit }}</option>
+                                <option value="{{ $bisnis_unit->bu_id }}">{{ $bisnis_unit->nama_bisnis_unit }}</option>
                             @endforeach
                             </select>
                         </div>
@@ -86,9 +86,9 @@
                     <div class="form-group">
                         <label>Area :</label>
                         <div>
-                            <select class="form-control" name="area_id">
+                            <select class="form-control" name="nama_area">
                             @foreach($areas as $area)
-                                <option value="{{ $area->area_id }}">{{ $area->nama_area }}</option>
+                                <option value="{{ $area->nama_area }}">{{ $area->nama_area }}</option>
                             @endforeach
                             </select>
                         </div>
@@ -106,9 +106,9 @@
                     <div class="form-group">
                         <label>Area Supervisor :</label>
                         <div>
-                            <select class="form-control" name="email">
+                            <select class="form-control" name="nama_depan">
                             @foreach($users as $users)
-                                <option value="{{ $users->email }}">{{ $users->nama_depan }}</option>
+                                <option value="{{ $users->nama_depan }}">{{ $users->nama_depan }}</option>
                             @endforeach
                             </select>
                         </div>
