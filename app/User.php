@@ -56,18 +56,24 @@ class User extends Authenticatable
 
     const ADMIN_TYPE = 'admin';
     const OFFICER_TYPE = 'officer';
-  
+    const MANAGER_CRM_TYPE = 'manager_crm';
+
 
     public function isAdmin()    {        
-        return $this->type === self::ADMIN_TYPE;    
+        return $this->rule === self::ADMIN_TYPE;    
     }
 
-    public function isAsessor()    {        
-        return $this->type === self::ASESSOR_TYPE;    
+    public function isOfficer()    {        
+        return $this->rule === self::OFFICER_TYPE;    
     }
+    public function isManagerCRM()    {        
+        return $this->rule === self::MANAGER_CRM_TYPE;    
+    }
+
+
     public function setPasswordAttribute($password)
-{
-    $this->attributes['password'] = \Hash::make($password);
-}
+    {
+        $this->attributes['password'] = \Hash::make($password);
+    }
 
 }
