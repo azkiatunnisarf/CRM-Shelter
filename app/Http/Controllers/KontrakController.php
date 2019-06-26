@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Kontrak;
+use App\Exports\KontrakExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KontrakController extends Controller
 {
@@ -47,6 +49,7 @@ class KontrakController extends Controller
             'tgl_dealing' =>'required',
             'posisi_pks' => 'required',
             'closing' =>'required',
+            'via' =>'required',
         ]);
 
         $kontrak = new kontrak;
@@ -63,6 +66,7 @@ class KontrakController extends Controller
         $kontrak->tgl_dealing = $request->tgl_dealing;
         $kontrak->posisi_pks = $request->posisi_pks;
         $kontrak->closing = $request->closing;
+        $kontrak->via = $request->via;
 
         if ($kontrak->save()){
             return redirect('/insertkontrak')->with('success', 'item berhasil ditambahkan');
@@ -116,6 +120,7 @@ class KontrakController extends Controller
             'tgl_dealing' =>'required',
             'posisi_pks' => 'required',
             'closing' =>'required',
+            'via' =>'required',
         ]);
 
         $kontrak->kode_customer = $request->kode_customer;
@@ -130,6 +135,7 @@ class KontrakController extends Controller
         $kontrak->tgl_dealing = $request->tgl_dealing;
         $kontrak->posisi_pks = $request->posisi_pks;
         $kontrak->closing = $request->closing;
+        $kontrak->via = $request->via;
         
         if ($kontrak->save())
           return redirect()->route('index.kontrak')->with(['success'=>'edit sukses']);
@@ -146,4 +152,8 @@ class KontrakController extends Controller
         $kontrak = Kontrak::where('id_kontrak',$id_kontrak)->delete();
         return redirect()->route('index.kontrak')->with('success', 'delete sukses');
     }
+    public function exportExcel()
+	{
+		return Excel::download(new KontrakExport, 'Laporan-Kontrak-CRM.xlsx');
+	}
 }

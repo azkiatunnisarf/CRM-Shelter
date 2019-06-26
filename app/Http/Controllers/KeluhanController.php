@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Keluhan;
+use App\Exports\KeluhanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KeluhanController extends Controller
 {
@@ -141,4 +143,8 @@ class KeluhanController extends Controller
         $keluhan = Keluhan::where('id_keluhan',$id_keluhan)->delete();
         return redirect()->route('index.keluhan')->with('success', 'delete sukses');
     }
+    public function exportExcel()
+	{
+		return Excel::download(new KeluhanExport, 'Laporan-Keluhan-CRM.xlsx');
+	}
 }

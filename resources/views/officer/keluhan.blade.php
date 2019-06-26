@@ -25,10 +25,12 @@
                             @include('admin.shared.components.alert')
                             <div style="overflow-x:auto;">
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
+                            <a href="/keluhan/exportExcel" class="btn btn-success btn-sm" target="_blank">EXPORT EXCEL</a>
+                            <a href="/insertkeluhan" class="btn btn-primary btn-sm">Input Keluhan</a>
                                 <thead>
                                     <th style="width:10%">ID Keluhan</th>
                                     <th style="width:75%">Nama Customer</th>
-                                    <th style="width:15%">SPV_PIC</th>
+                                    <th style="width:15%">SPV/PIC</th>
                                     <th style="width:10%">Tanggal</th>
                                     <th style="width:75%">Waktu Keluhan</th>
                                     <th style="width:10%">Keluhan</th>
