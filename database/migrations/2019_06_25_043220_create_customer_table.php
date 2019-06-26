@@ -17,16 +17,16 @@ class CreateCustomerTable extends Migration
             $table->string('kode_customer')->unique();
             $table->string('nama_perusahaan');
             $table->string('jenis_usaha');
-            $table->integer('bu_id');
+            $table->integer('bu_id')->unsigned();
             $table->string('alamat');
             $table->string('provinsi');
             $table->string('kabupaten');
             $table->string('telpon');
             $table->string('fax');
             $table->string('cp');
-            $table->integer('area_id');
+            $table->string('nama_area');
             $table->integer('wilayah_id')->unsigned();
-            $table->string('email');
+            $table->string('nama_depan');
             $table->timestamps();
         });
         Schema::table('customer', function($table)
@@ -34,6 +34,13 @@ class CreateCustomerTable extends Migration
             $table->foreign('wilayah_id')
                 ->references('wilayah_id')
                 ->on('wilayah')
+                ->onDelete('cascade');
+        });
+        Schema::table('customer', function($table)
+        {
+            $table->foreign('bu_id')
+                ->references('bu_id')
+                ->on('bisnis_unit')
                 ->onDelete('cascade');
         });
     }

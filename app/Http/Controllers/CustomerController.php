@@ -52,9 +52,9 @@ class CustomerController extends Controller
       $customer->telpon             = $request->telpon;
       $customer->fax                = $request->fax;
       $customer->cp                 = $request->cp;
-      $customer->area_id            = $request->area_id;
+      $customer->nama_area          = $request->nama_area;
       $customer->wilayah_id         = $request->wilayah_id;
-      $customer->email              = $request->email;
+      $customer->nama_depan         = $request->nama_depan;
       
 
       if ($customer->save()){

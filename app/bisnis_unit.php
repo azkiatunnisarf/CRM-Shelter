@@ -9,7 +9,7 @@ class bisnis_unit extends Model
     protected $table = 'bisnis_unit';
     protected $primaryKey = 'bu_id';
     protected $fillable = [
-        'bisnis_unit'
+        'nama_bisnis_unit'
        ,'created_at'
        ,'updated_at'
     ];

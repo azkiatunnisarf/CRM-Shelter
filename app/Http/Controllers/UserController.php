@@ -72,37 +72,7 @@ class UserController extends Controller
         // return view('admin/user/user', $data);
     }
 
-    // public function login(){
-    //     return view('auth.login');
-    // }
-    // public function loginPost(Request $request){
-
-    //     $email = $request->email;
-    //     $password = $request->password;
-
-    //     $data = User::where('email',$email)->first();
-    //     if($data){ //apakah email tersebut ada atau tidak
-    //         if(Hash::check($password,$data->password)){
-    //             Session::put('name',$data->name);
-    //             Session::put('email',$data->email);
-    //             Session::put('login',TRUE);
-    //             return redirect('home_user');
-    //         }
-    //         else{
-    //             return redirect('login')->with('alert','Password atau Email, Salah !');
-    //         }
-    //     }
-    //     else{
-    //         return redirect('login')->with('alert','Password atau Email, Salah!');
-    //     }
-    // }
-    // public function logout(){
-    //     Session::flush();
-    //     return redirect('login')->with('alert','Kamu sudah logout');
-    // }
-    // public function register(Request $request){
-    //     return view('register');
-    // }
+   
     public function store(Request $request)
     {
       $this->validate($request,[
@@ -128,10 +98,10 @@ class UserController extends Controller
       $users->rule           = $request->rule;
 
       if ($users->save()){
-        return redirect('/insert_user')->with('success', 'item berhasil ditambahkan');
+        return redirect('/admin/insert_user')->with('success', 'item berhasil ditambahkan');
       }
       else{
-        return redirect('/insert_user')->with('error', 'item gagal ditambahkan');
+        return redirect('/admin/insert_user')->with('error', 'item gagal ditambahkan');
       }
     }
     public function update(Request $request, $id){

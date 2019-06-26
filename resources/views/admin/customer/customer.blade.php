@@ -26,7 +26,6 @@
                     {{-- ---- end filter ------ --}}  
                             <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
                             @include('admin.shared.components.alert')
-
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped cell-border table-responsive">
                                 <thead>
                                     <th>No</th>
@@ -42,6 +41,7 @@
                                     <th>Area</th>
                                     <th>Wilayah</th>
                                     <th>Area Supervisor</th>
+                                    <th>Aksi</th>
                                 </thead>
                                 <tbody>
                                     @foreach($customers as $customer)
@@ -50,13 +50,13 @@
                                         <td>{{ $customer->kode_customer }}</td>
                                         <td>{{ $customer->nama_perusahaan }}</td>
                                         <td>{{ $customer->jenis_usaha }}</td>
-                                        <td>{{ $customer->bisnis_unit }}</td>
+                                        <td>{{ $customer->bisnis_unit->nama_bisnis_unit }}</td>
                                         <td>{{ $customer->alamat }}</td>
                                         <td>{{ $customer->provinsi }}</td>
                                         <td>{{ $customer->kabupaten }}</td>
                                         <td>{{ $customer->telpon }}</td>
                                         <td>{{ $customer->cp }}</td>
-                                        <td>{{ $customer->wilayah->area->nama_area}}</td>
+                                        <td>{{ $customer->nama_area}}</td>
                                         <td>{{ $customer->wilayah->nama_wilayah}}</td>
                                         <td>{{ $customer->nama_depan}}</td>
                                         <td>
