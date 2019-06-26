@@ -36,7 +36,7 @@
                                     @foreach($bisnis_units as $bisnis_unit)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $bisnis_unit->bisnis_unit }}</td>
+                                        <td>{{ $bisnis_unit->nama_bisnis_unit }}</td>
                                         <td>
                                             <a href="{{route('edit.bisnis_unit',$bisnis_unit->bu_id)}}" class="btn btn-info btn-sm">
                                                 <span class="fa fa-pencil">Edit</span>

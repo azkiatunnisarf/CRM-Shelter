@@ -15,7 +15,7 @@ class CreateBisnisUnitTable extends Migration
     {
         Schema::create('bisnis_unit', function (Blueprint $table) {
             $table->increments('bu_id');
-            $table->string('bisnis_unit');
+            $table->string('nama_bisnis_unit');
             $table->timestamps();
         });
     }

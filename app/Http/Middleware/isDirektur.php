@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class isDireksi
+class isDirektur
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,8 @@ class isDireksi
      */
     public function handle($request, Closure $next)
     {
-        $dosen = Pic::find(Auth::user()->username);
-        if($dosen)
+        $direktur = direktur::find(Auth::user()->username);
+        if($direktur)
             return $next($request);
         
         return response()->view('errors.401', [], 401);

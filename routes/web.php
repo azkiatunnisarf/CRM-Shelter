@@ -11,11 +11,9 @@
 |
 */
 
-// sementara . belum tak sambungin auth
+// Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
 
-Route::get('/officer', function () {
-    return view('officer.dashboard_officer');
-});
+    Route::get('/dashboard_officer', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
 
 //------- laporan call
     Route::get('/insertcall', 'callController@insert')->name('insert.call'); //show form insert
@@ -52,18 +50,13 @@ Route::get('/edit/editkontrak{id_kontrak}','KontrakController@edit')->name('edit
 Route::post('/update/kontrak{id_kontrak}','KontrakController@update')->name('update.kontrak');
 Route::get('/kontrak/exportExcel','KontrakController@exportExcel');
 
+// });
 
-Auth::routes();
 
-// Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
-    // {{--------------------------------------- halaman admin ---------------------------------------}}
-    // {{--------------------------------------- ------------- ---------------------------------------}}
-    Route::get('/manager_crm', function () {
-        return view('/manager_crm/dashboard_manager_crm');
-    });
+Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
+
     Route::get('/home', 'AdminController@index')->name('home'); //Dashboard Admin
     
-
     //--------- bisnis unit
     Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert
     Route::get('/bisnis_unit', 'BisnisController@index')->name('index.bisnis_unit');
@@ -103,3 +96,5 @@ Auth::routes();
     Route::get('/delete/customer{id}','CustomerController@delete')->name('delete.customer');
     Route::get('/edit/customer{id}','CustomerController@edit')->name('edit.customer');
     Route::put('/update/customer{id}','CustomerController@update')->name('update.customer');
+});
+    Auth::routes();
