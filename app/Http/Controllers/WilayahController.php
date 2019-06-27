@@ -3,12 +3,34 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use App\wilayah;
 use App\Area;
 
 class WilayahController extends Controller
 {
-    public function insert()
+  public function filter(Request $request)
+    {
+      if($request->area_id)
+      {
+        $data['areas'] = area::all();
+        $data['no'] = 1;
+        $data['wilayahs'] = DB::table('wilayah')
+            ->join('area', 'wilayah.area_id', '=', 'area.area_id')
+            ->select('area.area_id','wilayah.wilayah_id','area.nama_area', 'nama_wilayah')
+            ->where('area.area_id', '=', $request->area_id)
+            ->get();
+            // dd($request);
+            return view('admin/wilayah/wilayah', $data);
+      }
+      else {
+        $data['areas'] = area::all();
+        $data['no'] = 1;
+        return view('admin/wilayah/wilayah', $data);
+      }
+    }
+
+  public function insert()
     {
         $data['areas'] = area::all();
         return view('/admin/wilayah/insert_wilayah',$data);
