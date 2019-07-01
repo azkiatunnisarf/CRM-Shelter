@@ -11,9 +11,9 @@
 |
 */
 
-// Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
+Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
 
-    Route::get('/dashboard_officer', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
+    Route::get('/home', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
 
     //------- laporan call
     Route::get('/insert_call', 'callController@insert')->name('insert.call'); //show form insert
@@ -47,7 +47,7 @@
     Route::get('/edit/editkontrak{id_kontrak}','KontrakController@edit')->name('edit.kontrak');
     Route::put('/update/kontrak{id_kontrak}','KontrakController@update')->name('update.kontrak');
 
-// });
+});
 
 
 Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
