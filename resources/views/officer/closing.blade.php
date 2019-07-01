@@ -24,8 +24,6 @@
                             <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
                             @include('admin.shared.components.alert')
                             <div style="overflow-x:auto;">
-                            <a href="/kontrak/exportExcel" class="btn btn-success btn-sm" target="_blank">EXPORT EXCEL</a>
-                            <a href="/insertkontrak" class="btn btn-primary btn-sm">Input Kontrak</a>
                             <table id="mydatatables" class="table table-responsive table-hover table-light table-striped">
                                 <thead>
                                     <th style="width:10%">ID Kontrak</th>
@@ -42,28 +40,24 @@
                                     <th style="width:75%">Posisi Pks</th>
                                     <th style="width:15%">Closing</th>
                                     <th style="width:15%">Via</th>
-                                    <th style="width:15%">Aksi</th>
                                 </thead>
                                 <tbody>
-                                @foreach ($kontraks as $kontrak)
+                                @foreach ($akhir as $ak)
                                 <tr>
-                                    <td>{{ $kontrak->id_kontrak }}</td>
-                                    <td>{{ $kontrak->kode_customer }}</td>
-                                    <td>{{ $kontrak->nama_perusahaan }}</td>
-                                    <td>{{ $kontrak->periode_kontrak }}</td>
-                                    <td>{{ $kontrak->akhir_periode }}</td>
-                                    <td>{{ $kontrak->srt_pemberitahuan }}</td>
-                                    <td>{{ $kontrak->tgl_srt_pemberitahuan }}</td>
-                                    <td>{{ $kontrak->srt_penawaran }}</td>
-                                    <td>{{ $kontrak->tgl_srt_penawaran }}</td>
-                                    <td>{{ $kontrak->dealing }}</td>
-                                    <td>{{ $kontrak->tgl_dealing }}</td>
-                                    <td>{{ $kontrak->posisi_pks }}</td>
-                                    <td>{{ $kontrak->closing }}</td>
-                                    <td>{{ $kontrak->via }}</td>
-                                    <td>
-                                    <a href="{{route('edit.kontrak',$kontrak->id_kontrak)}}" class="btn btn-info btn-sm">Ubah</a>
-                                    <a href="{{route('destroy.kontrak',$kontrak->id_kontrak)}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                                    <td>{{ $ak->id_kontrak }}</td>
+                                    <td>{{ $ak->kode_customer }}</td>
+                                    <td>{{ $ak->nama_perusahaan }}</td>
+                                    <td>{{ $ak->periode_kontrak }}</td>
+                                    <td>{{ $ak->akhir_periode }}</td>
+                                    <td>{{ $ak->srt_pemberitahuan }}</td>
+                                    <td>{{ $ak->tgl_srt_pemberitahuan }}</td>
+                                    <td>{{ $ak->srt_penawaran }}</td>
+                                    <td>{{ $ak->tgl_srt_penawaran }}</td>
+                                    <td>{{ $ak->dealing }}</td>
+                                    <td>{{ $ak->tgl_dealing }}</td>
+                                    <td>{{ $ak->posisi_pks }}</td>
+                                    <td>{{ $ak->closing }}</td>
+                                    <td>{{ $ak->via }}</td>
                                 </tr> 
                                 @endforeach
                                 </tbody>

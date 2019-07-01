@@ -140,5 +140,16 @@ class callController extends Controller
     public function exportExcel()
 	{
 		return Excel::download(new CallExport, 'Laporan-Call-CRM.xlsx');
-	}
+    }
+    public function monthFilter(Request $request){
+        $month = $request->get('month');
+        $year = $request->get('year');
+            
+        $call = Call::whereYear('tanggal_call', '=', $year)
+                  ->whereMonth('tanggal_call', '=', $month)
+                  ->get();
+            
+            
+            return view('officer.call', ['call' => $call]);
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Kontrak;
 use App\Exports\KontrakExport;
 use Maatwebsite\Excel\Facades\Excel;
+use DB;
 
 class KontrakController extends Controller
 {
@@ -155,5 +156,13 @@ class KontrakController extends Controller
     public function exportExcel()
 	{
 		return Excel::download(new KontrakExport, 'Laporan-Kontrak-CRM.xlsx');
-	}
+    }
+    public function akhirKontrak(){
+        $akhir = DB::table('kontrak')
+        ->select(DB::raw('id_kontrak','kode_customer','nama_perusahaan','periode_kontrak','akhir_periode'))
+        ->where('akhir_periode', '<=', strtotime(date("H:i:s", strtotime('7 hour')))+30)
+        ->get();
+
+        return view('officer.closing', $akhir);
+    }
 }
