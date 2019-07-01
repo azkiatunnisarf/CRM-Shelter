@@ -83,6 +83,8 @@ Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     Route::get('/delete/wilayah{id}','WilayahController@delete')->name('delete.wilayah');
     Route::get('/edit/wilayah{id}','WilayahController@edit')->name('edit.wilayah');
     Route::put('/update/wilayah{id}','WilayahController@update')->name('update.wilayah');
+    Route::post('/filter/wilayah', 'WilayahController@filter')->name('filter.wilayah');
+
 
     // user
     Route::get('/insert_user', 'UserController@insert')->name('insert.user'); //show form insert

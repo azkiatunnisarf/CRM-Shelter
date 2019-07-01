@@ -45,9 +45,9 @@ class UserController extends Controller
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
-        elseif ($request->rule == 'manager')
+        elseif ($request->rule == 'manager_crm')
         {
-            $data['users'] = DB::table('users')->where('rule', 'manager')->get();
+            $data['users'] = DB::table('users')->where('rule', 'manager_crm')->get();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }

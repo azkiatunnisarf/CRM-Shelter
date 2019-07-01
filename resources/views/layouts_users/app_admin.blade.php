@@ -363,7 +363,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{asset('home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="{{asset('/admin/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
         
@@ -375,11 +375,11 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="insert_bisnis_unit"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
-              <li class="active"><a href="insert_area"><i class="fa fa-circle-o"></i> Input Area</a></li>
-              <li class="active"><a href="insert_wilayah"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
-              <li class="active"><a href="insert_user"><i class="fa fa-circle-o"></i> Input User</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Input Area</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_wilayah')}}"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Input User</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i> Input Customer</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -390,7 +390,7 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="insert_customer"><i class="fa fa-circle-o"></i>Insert Laporan Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i>Insert Laporan Customer</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Kontrak</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan visit</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Call</a></li>
@@ -407,9 +407,9 @@
               </span>
             </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="bisnis_unit"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
-                <li class="active"><a href="area"><i class="fa fa-circle-o"></i> Daftar area</a></li>
-                <li class="active"><a href="wilayah"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
+                <li class="active"><a href="{{asset('/admin/bisnis_unit')}}"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
+                <li class="active"><a href="{{asset('/admin/area')}}"><i class="fa fa-circle-o"></i> Daftar area</a></li>
+                <li class="active"><a href="{{asset('/admin/wilayah')}}"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
               </ul>
           </li>
 
@@ -421,11 +421,11 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="customer"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="kontrak"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="visit"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="call"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="keluhan"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="{{asset('/admin/customer')}}"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/kontrak')}}"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="{{asset('/admin/visit')}}"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="{{asset('/admin/call')}}"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="{{asset('/admin/keluhan')}}"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
@@ -438,8 +438,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="user"><i class="fa fa-circle-o"></i> User CRM</a></li>
-            <li><a href="customer"><i class="fa fa-circle-o"></i> Customer</a></li>
+            <li><a href="{{asset('/admin/user')}}"><i class="fa fa-circle-o"></i> User CRM</a></li>
+            <li><a href="{{asset('/admin/customer')}}"><i class="fa fa-circle-o"></i> Customer</a></li>
           </ul>
         </li>
 
