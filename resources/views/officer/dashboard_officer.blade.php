@@ -35,8 +35,8 @@
                         <div class="info-box bg-red col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Customer</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-text">30 kontrak akan habis dalam 30 hari</span>
+                                <span class="info-box-number">Lihat detil</span>
                             </div>     
                         </div>
                     </div>

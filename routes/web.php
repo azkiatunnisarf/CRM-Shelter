@@ -11,7 +11,7 @@
 |
 */
 
-// Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
+//Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
 
     Route::get('/dashboard_officer', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
 
@@ -23,34 +23,37 @@
     Route::get('/edit/editcall{call_id}','callController@edit')->name('edit.call');
     Route::post('/update/call{call_id}','callController@update')->name('update.call');
     Route::get('/call/exportExcel', 'callController@exportExcel');
+    Route::get('/call/monthFilter','callController@monthFilter')->name('monthFilter.call');
+
 //------- laporan visit
-Route::get('/insertvisit', 'VisitController@insert')->name('insert.visit'); //show form insert
-Route::get('/visit', 'VisitController@index')->name('index.visit');
-Route::post('/store/visit', 'VisitController@store')->name('store.visit');
-Route::get('/destroy/visit{visit_id}','VisitController@destroy')->name('destroy.visit');
-Route::get('/edit/editvisit{visit_id}','VisitController@edit')->name('edit.visit');
-Route::post('/update/visit{visit_id}','VisitController@update')->name('update.visit');
-Route::get('/visit/exportExcel','VisitController@exportExcel');
+    Route::get('/insertvisit', 'VisitController@insert')->name('insert.visit'); //show form insert
+    Route::get('/visit', 'VisitController@index')->name('index.visit');
+    Route::post('/store/visit', 'VisitController@store')->name('store.visit');
+    Route::get('/destroy/visit{visit_id}','VisitController@destroy')->name('destroy.visit');
+    Route::get('/edit/editvisit{visit_id}','VisitController@edit')->name('edit.visit');
+    Route::post('/update/visit{visit_id}','VisitController@update')->name('update.visit');
+    Route::get('/visit/exportExcel','VisitController@exportExcel');
 
-//------- laporan keluhan
-Route::get('/insertkeluhan', 'KeluhanController@insert')->name('insert.keluhan'); //show form insert
-Route::get('/keluhan', 'KeluhanController@index')->name('index.keluhan');
-Route::post('/store/keluhan', 'KeluhanController@store')->name('store.keluhan');
-Route::get('/destroy/keluhan{id_keluhan}','KeluhanController@destroy')->name('destroy.keluhan');
-Route::get('/edit/editkeluhan{id_keluhan}','KeluhanController@edit')->name('edit.keluhan');
-Route::post('/update/keluhan{id_keluhan}','KeluhanController@update')->name('update.keluhan');
-Route::get('/keluhan/exportExcel','KeluhanController@exportExcel');
+    //------- laporan keluhan
+    Route::get('/insertkeluhan', 'KeluhanController@insert')->name('insert.keluhan'); //show form insert
+    Route::get('/keluhan', 'KeluhanController@index')->name('index.keluhan');
+    Route::post('/store/keluhan', 'KeluhanController@store')->name('store.keluhan');
+    Route::get('/destroy/keluhan{id_keluhan}','KeluhanController@destroy')->name('destroy.keluhan');
+    Route::get('/edit/editkeluhan{id_keluhan}','KeluhanController@edit')->name('edit.keluhan');
+    Route::post('/update/keluhan{id_keluhan}','KeluhanController@update')->name('update.keluhan');
+    Route::get('/keluhan/exportExcel','KeluhanController@exportExcel');
 
-//------- laporan kontrak
-Route::get('/insertkontrak', 'KontrakController@insert')->name('insert.kontrak'); //show form insert
-Route::get('/kontrak', 'KontrakController@index')->name('index.kontrak');
-Route::post('/store/kontrak', 'KontrakController@store')->name('store.kontrak');
-Route::get('/destroy/kontrak{id_kontrak}','KontrakController@destroy')->name('destroy.kontrak');
-Route::get('/edit/editkontrak{id_kontrak}','KontrakController@edit')->name('edit.kontrak');
-Route::post('/update/kontrak{id_kontrak}','KontrakController@update')->name('update.kontrak');
-Route::get('/kontrak/exportExcel','KontrakController@exportExcel');
+    //------- laporan kontrak
+    Route::get('/insertkontrak', 'KontrakController@insert')->name('insert.kontrak'); //show form insert
+    Route::get('/kontrak', 'KontrakController@index')->name('index.kontrak');
+    Route::post('/store/kontrak', 'KontrakController@store')->name('store.kontrak');
+    Route::get('/destroy/kontrak{id_kontrak}','KontrakController@destroy')->name('destroy.kontrak');
+    Route::get('/edit/editkontrak{id_kontrak}','KontrakController@edit')->name('edit.kontrak');
+    Route::post('/update/kontrak{id_kontrak}','KontrakController@update')->name('update.kontrak');
+    Route::get('/kontrak/exportExcel','KontrakController@exportExcel');
+    Route::get('/closing','KontrakController@akhirKontrak');
 
-// });
+ //});
 
 
 Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
