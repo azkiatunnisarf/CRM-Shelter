@@ -64,4 +64,12 @@ class CustomerController extends Controller
         return redirect('/insert_customer')->with('error', 'item gagal ditambahkan');
       }
     }
+    public function delete($kode_customer){
+      $customer = customer::findOrFail($kode_customer)->delete();
+      return redirect()->route('index.customer')->with('success', 'delete sukses');
+    }
+    public function edit($kode_customer){
+        $customer = customer::findOrFail($kode_customer);
+        return view('admin/customer/edit_customer')->with('customer', $customer);
+    }
 }
