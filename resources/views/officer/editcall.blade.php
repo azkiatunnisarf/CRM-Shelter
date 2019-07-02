@@ -35,7 +35,7 @@
 
                   <br>
 
-                <form action="{{route('store.call')}}" method="post">
+                <form action="{{route('update.call', $call->call_id)}}" method="post">
                     {{ csrf_field() }}
                     
 

@@ -35,7 +35,7 @@
 
                   <br>
 
-                <form action="{{route('store.visit')}}" method="post">
+                <form action="{{route('update.visit', $visit->visit_id)}}" method="post">
                     {{ csrf_field() }}
                     
 

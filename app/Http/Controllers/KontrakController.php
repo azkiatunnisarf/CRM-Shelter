@@ -5,12 +5,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Kontrak;
+use App\Exports\KontrakExport;
+use Maatwebsite\Excel\Facades\Excel;
+use DB;
 
 class KontrakController extends Controller
 {
     public function index()
     {
-        $data['kontrak'] = Kontrak::orderBy('id_kontrak','desc');
+        $data['kontraks'] = Kontrak::all();
         return view('officer/kontrak', $data);
     }
 
@@ -47,6 +50,7 @@ class KontrakController extends Controller
             'tgl_dealing' =>'required',
             'posisi_pks' => 'required',
             'closing' =>'required',
+            'via' =>'required',
         ]);
 
         $kontrak = new kontrak;
@@ -63,6 +67,7 @@ class KontrakController extends Controller
         $kontrak->tgl_dealing = $request->tgl_dealing;
         $kontrak->posisi_pks = $request->posisi_pks;
         $kontrak->closing = $request->closing;
+        $kontrak->via = $request->via;
 
         if ($kontrak->save()){
             return redirect('/insertkontrak')->with('success', 'item berhasil ditambahkan');
@@ -87,10 +92,10 @@ class KontrakController extends Controller
      */
     public function edit($id_kontrak)
     {
-        $where = array('id_kontrak' => $id_kontrak);
-        $kontrak  = Kontrak::where($where)->first();
+        //$where = array('id_kontrak' => $id_kontrak);
+        $kontrak  = Kontrak::findOrFail($id_kontrak);
  
-        return view('officer/editkontrak');
+        return view('officer/editkontrak')->with('kontrak',$kontrak);
     }
 
     /**
@@ -100,9 +105,9 @@ class KontrakController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_kontrak)
+    public function update(Request $request, $id)
     {
-        $kontrak = Kontrak::findorFail($id_kontrak);
+        $kontrak = Kontrak::findorFail($id);
         $request->validate([
             'kode_customer' => 'required',
             'nama_perusahaan' => 'required',
@@ -116,6 +121,7 @@ class KontrakController extends Controller
             'tgl_dealing' =>'required',
             'posisi_pks' => 'required',
             'closing' =>'required',
+            'via' =>'required',
         ]);
 
         $kontrak->kode_customer = $request->kode_customer;
@@ -130,9 +136,10 @@ class KontrakController extends Controller
         $kontrak->tgl_dealing = $request->tgl_dealing;
         $kontrak->posisi_pks = $request->posisi_pks;
         $kontrak->closing = $request->closing;
+        $kontrak->via = $request->via;
         
         if ($kontrak->save())
-          return redirect()->route('kontrak.index')->with(['success'=>'edit sukses']);
+          return redirect()->route('index.kontrak')->with(['success'=>'edit sukses']);
     }
 
     /**
@@ -144,6 +151,18 @@ class KontrakController extends Controller
     public function destroy($id_kontrak)
     {
         $kontrak = Kontrak::where('id_kontrak',$id_kontrak)->delete();
-        return redirect()->route('kontrak.index')->with('success', 'delete sukses');
+        return redirect()->route('index.kontrak')->with('success', 'delete sukses');
+    }
+    public function exportExcel()
+	{
+		return Excel::download(new KontrakExport, 'Laporan-Kontrak-CRM.xlsx');
+    }
+    public function akhirKontrak(){
+        $akhir = DB::table('kontrak')
+        ->select(DB::raw('id_kontrak','kode_customer','nama_perusahaan','periode_kontrak','akhir_periode'))
+        ->where('akhir_periode', '<=', strtotime(date("H:i:s", strtotime('7 hour')))+30)
+        ->get();
+
+        return view('officer.closing', $akhir);
     }
 }

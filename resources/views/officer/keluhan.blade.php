@@ -24,11 +24,13 @@
                             <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
                             @include('admin.shared.components.alert')
                             <div style="overflow-x:auto;">
+                            <a href="/keluhan/exportExcel" class="btn btn-success btn-sm" target="_blank">EXPORT EXCEL</a>
+                            <a href="/insertkeluhan" class="btn btn-primary btn-sm">Input Keluhan</a>
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
                                 <thead>
                                     <th style="width:10%">ID Keluhan</th>
                                     <th style="width:75%">Nama Customer</th>
-                                    <th style="width:15%">SPV_PIC</th>
+                                    <th style="width:15%">SPV/PIC</th>
                                     <th style="width:10%">Tanggal</th>
                                     <th style="width:75%">Waktu Keluhan</th>
                                     <th style="width:10%">Keluhan</th>
@@ -41,23 +43,23 @@
                                     <th style="width:15%">Aksi</th>
                                 </thead>
                                 <tbody>
-                                @foreach($keluhan as $ke)
+                                @foreach($keluhans as $keluhan )
                                 <tr>
-                                    <td>{{ $ke->id_keluhan  }}</td>
-                                    <td>{{ $ke->nama_customer }}</td>
-                                    <td>{{ $ke->spv_pic }}</td>
-                                    <td>{{ $ke->tanggal_keluhan }}</td>
-                                    <td>{{ $ke->jam_keluhan }}</td>
-                                    <td>{{ $ke->keluhan }}</td>
-                                    <td>{{ $ke->pic }}</td>
-                                    <td>{{ $ke->jam_follow }}</td>
-                                    <td>{{ $ke->follow_up }}</td>
-                                    <td>{{ $ke->closing_case }}</td>
-                                    <td>{{ $ke->via }}</td>
-                                    <td>{{ $ke->status }}</td>
-                                    <td><a href="{{route('edit.keluhan',$keluhan->id_keluhan)}}" class="btn btn-info btn-sm">Ubah</a></td>
+                                    <td>{{ $keluhan->id_keluhan  }}</td>
+                                    <td>{{ $keluhan->nama_customer }}</td>
+                                    <td>{{ $keluhan->spv_pic }}</td>
+                                    <td>{{ $keluhan->tanggal_keluhan }}</td>
+                                    <td>{{ $keluhan->jam_keluhan }}</td>
+                                    <td>{{ $keluhan->keluhan }}</td>
+                                    <td>{{ $keluhan->pic }}</td>
+                                    <td>{{ $keluhan->jam_follow }}</td>
+                                    <td>{{ $keluhan->follow_up }}</td>
+                                    <td>{{ $keluhan->closing_case }}</td>
+                                    <td>{{ $keluhan->via }}</td>
+                                    <td>{{ $keluhan->status }}</td>
                                     <td>
-                                    <a href="{{route('delete.keluhan',$keluhan->id_keluhan)}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                                    <a href="{{route('edit.keluhan',$keluhan->id_keluhan)}}" class="btn btn-info btn-sm">Ubah</a>
+                                    <a href="{{route('destroy.keluhan',$keluhan->id_keluhan)}}" class="btn btn-danger btn-sm">Hapus</a></td>
                                 </tr>
                                 @endforeach 
                                 </tbody>

@@ -21,6 +21,7 @@ class kontrak extends Model
        ,'tgl_dealing'
        ,'posisi_pks'
        ,'closing'
+       ,'via'
     ];
 
     public function customer()

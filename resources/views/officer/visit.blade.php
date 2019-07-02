@@ -24,7 +24,10 @@
                             <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
                             @include('admin.shared.components.alert')
                             <div style="overflow-x:auto;">
+                                <a href="/visit/exportExcel" class="btn btn-success btn-sm" target="_blank">EXPORT EXCEL</a>
+                                <a href="/insertvisit" class="btn btn-primary btn-sm">Input Visit</a>
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
+                                
                                 <thead>
                                     <th>ID Visit</th>
                                     <th>Nama Customer</th>
@@ -49,7 +52,7 @@
                                     <td>{{ $visit->kegiatan }}</td>
                                     <td>
                                         <a href="{{route('edit.visit',$visit->visit_id)}}" class="btn btn-info btn-sm">Ubah</a>
-                                        <a href="{{route('delete.visit',$visit->visit_id)}}" class="btn btn-danger btn-sm">Hapus</a>
+                                        <a href="{{route('destroy.visit',$visit->visit_id)}}" class="btn btn-danger btn-sm">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach 
