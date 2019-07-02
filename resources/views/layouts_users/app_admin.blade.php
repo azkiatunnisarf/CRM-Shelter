@@ -2,8 +2,6 @@
 <html>
   <head>
     <!-- DataTables -->
-    
-      
       {{-- <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')}}"></script> --}}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,7 +80,7 @@
                   <li><!-- start message -->
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -95,7 +93,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -107,7 +105,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -119,7 +117,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -131,7 +129,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -268,13 +266,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="admin_lte/dist/img/avatar04.png" class="user-image" alt="User Image">
+              <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="user-image" alt="User Image">
               <span class="hidden-xs"> Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="admin_lte/dist/img/avatar04.png" class="img-circle" alt="User Image">
+                <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
 
                 <p>
                     Admin
@@ -334,7 +332,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="admin_lte/dist/img/avatar04.png" class="img-circle" alt="User Image">
+          <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Admin</p>
@@ -365,7 +363,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{asset('home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="{{asset('/admin/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
         
@@ -377,11 +375,11 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="insert_bisnis_unit"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
-              <li class="active"><a href="insert_area"><i class="fa fa-circle-o"></i> Input Area</a></li>
-              <li class="active"><a href="insert_wilayah"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input User</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Input Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Input Area</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_wilayah')}}"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Input User</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i> Input Customer</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -392,7 +390,7 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i>Insert Laporan Customer</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Kontrak</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan visit</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Call</a></li>
@@ -409,9 +407,9 @@
               </span>
             </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="bisnis_unit"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
-                <li class="active"><a href="area"><i class="fa fa-circle-o"></i> Daftar area</a></li>
-                <li class="active"><a href="wilayah"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
+                <li class="active"><a href="{{asset('/admin/bisnis_unit')}}"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
+                <li class="active"><a href="{{asset('/admin/area')}}"><i class="fa fa-circle-o"></i> Daftar area</a></li>
+                <li class="active"><a href="{{asset('/admin/wilayah')}}"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
               </ul>
           </li>
 
@@ -423,11 +421,11 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="{{asset('/admin/customer')}}"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/kontrak')}}"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="{{asset('/admin/visit')}}"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="{{asset('/admin/call')}}"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="{{asset('/admin/keluhan')}}"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
               <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
@@ -440,11 +438,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Admin</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Officer CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Manager CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Manager Non CRM</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Direktur</a></li>
+            <li><a href="{{asset('/admin/user')}}"><i class="fa fa-circle-o"></i> User CRM</a></li>
+            <li><a href="{{asset('/admin/customer')}}"><i class="fa fa-circle-o"></i> Customer</a></li>
           </ul>
         </li>
 
@@ -516,17 +511,19 @@
   
  
 <!-- ./wrapper -->
-
-<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<!-- jQuery 3 -->
+<script src="{{asset('admin_lte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('https://code.jquery.com/jquery-3.4.0.min.js')}}"></script>
+<script src="{{asset('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}"></script>
 
-<!-- jQuery 3 -->
-{{-- <script src="{{asset('admin_lte/bower_components/jquery/dist/jquery.min.js')}}"></script> --}}
+{{-- js ku --}}
+<script src="{{asset('admin_lte/dist/js/admin.js')}}"></script>
+
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('admin_lte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
-{{-- <script src="{{asset('admin_lte/bower_components/fastclick/lib/fastclick.js')}}"></script> --}}
+<script src="{{asset('admin_lte/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('admin_lte/dist/js/adminlte.min.js')}}"></script>
 <!-- Sparkline -->
@@ -537,12 +534,12 @@
 <!-- SlimScroll -->
 {{-- <script src="{{asset('admin_lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script> --}}
 <!-- ChartJS -->
-{{-- <script src="{{asset('admin_lte/bower_components/chart.js/Chart.js')}}"></script> --}}
+<script src="{{asset('admin_lte/bower_components/chart.js/Chart.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('admin_lte/dist/js/pages/dashboard2.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin_lte/dist/js/demo.js')}}"></script>
-<script src="{{asset('admin_lte/dist/js/admin.js')}}"></script>
+
 @yield('date_pick')
 @yield('js')
 </body>

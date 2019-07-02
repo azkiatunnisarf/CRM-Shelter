@@ -37,7 +37,7 @@
                       <div class="form-group">
                         <label>Nama Bisnis Unit:</label>
                         <div>
-                          <input type="text" class="form-control" name="bisnis_unit" value="{{ $bisnis_unit->bisnis_unit}}">
+                          <input type="text" class="form-control" name="nama_bisnis_unit" value="{{ $bisnis_unit->nama_bisnis_unit}}">
                         </div>
                       </div>
 

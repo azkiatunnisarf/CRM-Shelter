@@ -24,7 +24,7 @@
                             <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
                             @include('admin.shared.components.alert')
 
-                            <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
+                            <table id="mydatatables" class="table table-collapse table-hover table-light table-striped cell-border">
                                 <thead>
                                     <th style="width:10%">No</th>
                                     <th style="width:75%">Nama Bisnis Unit</th>
@@ -36,7 +36,7 @@
                                     @foreach($bisnis_units as $bisnis_unit)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $bisnis_unit->bisnis_unit }}</td>
+                                        <td>{{ $bisnis_unit->nama_bisnis_unit }}</td>
                                         <td>
                                             <a href="{{route('edit.bisnis_unit',$bisnis_unit->bu_id)}}" class="btn btn-info btn-sm">
                                                 <span class="fa fa-pencil">Edit</span>

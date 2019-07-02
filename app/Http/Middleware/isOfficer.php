@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class isOfficerCRM
+class isOfficer
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,9 @@ class isOfficerCRM
      */
     public function handle($request, Closure $next)
     {
-        $dosen = Pic::find(Auth::user()->username);
-        if($dosen)
+        if( auth()->user()->isofficer()) {
             return $next($request);
-        
-        return response()->view('errors.401', [], 401);
+        }
+        // return redirect('/dashboard_officer');
     }
 }

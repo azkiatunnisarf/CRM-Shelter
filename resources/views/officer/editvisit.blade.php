@@ -5,11 +5,11 @@
     <div class="col-md-12">
         <div class="panel block">
             <div class="panel-body">
-                <h1>Form Insert Keluhan</h1>
+                <h1>Edit Visit</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="area"></i>Area</a></li>
-                    <li class="active">Insert Area</li>
+                    <li><a href="area"></i>Visit</a></li>
+                    <li class="active">Edit Visit</li>
                 </ol>
             </div>
         </div>
@@ -35,8 +35,10 @@
 
                   <br>
 
-                <form action="{{route('store.keluhan')}}" method="post">
+                <form action="{{route('store.visit')}}" method="post">
                     {{ csrf_field() }}
+                    
+
                     <div class="form-group">
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Nama Customer</label>
@@ -48,39 +50,23 @@
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal</label>
-                	        <input type="date" class="form-control" name="tanggal_keluhan" required>
+                	        <input type="date" class="form-control" name="tanggal_visit" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Waktu Keluhan</label>
-                	        <input type="time" class="form-control" name="jam_keluhan" required>
+                	        <label class="font-weight-bold">Waktu In</label>
+                	        <input type="time" class="form-control" name="waktu_in" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Keluhan</label>
-                	        <input type="text" class="form-control" name="keluhan" required>
+                	        <label class="font-weight-bold">Waktu Out</label>
+                	        <input type="time" class="form-control" name="waktu_out" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">PIC</label>
-                	        <input type="text" class="form-control" name="pic" required>
+                	        <label class="font-weight-bold">PIC Visit</label>
+                	        <input type="text" class="form-control" name="pic_meeted" required>
                         </div>
                         <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Waktu Follow</label>
-                	        <input type="time" class="form-control" name="jam_follow" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Follow Up</label>
-                	        <input type="text" class="form-control" name="follow_up" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Closing Case</label>
-                	        <input type="text" class="form-control" name="closing_case" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Via</label>
-                	        <input type="text" class="form-control" name="via" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                	        <label class="font-weight-bold">Status</label>
-                	        <input type="text" class="form-control" name="status" required>
+                	        <label class="font-weight-bold">Kegiatan</label>
+                	        <input type="text" class="form-control" name="kegiatan" required>
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-lg btn-info btn-block ">

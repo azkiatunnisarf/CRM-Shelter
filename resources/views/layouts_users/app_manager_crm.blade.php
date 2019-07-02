@@ -2,6 +2,8 @@
 <html>
   <head>
     <!-- DataTables -->
+    
+      
       {{-- <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')}}"></script> --}}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +24,6 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset('admin_lte/dist/css/skins/_all-skins.min.css')}}">
-  
     {{-- jquery --}}
   
   {{-- data table --}}
@@ -43,7 +44,6 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic')}}">
-  
 @yield('css')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -268,16 +268,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="admin_lte/dist/img/avatar2.png" class="user-image" alt="User Image">
-              <span class="hidden-xs"> Officer CRM</span>
+              <img src="admin_lte/dist/img/avatar04.png" class="user-image" alt="User Image">
+              <span class="hidden-xs"> Manager CRM</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="admin_lte/dist/img/avatar2.png" class="img-circle" alt="User Image">
+                <img src="admin_lte/dist/img/avatar04.png" class="img-circle" alt="User Image">
 
                 <p>
-                    Officer CRM
+                    Manager CRM
                   <small></small>
                 </p>
               </li>
@@ -334,10 +334,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="admin_lte/dist/img/avatar2.png" class="img-circle" alt="User Image">
+          <img src="admin_lte/dist/img/avatar04.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Officer CRM</p>
+          <p>Manager CRM</p>
           <a href=""><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -359,7 +359,7 @@
 
         <li class="active treeview menu-open">
           <a href="">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span>Dashboard manager</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -367,24 +367,6 @@
           <ul class="treeview-menu">
             <li class="active"><a href="{{asset('home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
-        </li>
-        
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-plus"></i> <span>Insert Laporan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="/insertcall"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="/insertvisit"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="/insertkeluhan"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="/insertkontrak"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="/insertMoU"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Closing Rekontrak</a></li>
-
-            </ul>
         </li>
 
         <li class="treeview">
@@ -395,14 +377,49 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="/call"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="/visit"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="/keluhan"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="/kontrak"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="/MoU"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
-        
+
+        {{-- <li class="treeview">
+          <a href="">
+            <i class="fa fa-share"></i> <span>Multilevel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
+            <li class="treeview">
+              <a href=""><i class="fa fa-circle-o"></i> Level One
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Level Two</a></li>
+                <li class="treeview">
+                  <a href=""><i class="fa fa-circle-o"></i> Level Two
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
+                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
+          </ul>
+        </li> --}}
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -440,11 +457,6 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}"></script>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
 <!-- jQuery 3 -->
 {{-- <script src="{{asset('admin_lte/bower_components/jquery/dist/jquery.min.js')}}"></script> --}}
 <!-- Bootstrap 3.3.7 -->
@@ -467,7 +479,6 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin_lte/dist/js/demo.js')}}"></script>
 <script src="{{asset('admin_lte/dist/js/admin.js')}}"></script>
-
 @yield('date_pick')
 @yield('js')
 </body>

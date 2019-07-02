@@ -8,8 +8,8 @@
                 <h1>Form Insert Call</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="area"></i>Area</a></li>
-                    <li class="active">Insert Area</li>
+                    <li><a href="area"></i>Call</a></li>
+                    <li class="active">Insert Call</li>
                 </ol>
             </div>
         </div>
@@ -35,38 +35,38 @@
 
                   <br>
 
-                <form>
+                <form action="{{route('store.call')}}" method="post">
                     {{ csrf_field() }}
                     
 
                     <div class="form-group">
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Nama Customer</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="nama_customer" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">SPV_PIC</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="spv_pic" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Tanggal</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="date" class="form-control" name="tanggal_call" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Waktu Call</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="time" class="form-control" name="jam_call" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Pembicaraan</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="pembicaraan" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">PIC Call</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="pic_called" required>
                         </div>
                         <div class="form-group col-md-6">
                 	        <label class="font-weight-bold">Hal Menonjol</label>
-                	        <input type="text" class="form-control" name="nama_kuis" required>
+                	        <input type="text" class="form-control" name="hal_menonjol" required>
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-lg btn-info btn-block ">
