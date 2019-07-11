@@ -24,7 +24,7 @@
             <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
             <div class="info-box-content">
                 <span class="info-box-text">Customer</span>
-                <span class="info-box-number">1,410</span>
+                <span class="info-box-number">{{$customer}}</span>
             </div>
             </div>
         </div>

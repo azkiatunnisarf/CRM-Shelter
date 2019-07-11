@@ -10,10 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('auth.login');
+});
 
 Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
 
     Route::get('/home', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
+    Route::get('/officer', function () {
+        return view('officer/dashboard_officer');
+    });
 
     //------- laporan call
     Route::get('/insert_call', 'callController@insert')->name('insert.call'); //show form insert

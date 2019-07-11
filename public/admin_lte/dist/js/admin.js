@@ -3,7 +3,7 @@ $(document).ready(function(){
         "sScrollX": "100%",
         "sScrollXInner": "100%",    
         show: true,
-        dom: 'Bfrtip',
+        // dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
       });
 })
