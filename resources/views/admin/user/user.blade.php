@@ -58,7 +58,7 @@
                                     <th>Nama Belakang</th>
                                     <th>Email</th>
                                     <th>Nomor HP</th>
-                                    <th>Password</th>
+                                    {{-- <th>Password</th> --}}
                                     <th>Nama Area</th>
                                     <th>Nama Wilayah</th>
                                     <th>rule</th>
@@ -73,7 +73,7 @@
                                         <td>{{ $user->nama_belakang }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->no_hp }}</td>
-                                        <td>{{ $user->password }}</td>
+                                        {{-- <td>{{ $user->password }}</td> --}}
                                         <td>{{ $user->nama_area }}</td>
                                         <td>{{ $user->nama_wilayah }}</td>
                                         <td>{{ $user->rule }}</td>
