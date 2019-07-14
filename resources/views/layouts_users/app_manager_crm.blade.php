@@ -365,7 +365,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{asset('home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="{{asset('dashboard_manager_crm')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
 
@@ -377,12 +377,12 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
+              <li class="active"><a href="{{asset('manager_customer')}}"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
+              <li class="active"><a href="{{asset('manager_kontrak')}}"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="{{asset('manager_visit')}}"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="{{asset('manager_call')}}"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="{{asset('manager_keluhan')}}"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="{{asset('manager_mou')}}"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
 

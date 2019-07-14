@@ -30,57 +30,57 @@
                 </div> --}} 
                 <h2>Daftar Laporan yang tersedia</h2>
                 {{----------- box -----------}}
-                <a href="#">
+                <a href="{{asset('manager_customer')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-red col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan Customer</span>
-                                <span class="info-box-number">4</span>
+                                <span class="info-box-number">{{$customers}}</span>
                             </div>     
                         </div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="{{asset('manager_kontrak')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-blue col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan kontrak</span>
-                                <span class="info-box-number">8</span>
+                                <span class="info-box-number">{{$kontrak}}</span>
                             </div>     
                         </div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="{{asset('manager_visit')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-green col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan Visit</span>
-                                <span class="info-box-number">8</span>
+                                <span class="info-box-number">{{$visits}}</span>
                             </div>     
                         </div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="{{asset('manager_call')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-yellow col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan call</span>
-                                <span class="info-box-number">10</span>
+                                <span class="info-box-number">{{$calls}}</span>
                             </div>     
                         </div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="{{asset('manager_keluhan')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-purple col-md-4">
                         <span class="info-box-icon"><i class="fa fa-table"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan Keluhan</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{$keluhan}}</span>
                             </div>     
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                             <span class="info-box-icon"><i class="fa fa-table"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Laporan data MOU</span>
-                                    <span class="info-box-number">41,410</span>
+                                    <span class="info-box-number">40000</span>
                                 </div>     
                             </div>
                         </div>

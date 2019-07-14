@@ -59,9 +59,9 @@
                                     <th>Email</th>
                                     <th>Nomor HP</th>
                                     {{-- <th>Password</th> --}}
-                                    <th>Nama Area</th>
-                                    <th>Nama Wilayah</th>
-                                    <th>rule</th>
+                                    <th>Area/Cabang</th>
+                                    <th>Wilayah Supervisi</th>
+                                    <th>Role</th>
                                     <th>aksi</th>
                                 </thead>
                                 <tbody>
@@ -74,8 +74,8 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->no_hp }}</td>
                                         {{-- <td>{{ $user->password }}</td> --}}
-                                        <td>{{ $user->nama_area }}</td>
-                                        <td>{{ $user->nama_wilayah }}</td>
+                                        <td>{{ $user->cabang }}</td>
+                                        <td>{{ $user->wilayah_supervisi }}</td>
                                         <td>{{ $user->rule }}</td>
                                         <td>
                                             <a href="{{route('edit.user',$user->email)}}" class="btn btn-info btn-sm">

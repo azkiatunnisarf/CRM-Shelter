@@ -71,34 +71,12 @@
                       <div><input type="text" class="form-control"  name="no_hp" required></div>
                     </div>
                     <div class="form-group">
-                        <label>Nama Area :</label>
-                        <div>
-                            <select class="form-control" name="nama_area">
-                            @foreach($areas as $area)
-                                <option value="{{ $area->nama_area }}">{{ $area->nama_area }}</option>
-                            @endforeach
-                            </select>
-                        </div>
+                      <label>Area/Cabang :</label>
+                      <div><input type="text" class="form-control"  name="cabang" required></div>
                     </div>
                     <div class="form-group">
-                        <label>Nama Wilayah :</label>
-                        <div>
-                            <select class="form-control" name="wilayah_id">
-                            @foreach($wilayahs as $wilayah)
-                                <option value="{{ $wilayah->wilayah_id }}">{{ $wilayah->nama_wilayah }}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Wilayah Supervisi :</label>
-                        <div>
-                            <select class="form-control" name="nama_wilayah">
-                            @foreach($wilayahs as $wilayah)
-                                <option value="{{ $wilayah->nama_wilayah }}">{{ $wilayah->nama_wilayah }}</option>
-                            @endforeach
-                            </select>
-                        </div>
+                      <label>Wilayah Supervisi :</label>
+                      <div><input type="text" class="form-control"  name="wilayah_supervisi" required></div>
                     </div>
                     <div class="form-group">
                         <label>Rule :</label>
