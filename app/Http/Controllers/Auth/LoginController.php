@@ -25,7 +25,7 @@ class LoginController extends Controller
         {
             return redirect('/admin/home');
         }
-        if ( $user->isofficer() ) 
+        if ( $user->isOfficer() ) 
         {
             return redirect('/officer/home');
         }
@@ -33,8 +33,12 @@ class LoginController extends Controller
         {
             return redirect('/manager_crm/home');
         }
+        elseif ( $user->isdirektur() ) 
+        {
+            return redirect('/direktur/home');
+        }
         else {
-            return redirect('/login');
+            return redirect('/');
         }
     }
     

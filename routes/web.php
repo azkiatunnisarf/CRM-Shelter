@@ -110,3 +110,13 @@ Route::group(['prefix' => 'manager_crm',  'middleware' => 'is_manager_crm'], fun
     Route::get('/manager_kontrak', 'ManagerController@kontrak')->name('manager_kontrak');
     Route::get('/manager_mou', 'ManagerController@mou')->name('manager_mou');
 });
+
+Route::group(['prefix' => 'direktur',  'middleware' => 'is_direktur'], function(){
+    //manager crm
+    Route::get('/home', 'DirekturController@index')->name('dashboard_direktur'); //Dashboard Admin
+    Route::get('/direktur_call', 'DirekturController@call')->name('direktur_call');
+    Route::get('/direktur_keluhan', 'DirekturController@keluhan')->name('direktur_keluhan');
+    Route::get('/direktur_visit', 'DirekturController@visit')->name('direktur_visit');
+    Route::get('/direktur_kontrak', 'DirekturController@kontrak')->name('direktur_kontrak');
+    Route::get('/direktur_mou', 'DirekturController@mou')->name('direktur_mou');
+});
