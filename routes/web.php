@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('auth.login');
+});
+Auth::routes();
 
 Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
 
@@ -102,4 +106,13 @@ Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     Route::get('/edit/customer{id}','CustomerController@edit')->name('edit.customer');
     Route::put('/update/customer{id}','CustomerController@update')->name('update.customer');
 });
-    Auth::routes();
+ 
+Route::group(['prefix' => 'manager_crm',  'middleware' => 'is_manager_crm'], function(){
+    //manager crm
+    Route::get('/home', 'ManagerController@index')->name('dashboard_manager'); //Dashboard Admin
+    Route::get('/manager_call', 'ManagerController@call')->name('manager_call');
+    Route::get('/manager_keluhan', 'ManagerController@keluhan')->name('manager_keluhan');
+    Route::get('/manager_visit', 'ManagerController@visit')->name('manager_visit');
+    Route::get('/manager_kontrak', 'ManagerController@kontrak')->name('manager_kontrak');
+    Route::get('/manager_mou', 'ManagerController@mou')->name('manager_mou');
+});

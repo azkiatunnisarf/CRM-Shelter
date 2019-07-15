@@ -23,10 +23,9 @@ class User extends Authenticatable
         ,'email'
         ,'password'
         ,'email'
-        ,'wilayah_id'
         ,'no_hp'
-        ,'nama_area'
-        ,'nama_wilayah'
+        ,'cabang'
+        ,'wilayah_supervisi'
         ,'rule'
         ,
     ];
@@ -49,10 +48,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public $incrementing = false;
-    public function wilayah()
-    {
-        return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
-    }
+    // public function wilayah()
+    // {
+    //     return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
+    // }
 
     const ADMIN_TYPE = 'admin';
     const OFFICER_TYPE = 'officer';

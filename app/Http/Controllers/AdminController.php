@@ -14,6 +14,7 @@ class AdminController extends Controller
         $data['wilayah'] = DB::table('wilayah')->count();
         $data['area'] = DB::table('area')->count();
         $data['users'] = DB::table('users')->count();
+        $data['customer'] = DB::table('customer')->count();
 
         return view('/admin/dashboard_admin',$data);
     }

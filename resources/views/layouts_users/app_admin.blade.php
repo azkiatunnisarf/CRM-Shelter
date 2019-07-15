@@ -8,7 +8,7 @@
   <title>CRM Shelter</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="icon" href="{{asset('/img/logo_lsp_its.jpg')}}">
+  {{-- <link rel="icon" href="{{asset('/img/logo_lsp_its.jpg')}}"> --}}
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{asset('admin_lte/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
@@ -32,6 +32,8 @@
 
   {{-- manual style css --}}
   <link rel="stylesheet" href="{{asset('admin_lte/css_ubut/style.css')}}">
+  <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -375,11 +377,9 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Input Area</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_wilayah')}}"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Input User</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i> Input Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Insert Bisnis Unit</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Insert Area</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Insert User</a></li>
             </ul>
         </li>
         <li class="treeview">
