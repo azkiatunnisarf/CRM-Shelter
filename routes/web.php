@@ -117,8 +117,16 @@ Route::group(['prefix' => 'manager_crm',  'middleware' => 'is_manager_crm'], fun
     Route::get('/manager_mou', 'ManagerController@mou')->name('manager_mou');
 });
 
+Route::group(['prefix' => 'direktur',  'middleware' => 'is_manager_non_crm'], function(){
+    //noncrm
+    Route::get('/homenon', 'NoncrmController@index')->name('dashboard_noncrm'); //Dashboard Admin
+    Route::get('/noncrm_kontrak', 'NoncrmController@kontrak')->name('noncrm_kontrak');
+    Route::get('/noncrm_mou', 'NoncrmController@mou')->name('noncrm_mou');
+    Route::get('/noncrm_customer', 'NoncrmController@customer')->name('noncrm_customer');
+});
+
 Route::group(['prefix' => 'direktur',  'middleware' => 'is_direktur'], function(){
-    //manager crm
+    //direktur
     Route::get('/home', 'DirekturController@index')->name('dashboard_direktur'); //Dashboard Admin
     Route::get('/direktur_call', 'DirekturController@call')->name('direktur_call');
     Route::get('/direktur_keluhan', 'DirekturController@keluhan')->name('direktur_keluhan');
