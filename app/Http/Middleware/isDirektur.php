@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+// use Auth;
 class isDirektur
 {
     /**
@@ -15,10 +15,10 @@ class isDirektur
      */
     public function handle($request, Closure $next)
     {
-        $direktur = direktur::find(Auth::user()->username);
-        if($direktur)
+        if( auth()->user()->isdirektur()) {
             return $next($request);
-        
-        return response()->view('errors.401', [], 401);
+        }
+       
+            return redirect('dashboard_direktur');
     }
 }
