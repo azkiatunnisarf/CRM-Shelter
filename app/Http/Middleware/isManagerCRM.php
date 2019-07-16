@@ -19,6 +19,6 @@ class isManagerCRM
             return $next($request);
         }
        
-            return redirect('dashboard_manager_crm');
+            // return redirect('dashboard_manager_crm');
     }
 }
