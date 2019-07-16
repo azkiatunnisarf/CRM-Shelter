@@ -33,7 +33,7 @@ class LoginController extends Controller
         {
             return redirect('/manager_crm/home');
         }
-        elseif ( $user->isdirektur() ) 
+        if ( $user->isdirektur() ) 
         {
             return redirect('/direktur/home');
         }

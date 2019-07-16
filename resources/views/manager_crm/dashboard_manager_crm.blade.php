@@ -30,10 +30,10 @@
                 </div> --}} 
                 <h2>Daftar Laporan yang tersedia</h2>
                 {{----------- box -----------}}
-                <a href="{{asset('manager_customer')}}">
+                <a href="{{asset('/manager_crm/manager_customer')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-red col-md-4">
-                        <span class="info-box-icon"><i class="fa fa-table"></i></span>
+                        <span class="info-box-icon"><i class="fa fa-envelope-o"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan Customer</span>
                                 <span class="info-box-number">{{$customers}}</span>
@@ -41,10 +41,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="{{asset('manager_kontrak')}}">
+                <a href="{{asset('/manager_crm/manager_kontrak')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-blue col-md-4">
-                        <span class="info-box-icon"><i class="fa fa-table"></i></span>
+                        <span class="info-box-icon"><i class="fa fa-envelope-o"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan kontrak</span>
                                 <span class="info-box-number">{{$kontrak}}</span>
@@ -52,10 +52,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="{{asset('manager_visit')}}">
+                <a href="{{asset('/manager_crm/manager_visit')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-green col-md-4">
-                        <span class="info-box-icon"><i class="fa fa-table"></i></span>
+                        <span class="info-box-icon"><i class="fa fa-envelope-o"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan Visit</span>
                                 <span class="info-box-number">{{$visits}}</span>
@@ -63,10 +63,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="{{asset('manager_call')}}">
+                <a href="{{asset('/manager_crm/manager_call')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-yellow col-md-4">
-                        <span class="info-box-icon"><i class="fa fa-table"></i></span>
+                        <span class="info-box-icon"><i class="fa fa-envelope-o"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan call</span>
                                 <span class="info-box-number">{{$calls}}</span>
@@ -74,10 +74,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="{{asset('manager_keluhan')}}">
+                <a href="{{asset('/manager_crm/manager_keluhan')}}">
                     <div class="col-md-4">
                         <div class="info-box bg-purple col-md-4">
-                        <span class="info-box-icon"><i class="fa fa-table"></i></span>
+                        <span class="info-box-icon"><i class="fa fa-envelope-o"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Laporan Keluhan</span>
                                 <span class="info-box-number">{{$keluhan}}</span>
@@ -88,7 +88,7 @@
                 <a href="#">
                         <div class="col-md-4">
                             <div class="info-box bg-orange col-md-4">
-                            <span class="info-box-icon"><i class="fa fa-table"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-envelope-o"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Laporan data MOU</span>
                                     <span class="info-box-number">40000</span>
