@@ -54,7 +54,7 @@ class User extends Authenticatable
     // }
 
     const ADMIN_TYPE = 'admin';
-    const OFFICER_TYPE = 'officer_crm';
+    const OFFICER_CRM_TYPE = 'officer_crm';
     const MANAGER_CRM_TYPE = 'manager_crm';
     const DIREKTUR_TYPE = 'direktur';
     const MANAGER_NON_CRM_TYPE = 'manager_non_crm';
@@ -66,8 +66,8 @@ class User extends Authenticatable
         return $this->rule === self::ADMIN_TYPE;    
     }
 
-    public function isOfficer()    {        
-        return $this->rule === self::OFFICER_TYPE;    
+    public function isOfficerCRM()    {        
+        return $this->rule === self::OFFICER_CRM_TYPE;    
     }
     public function isManagerCRM()    {        
         return $this->rule === self::MANAGER_CRM_TYPE;    

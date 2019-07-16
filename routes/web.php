@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
+Route::group(['prefix' => 'officer_crm',  'middleware' => 'is_officer_crm'], function(){
 
     Route::get('/home', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
 
