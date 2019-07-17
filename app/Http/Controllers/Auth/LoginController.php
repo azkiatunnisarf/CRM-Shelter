@@ -37,6 +37,10 @@ class LoginController extends Controller
         {
             return redirect('/direktur/home');
         }
+        if ( $user->ismanagernoncrm() ) 
+        {
+            return redirect('/manager_non_crm/home');
+        }
         // else {
         //     return redirect('/');
         // }
