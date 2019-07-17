@@ -10,10 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('auth.login');
+});
+Auth::routes();
 
-//Route::group(['prefix' => 'officer',  'middleware' => 'is_officer'], function(){
+Route::group(['prefix' => 'officer_crm',  'middleware' => 'is_officer_crm'], function(){
 
-    Route::get('/dashboard_officer', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
+    Route::get('/home', 'OfficerController@index')->name('dashboard_officer'); //Dashboard Officer
 
 //------- laporan call
     Route::get('/insertcall', 'callController@insert')->name('insert.call'); //show form insert
@@ -24,6 +28,7 @@
     Route::post('/update/call{call_id}','callController@update')->name('update.call');
     Route::get('/call/exportExcel', 'callController@exportExcel');
     Route::get('/call/monthFilter','callController@monthFilter')->name('monthFilter.call');
+    Route::get('/call/customerCode','callController@customerCode')->name('customerCode.call');
 
 //------- laporan visit
     Route::get('/insertvisit', 'VisitController@insert')->name('insert.visit'); //show form insert
@@ -53,7 +58,7 @@
     Route::get('/kontrak/exportExcel','KontrakController@exportExcel');
     Route::get('/closing','KontrakController@akhirKontrak');
 
- //});
+});
 
 
 Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
@@ -102,4 +107,31 @@ Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     Route::get('/edit/customer{id}','CustomerController@edit')->name('edit.customer');
     Route::put('/update/customer{id}','CustomerController@update')->name('update.customer');
 });
-    Auth::routes();
+ 
+Route::group(['prefix' => 'manager_crm',  'middleware' => 'is_manager_crm'], function(){
+    //manager crm
+    Route::get('/home', 'ManagerController@index')->name('dashboard_manager'); //Dashboard Admin
+    Route::get('/manager_call', 'ManagerController@call')->name('manager_call');
+    Route::get('/manager_keluhan', 'ManagerController@keluhan')->name('manager_keluhan');
+    Route::get('/manager_visit', 'ManagerController@visit')->name('manager_visit');
+    Route::get('/manager_kontrak', 'ManagerController@kontrak')->name('manager_kontrak');
+    Route::get('/manager_mou', 'ManagerController@mou')->name('manager_mou');
+});
+
+Route::group(['prefix' => 'direktur',  'middleware' => 'is_manager_non_crm'], function(){
+    //noncrm
+    Route::get('/homenon', 'NoncrmController@index')->name('dashboard_noncrm'); //Dashboard Admin
+    Route::get('/noncrm_kontrak', 'NoncrmController@kontrak')->name('noncrm_kontrak');
+    Route::get('/noncrm_mou', 'NoncrmController@mou')->name('noncrm_mou');
+    Route::get('/noncrm_customer', 'NoncrmController@customer')->name('noncrm_customer');
+});
+
+Route::group(['prefix' => 'direktur',  'middleware' => 'is_direktur'], function(){
+    //direktur
+    Route::get('/home', 'DirekturController@index')->name('dashboard_direktur'); //Dashboard Admin
+    Route::get('/direktur_call', 'DirekturController@call')->name('direktur_call');
+    Route::get('/direktur_keluhan', 'DirekturController@keluhan')->name('direktur_keluhan');
+    Route::get('/direktur_visit', 'DirekturController@visit')->name('direktur_visit');
+    Route::get('/direktur_kontrak', 'DirekturController@kontrak')->name('direktur_kontrak');
+    Route::get('/direktur_mou', 'DirekturController@mou')->name('direktur_mou');
+});

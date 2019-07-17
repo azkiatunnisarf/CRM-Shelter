@@ -91,10 +91,10 @@ class UserController extends Controller
       $users->nama_belakang  = $request->nama_belakang;
       $users->password       = $request->password;
       $users->email          = $request->email;
-      $users->wilayah_id     = $request->wilayah_id;
+    //   $users->wilayah_id     = $request->wilayah_id;
       $users->no_hp          = $request->no_hp;
-      $users->nama_area      = $request->nama_area;
-      $users->nama_wilayah   = $request->nama_wilayah;
+      $users->cabang         = $request->cabang;
+      $users->wilayah_supervisi   = $request->wilayah_supervisi;
       $users->rule           = $request->rule;
 
       if ($users->save()){
@@ -122,8 +122,8 @@ class UserController extends Controller
             $user->email          = $request->email;
             $user->wilayah_id     = $request->wilayah_id;
             $user->no_hp          = $request->no_hp;
-            $user->nama_area      = $request->nama_area;
-            $user->nama_wilayah   = $request->nama_wilayah;
+            $user->cabang      = $request->cabang;
+            $user->wilayah_supervisi   = $request->wilayah_supervisi;
             $user->rule           = $request->rule;
   
         if ($user->save())

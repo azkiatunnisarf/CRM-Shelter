@@ -25,13 +25,21 @@ class LoginController extends Controller
         {
             return redirect('/admin/home');
         }
-        elseif ( $user->isOfficer() ) 
+        if ( $user->isofficercrm() ) 
         {
-            return redirect('/officer/dashboard_officer');
+            return redirect('/officer_crm/home');
         }
-        else {
-            return redirect('/login');
+        if ( $user->ismanagercrm() ) 
+        {
+            return redirect('/manager_crm/home');
         }
+        if ( $user->isdirektur() ) 
+        {
+            return redirect('/direktur/home');
+        }
+        // else {
+        //     return redirect('/');
+        // }
     }
     
 
@@ -40,7 +48,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/home';
+
 
     /**
      * Create a new controller instance.

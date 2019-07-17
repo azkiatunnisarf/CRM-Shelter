@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class isOfficer
+class isOfficerCRM
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,9 @@ class isOfficer
      */
     public function handle($request, Closure $next)
     {
-        if(!auth()->check() || auth()->user()->isOfficer()) {
+        if( auth()->user()->isofficercrm()) {
             return $next($request);
         }
-        return redirect('/dashboard_officer');
+        // return redirect('/dashboard_officer');
     }
 }

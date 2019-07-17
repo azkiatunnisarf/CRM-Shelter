@@ -15,10 +15,10 @@ class isManagerCRM
      */
     public function handle($request, Closure $next)
     {
-        $dosen = Pic::find(Auth::user()->username);
-        if($dosen)
+        if( auth()->user()->ismanagercrm()) {
             return $next($request);
-        
-        return response()->view('errors.401', [], 401);
+        }
+       
+            // return redirect('dashboard_manager_crm');
     }
 }
