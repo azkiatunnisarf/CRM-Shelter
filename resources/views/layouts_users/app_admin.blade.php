@@ -338,7 +338,7 @@
         </div>
         <div class="pull-left info">
           <p>Admin</p>
-          <a href=""><i class="fa fa-circle text-success"></i> Online</a>
+          {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
         </div>
       </div>
       <!-- search form -->
