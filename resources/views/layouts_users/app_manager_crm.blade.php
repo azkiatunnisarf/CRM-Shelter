@@ -28,9 +28,9 @@
   
   {{-- data table --}}
   
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="{{asset('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')}}">
 
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.css')}}">
 
   {{-- manual style css --}}
   <link rel="stylesheet" href="{{asset('admin_lte/css_ubut/style.css')}}">
@@ -82,7 +82,7 @@
                   <li><!-- start message -->
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -95,7 +95,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -107,7 +107,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -119,7 +119,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -131,7 +131,7 @@
                   <li>
                     <a href="">
                       <div class="pull-left">
-                        <img src="admin_lte/dist/img/user_icon.png" class="img-circle" alt="User Image">
+                        <img src="{{asset('admin_lte/dist/img/user_icon.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -268,13 +268,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="admin_lte/dist/img/avatar04.png" class="user-image" alt="User Image">
+              <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="user-image" alt="User Image">
               <span class="hidden-xs"> Manager CRM</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="admin_lte/dist/img/avatar04.png" class="img-circle" alt="User Image">
+                <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
 
                 <p>
                     Manager CRM
@@ -334,7 +334,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="admin_lte/dist/img/avatar04.png" class="img-circle" alt="User Image">
+          <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Manager CRM</p>
@@ -365,7 +365,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{asset('home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="{{asset('/manager_crm/dashboard_manager_crm')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
 
@@ -377,48 +377,14 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
+              <li class="active"><a href="{{asset('/manager_crm/manager_customer')}}"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
+              <li class="active"><a href="{{asset('/manager_crm/manager_kontrak')}}"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="{{asset('/manager_crm/manager_visit')}}"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
+              <li class="active"><a href="{{asset('/manager_crm/manager_call')}}"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
+              <li class="active"><a href="{{asset('/manager_crm/manager_keluhan')}}"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
+              <li class="active"><a href="{{asset('/manager_crm/manager_mou')}}"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
-
-        {{-- <li class="treeview">
-          <a href="">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li class="treeview">
-              <a href=""><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href=""><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
-        </li> --}}
 
       </ul>
     </section>

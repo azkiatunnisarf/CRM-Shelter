@@ -62,10 +62,11 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
-        'is_officer' => \App\Http\Middleware\isOfficer::class,
-        // 'is_manager_crm' => \App\Http\Middleware\IsAdmin::class,
-        // 'is_manager_non_crm' => \App\Http\Middleware\IsAdmin::class,
-        // 'is_direktur' => \App\Http\Middleware\IsAdmin::class,
+        'is_officer_crm' => \App\Http\Middleware\IsOfficerCRM::class,
+        'is_manager_crm' => \App\Http\Middleware\IsManagerCRM::class,
+        'is_direktur' => \App\Http\Middleware\IsDirektur::class,
+        'is_manager_non_crm' => \App\Http\Middleware\IsManagerNonCRM::class,
+        
 
 
     ];

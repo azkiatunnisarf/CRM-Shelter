@@ -24,7 +24,7 @@
             <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
             <div class="info-box-content">
                 <span class="info-box-text">Customer</span>
-                <span class="info-box-number">1,410</span>
+                <span class="info-box-number">{{$customer}}</span>
             </div>
             </div>
         </div>
@@ -64,60 +64,30 @@
     </a>
 </div>
 <div class="row">
+    <div class="col-md-9">
+        <div class="nav-tabs-custom">
+            <!-- Tabs within a box -->
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
+                    <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+                    <li class="pull-left header"><i class="fa fa-inbox"></i>Customer</li>
+                </ul>
+                <div class="tab-content no-padding">
+                <!-- Morris chart - Sales -->
+                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                </div>
+            </div>
+    <!-- /.box -->
+    </div>
+</div>
+<div class="row">
     <div class="col-md-12">
         <div class="panel block">
             <div class="panel-body">
-                {{-- <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                </div> --}} 
                 <h2>Customer</h2>
                 {{----------- box -----------}}
-                <div class="col-md-6">
-                        <!-- LINE CHART -->
-                        <div class="box box-info">
-                          <div class="box-header with-border">
-                            <h3 class="box-title">Line Chart</h3>
-              
-                            <div class="box-tools pull-right">
-                              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                              </button>
-                              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
-                          </div>
-                          <div class="box-body">
-                            <div class="chart">
-                              <canvas id="lineChart" style="height:250px"></canvas>
-                            </div>
-                          </div>
-                          <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-              
-                        <!-- BAR CHART -->
-                        <div class="box box-success">
-                          <div class="box-header with-border">
-                            <h3 class="box-title">Bar Chart</h3>
-              
-                            <div class="box-tools pull-right">
-                              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                              </button>
-                              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
-                          </div>
-                          <div class="box-body">
-                            <div class="chart">
-                              <canvas id="barChart" style="height:230px"></canvas>
-                            </div>
-                          </div>
-                          <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-              
-                      </div>
+                
                 
                 {{----------- end box -----------}}
                 </div>

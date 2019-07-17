@@ -8,7 +8,7 @@
   <title>CRM Shelter</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="icon" href="{{asset('/img/logo_lsp_its.jpg')}}">
+  {{-- <link rel="icon" href="{{asset('/img/logo_lsp_its.jpg')}}"> --}}
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{asset('admin_lte/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
@@ -32,6 +32,8 @@
 
   {{-- manual style css --}}
   <link rel="stylesheet" href="{{asset('admin_lte/css_ubut/style.css')}}">
+  <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -267,7 +269,7 @@
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="user-image" alt="User Image">
-              <span class="hidden-xs"> Admin</span>
+              <span class="hidden-xs"> {{ Auth::user()->nama_depan }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -275,7 +277,8 @@
                 <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
 
                 <p>
-                    Admin
+                    Admin<br>
+                    {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
                   <small></small>
                 </p>
               </li>
@@ -336,7 +339,7 @@
         </div>
         <div class="pull-left info">
           <p>Admin</p>
-          <a href=""><i class="fa fa-circle text-success"></i> Online</a>
+          {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
         </div>
       </div>
       <!-- search form -->
@@ -375,11 +378,9 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Input Bisnis Unit</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Input Area</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_wilayah')}}"><i class="fa fa-circle-o"></i> Input Wilayah</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Input User</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i> Input Customer</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Insert Bisnis Unit</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Insert Area</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Insert User</a></li>
             </ul>
         </li>
         <li class="treeview">

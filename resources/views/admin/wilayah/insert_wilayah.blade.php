@@ -32,7 +32,16 @@
                         </ul>
                       </div>
                   @endif
-
+                  <div>
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                          <a class="nav-link" style="border:1px solid #ccc" href="{{asset('/admin/insert_area')}}">Insert Area</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active_tab1" style="border:1px solid #ccc" href="{{asset('/admin/insert_wilayah')}}">Insert Wilayah</a>
+                      </li>
+                    </ul>
+                  </div>
                   <br>
 
                 <form action="{{route('store.wilayah')}}" method="post">
