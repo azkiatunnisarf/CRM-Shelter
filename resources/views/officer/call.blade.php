@@ -61,6 +61,21 @@
                                 </div>
                                 </form>
 
+                                        <?php
+                                        function initialism($str, $as_space = array('-'))
+                                        {
+                                            $str = str_replace($as_space, ' ', trim($str));
+                                            $ret = '';
+                                            foreach (explode(' ', $str) as $word) {
+                                                $ret .= strtoupper($word[0]);
+                                            }
+                                            return $ret;
+                                        }
+                                        
+                                        $phrase = 'Stack-Overflow Questions IT Tags Users Meta Example';
+                                        echo initialism($phrase);
+                                        ?>
+
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
                                 <thead>
                                     <th>ID Call</th>
