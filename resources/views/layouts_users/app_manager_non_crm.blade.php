@@ -277,7 +277,7 @@
                 <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
 
                 <p>
-                    Manager CRM<br>
+                    Manager Non CRM<br>
                     {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
                   <small></small>
                 </p>
@@ -338,7 +338,7 @@
           <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Manager CRM</p>
+          <p>Manager Non CRM</p>
           {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
         </div>
       </div>
@@ -366,7 +366,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{asset('/manager_crm/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="{{asset('/manager_non_crm/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
 
@@ -378,12 +378,9 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="{{asset('/manager_crm/manager_customer')}}"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="{{asset('/manager_crm/manager_kontrak')}}"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="{{asset('/manager_crm/manager_visit')}}"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="{{asset('/manager_crm/manager_call')}}"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="{{asset('/manager_crm/manager_keluhan')}}"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="{{asset('/manager_crm/manager_mou')}}"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
+              <li class="active"><a href="{{asset('/manager_non_crm/manager_non_crm_customer')}}"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
+              <li class="active"><a href="{{asset('/manager_non_crm/manager_non_crm_kontrak')}}"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
+              <li class="active"><a href="{{asset('/manager_non_crm/manager_non_crm_mou')}}"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
             </ul>
         </li>
 
