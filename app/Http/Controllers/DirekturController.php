@@ -10,6 +10,7 @@ use App\Keluhan;
 use App\Visit;
 use App\Kontrak;
 use App\mou;
+use App\Customer;
 
 class DirekturController extends Controller
 {
@@ -52,5 +53,11 @@ class DirekturController extends Controller
         $data['mou'] = mou::all();
         $data['no'] = 1;
         return view('direktur/direktur_mou', $data);
+    }
+    public function customer()
+    {  
+        $data['customers'] = customer::all();
+        $data['no'] = 1;
+        return view('direktur/direktur_customer', $data);
     }
 }

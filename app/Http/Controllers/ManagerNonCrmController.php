@@ -29,7 +29,7 @@ class ManagerNonCrmController extends Controller
     {  
         $data['customers'] = customer::all();
         $data['no'] = 1;
-        return view('manager_non_crm/manager_non_crm_kontrak', $data);
+        return view('manager_non_crm/manager_non_crm_customer', $data);
     }
     public function kontrak()
     {  
