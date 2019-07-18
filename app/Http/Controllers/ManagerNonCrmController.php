@@ -12,7 +12,7 @@ use App\Kontrak;
 use App\mou;
 use App\Customer;
 
-class DirekturController extends Controller
+class ManagerNonCrmController extends Controller
 {
     public function index()
     {
@@ -22,42 +22,25 @@ class DirekturController extends Controller
         $data['kontrak'] = DB::table('kontrak')->count();
         $data['customers'] = DB::table('customer')->count();
         // $data['mou'] = DB::table('mou')->count();
-        return view('/direktur/dashboard_direktur',$data);
+        return view('/manager_non_crm/dashboard_manager_non_crm',$data);
     }
-    public function call()
+   
+    public function customer()
     {  
-        $data['calls'] = call::all();
+        $data['customers'] = customer::all();
         $data['no'] = 1;
-        return view('direktur/direktur_call', $data);
-    }
-    public function keluhan()
-    {  
-        $data['keluhan'] = keluhan::all();
-        $data['no'] = 1;
-        return view('direktur/direktur_keluhan', $data);
-    }
-    public function visit()
-    {  
-        $data['visits'] = visit::all();
-        $data['no'] = 1;
-        return view('direktur/direktur_visit', $data);
+        return view('manager_non_crm/manager_non_crm_customer', $data);
     }
     public function kontrak()
     {  
         $data['kontrak'] = kontrak::all();
         $data['no'] = 1;
-        return view('direktur/direktur_kontrak', $data);
+        return view('manager_non_crm/manager_non_crm_kontrak', $data);
     }
     public function mou()
     {  
         $data['mou'] = mou::all();
         $data['no'] = 1;
-        return view('direktur/direktur_mou', $data);
-    }
-    public function customer()
-    {  
-        $data['customers'] = customer::all();
-        $data['no'] = 1;
-        return view('direktur/direktur_customer', $data);
+        return view('manager_non_crm/manager_non_crm_mou', $data);
     }
 }

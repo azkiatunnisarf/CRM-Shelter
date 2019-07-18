@@ -69,6 +69,7 @@ class User extends Authenticatable
     public function isOfficerCRM()    {        
         return $this->rule === self::OFFICER_CRM_TYPE;    
     }
+
     public function isManagerCRM()    {        
         return $this->rule === self::MANAGER_CRM_TYPE;    
     }

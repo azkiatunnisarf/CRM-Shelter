@@ -268,16 +268,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="user-image" alt="User Image">
-              <span class="hidden-xs"> Manager CRM</span>
+              <img src="{{asset('admin_lte/dist/img/avatar.png')}}" class="user-image" alt="User Image">
+              <span class="hidden-xs"> {{ Auth::user()->nama_depan }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
+                <img src="{{asset('admin_lte/dist/img/avatar.png')}}" class="img-circle" alt="User Image">
 
                 <p>
-                    Manager CRM
+                    Manager CRM<br>
+                    {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
                   <small></small>
                 </p>
               </li>
@@ -334,11 +335,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
+          <img src="{{asset('admin_lte/dist/img/avatar.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Manager CRM</p>
-          <a href=""><i class="fa fa-circle text-success"></i> Online</a>
+          {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
         </div>
       </div>
       <!-- search form -->
@@ -365,7 +366,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{asset('/manager_crm/dashboard_manager_crm')}}"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="{{asset('/manager_crm/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
 

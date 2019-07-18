@@ -18,7 +18,5 @@ class isManagerCRM
         if( auth()->user()->ismanagercrm()) {
             return $next($request);
         }
-       
-            // return redirect('dashboard_manager_crm');
     }
 }
