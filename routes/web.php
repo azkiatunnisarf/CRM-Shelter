@@ -29,6 +29,9 @@ Route::group(['prefix' => 'officer_crm',  'middleware' => 'is_officer_crm'], fun
     Route::get('/call/exportExcel', 'callController@exportExcel');
     Route::get('/call/monthFilter','callController@monthFilter')->name('monthFilter.call');
 
+    Route::get('/call/customerCode','callController@customerCode')->name('customerCode.call');
+
+
 //------- laporan visit
     Route::get('/insertvisit', 'VisitController@insert')->name('insert.visit'); //show form insert
     Route::get('/visit', 'VisitController@index')->name('index.visit');
@@ -56,6 +59,10 @@ Route::group(['prefix' => 'officer_crm',  'middleware' => 'is_officer_crm'], fun
     Route::post('/update/kontrak{id_kontrak}','KontrakController@update')->name('update.kontrak');
     Route::get('/kontrak/exportExcel','KontrakController@exportExcel');
     Route::get('/closing','KontrakController@akhirKontrak');
+
+
+});
+
 
  //});
 
@@ -121,8 +128,16 @@ Route::group(['prefix' => 'manager_crm',  'middleware' => 'is_manager_crm'], fun
 
 });
 
+Route::group(['prefix' => 'direktur',  'middleware' => 'is_manager_non_crm'], function(){
+    //noncrm
+    Route::get('/homenon', 'NoncrmController@index')->name('dashboard_noncrm'); //Dashboard Admin
+    Route::get('/noncrm_kontrak', 'NoncrmController@kontrak')->name('noncrm_kontrak');
+    Route::get('/noncrm_mou', 'NoncrmController@mou')->name('noncrm_mou');
+    Route::get('/noncrm_customer', 'NoncrmController@customer')->name('noncrm_customer');
+});
+
 Route::group(['prefix' => 'direktur',  'middleware' => 'is_direktur'], function(){
-    //manager crm
+    //direktur
     Route::get('/home', 'DirekturController@index')->name('dashboard_direktur'); //Dashboard Admin
     Route::get('/direktur_call', 'DirekturController@call')->name('direktur_call');
     Route::get('/direktur_keluhan', 'DirekturController@keluhan')->name('direktur_keluhan');
