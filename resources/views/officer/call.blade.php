@@ -61,6 +61,7 @@
                                 </div>
                                 </form>
 
+
                                         <?php
                                         function initialism($str, $as_space = array('-'))
                                         {
@@ -75,6 +76,7 @@
                                         $phrase = 'Stack-Overflow Questions IT Tags Users Meta Example';
                                         echo initialism($phrase);
                                         ?>
+
 
                             <table id="mydatatables" class="table table-collapse table-hover table-light table-striped">
                                 <thead>

@@ -42,7 +42,11 @@
                 	        <label class="font-weight-bold">Nama Customer</label>
                 	        <input type="text" class="form-control" name="nama_customer" value="{{ $keluhan->nama_customer }}" required>
                         </div>
+
+                        <div class="form-group col-md-6">
+
                         <div class="form-group col-md-12">
+
                 	        <label class="font-weight-bold">SPV/PIC</label>
                 	        <input type="text" class="form-control" name="spv_pic" value="{{ $keluhan->spv_pic }}" required>
                         </div>

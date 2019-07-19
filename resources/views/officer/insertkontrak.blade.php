@@ -100,7 +100,11 @@
                 	        <label class="font-weight-bold">Closing</label>
                 	        <input type="text" class="form-control" name="closing" required>
                         </div>
+
+                        <div class="form-group col-md-6">
+
                         <div class="form-group col-md-12">
+
                 	        <label class="font-weight-bold">Via</label>
                 	        <select class ="form-control" name="via" required>
                             <option value="-">-</option>

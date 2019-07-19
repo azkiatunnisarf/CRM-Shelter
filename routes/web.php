@@ -28,7 +28,9 @@ Route::group(['prefix' => 'officer_crm',  'middleware' => 'is_officer_crm'], fun
     Route::post('/update/call{call_id}','callController@update')->name('update.call');
     Route::get('/call/exportExcel', 'callController@exportExcel');
     Route::get('/call/monthFilter','callController@monthFilter')->name('monthFilter.call');
+
     Route::get('/call/customerCode','callController@customerCode')->name('customerCode.call');
+
 
 //------- laporan visit
     Route::get('/insertvisit', 'VisitController@insert')->name('insert.visit'); //show form insert
@@ -58,13 +60,15 @@ Route::group(['prefix' => 'officer_crm',  'middleware' => 'is_officer_crm'], fun
     Route::get('/kontrak/exportExcel','KontrakController@exportExcel');
     Route::get('/closing','KontrakController@akhirKontrak');
 
+
 });
 
 
-Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
+ //});
 
-    Route::get('/home', 'AdminController@index')->name('home'); //Dashboard Admin
-    
+Route::group(['prefix' => 'superadmin',  'middleware' => 'is_superadmin'], function(){
+    Route::get('/home', 'AdminController@superadmin')->name('home'); //Dashboard 
+
     //--------- bisnis unit
     Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert
     Route::get('/bisnis_unit', 'BisnisController@index')->name('index.bisnis_unit');
@@ -90,7 +94,6 @@ Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     Route::put('/update/wilayah{id}','WilayahController@update')->name('update.wilayah');
     Route::post('/filter/wilayah', 'WilayahController@filter')->name('filter.wilayah');
 
-
     // user
     Route::get('/insert_user', 'UserController@insert')->name('insert.user'); //show form insert
     Route::get('/user', 'UserController@index')->name('index.user');
@@ -98,7 +101,12 @@ Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     Route::get('/delete/user{id}','UserController@delete')->name('delete.user');
     Route::get('/edit/user{id}','UserController@edit')->name('edit.user');
     Route::put('/update/user{id}','UserController@update')->name('update.user');
+});
 
+Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
+
+    Route::get('/home', 'AdminController@index')->name('home'); //Dashboard Admin
+    
     // customer
     Route::get('/insert_customer', 'CustomerController@insert')->name('insert.user'); //show form insert
     Route::get('/customer', 'CustomerController@index')->name('index.customer');
@@ -116,6 +124,8 @@ Route::group(['prefix' => 'manager_crm',  'middleware' => 'is_manager_crm'], fun
     Route::get('/manager_visit', 'ManagerController@visit')->name('manager_visit');
     Route::get('/manager_kontrak', 'ManagerController@kontrak')->name('manager_kontrak');
     Route::get('/manager_mou', 'ManagerController@mou')->name('manager_mou');
+    Route::get('/manager_customer', 'ManagerController@customer')->name('manager_customer');
+
 });
 
 Route::group(['prefix' => 'direktur',  'middleware' => 'is_manager_non_crm'], function(){
@@ -134,4 +144,14 @@ Route::group(['prefix' => 'direktur',  'middleware' => 'is_direktur'], function(
     Route::get('/direktur_visit', 'DirekturController@visit')->name('direktur_visit');
     Route::get('/direktur_kontrak', 'DirekturController@kontrak')->name('direktur_kontrak');
     Route::get('/direktur_mou', 'DirekturController@mou')->name('direktur_mou');
+    Route::get('/direktur_customer', 'DirekturController@customer')->name('direktur_customer');
+});
+
+Route::group(['prefix' => 'manager_non_crm',  'middleware' => 'is_manager_non_crm'], function(){
+    //manager crm
+    Route::get('/home', 'ManagerNonCrmController@index')->name('dashboard_manager_non_crm'); //Dashboard Admin
+    Route::get('/manager_non_crm_kontrak', 'ManagerNonCrmController@kontrak')->name('manager_non_crm_kontrak');
+    Route::get('/manager_non_crm_mou', 'ManagerNonCrmController@mou')->name('manager_non_crm_mou');
+    Route::get('/manager_non_crm_customer', 'ManagerNonCrmController@customer')->name('manager_non_crm_customer');
+
 });

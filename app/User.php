@@ -23,9 +23,8 @@ class User extends Authenticatable
         ,'email'
         ,'password'
         ,'email'
+        ,'wilayah_id'
         ,'no_hp'
-        ,'cabang'
-        ,'wilayah_supervisi'
         ,'rule'
         ,
     ];
@@ -48,12 +47,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public $incrementing = false;
-    // public function wilayah()
-    // {
-    //     return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
-    // }
+    public function wilayah()
+    {
+        return $this->belongsTo(\App\Wilayah::class,'wilayah_id','wilayah_id');
+    }
 
     const ADMIN_TYPE = 'admin';
+    const SUPERADMIN_TYPE = 'superadmin';
     const OFFICER_CRM_TYPE = 'officer_crm';
     const MANAGER_CRM_TYPE = 'manager_crm';
     const DIREKTUR_TYPE = 'direktur';
@@ -65,10 +65,13 @@ class User extends Authenticatable
     public function isAdmin()    {        
         return $this->rule === self::ADMIN_TYPE;    
     }
-
+    public function isSuperAdmin()    {        
+        return $this->rule === self::SUPERADMIN_TYPE;    
+    }
     public function isOfficerCRM()    {        
         return $this->rule === self::OFFICER_CRM_TYPE;    
     }
+
     public function isManagerCRM()    {        
         return $this->rule === self::MANAGER_CRM_TYPE;    
     }

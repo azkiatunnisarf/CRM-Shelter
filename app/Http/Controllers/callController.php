@@ -151,6 +151,7 @@ class callController extends Controller
             
             
             return view('officer.call', ['call' => $call]);
+
     }
     public function customerCode($str, $as_space = array('-'))
     {
@@ -160,6 +161,7 @@ class callController extends Controller
             $ret .= strtoupper($word[0]);
         }
         return $ret;
+
     }
     //$phrase = 'Stack-Overflow Questions IT Tags Users Meta Example';
     // initialism($phrase);

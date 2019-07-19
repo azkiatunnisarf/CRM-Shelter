@@ -21,12 +21,6 @@ class UserController extends Controller
     }
     public function index(Request $request)
     {   
-        // if(!Session::get('login')){
-        //     return redirect('login')->with('alert','Kamu harus login dulu');
-        // }
-        // else{
-        //     return view('user');
-        // }
 
         $data['areas'] = area::all();
         $data['wilayahs'] = wilayah::all();
@@ -35,6 +29,8 @@ class UserController extends Controller
         if ($request->rule == 'admin')
         {
             $data['users'] = DB::table('users')->where('rule', 'admin')->get();
+            $data['areas'] = area::all();
+            $data['wilayahs'] = wilayah::all();
             $data['no'] = 1;
             return view('admin/user/user', $data);
             
@@ -42,30 +38,40 @@ class UserController extends Controller
         elseif ($request->rule == 'officer')
         {
             $data['users'] = DB::table('users')->where('rule', 'officer')->get();
+            $data['areas'] = area::all();
+            $data['wilayahs'] = wilayah::all();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
         elseif ($request->rule == 'manager_crm')
         {
             $data['users'] = DB::table('users')->where('rule', 'manager_crm')->get();
+            $data['areas'] = area::all();
+            $data['wilayahs'] = wilayah::all();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
         elseif ($request->rule == 'manager_non_crm')
         {
             $data['users'] = DB::table('users')->where('rule', 'manager_non_crm')->get();
+            $data['areas'] = area::all();
+            $data['wilayahs'] = wilayah::all();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
         elseif ($request->rule == 'direktur')
         {
             $data['users'] = DB::table('users')->where('rule', 'direktur')->get();
+            $data['areas'] = area::all();
+            $data['wilayahs'] = wilayah::all();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
         else
         {
             $data['users'] = user::all();
+            $data['areas'] = area::all();
+            $data['wilayahs'] = wilayah::all();
             $data['no'] = 1;
             return view('admin/user/user', $data);
         }
@@ -91,17 +97,15 @@ class UserController extends Controller
       $users->nama_belakang  = $request->nama_belakang;
       $users->password       = $request->password;
       $users->email          = $request->email;
-    //   $users->wilayah_id     = $request->wilayah_id;
+      $users->wilayah_id     = $request->wilayah_id;
       $users->no_hp          = $request->no_hp;
-      $users->cabang         = $request->cabang;
-      $users->wilayah_supervisi   = $request->wilayah_supervisi;
       $users->rule           = $request->rule;
 
       if ($users->save()){
-        return redirect('/admin/insert_user')->with('success', 'item berhasil ditambahkan');
+        return redirect('/superadmin/insert_user')->with('success', 'item berhasil ditambahkan');
       }
       else{
-        return redirect('/admin/insert_user')->with('error', 'item gagal ditambahkan');
+        return redirect('/superadmin/insert_user')->with('error', 'item gagal ditambahkan');
       }
     }
     public function update(Request $request, $id){
@@ -122,8 +126,6 @@ class UserController extends Controller
             $user->email          = $request->email;
             $user->wilayah_id     = $request->wilayah_id;
             $user->no_hp          = $request->no_hp;
-            $user->cabang      = $request->cabang;
-            $user->wilayah_supervisi   = $request->wilayah_supervisi;
             $user->rule           = $request->rule;
   
         if ($user->save())

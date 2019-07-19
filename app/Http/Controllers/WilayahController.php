@@ -54,10 +54,10 @@ class WilayahController extends Controller
       
 
       if ($wilayah->save()){
-        return redirect('/insert_wilayah')->with('success', 'item berhasil ditambahkan');
+        return redirect('/superadmin/insert_wilayah')->with('success', 'item berhasil ditambahkan');
       }
       else{
-        return redirect('/insert_wilayah')->with('error', 'item gagal ditambahkan');
+        return redirect('superadmin/insert_wilayah')->with('error', 'item gagal ditambahkan');
       }
     }
     public function delete($wilayah_id){
