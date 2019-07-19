@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use App\Customer;
 use App\bisnis_unit;
 use App\area;
@@ -24,7 +25,7 @@ class CustomerController extends Controller
         $data['bisnis_units'] = bisnis_unit::all();
         $data['areas'] = area::all();
         $data['wilayahs'] = wilayah::all();
-        $data['users'] = user::all();
+        $data['users'] = DB::table('users')->where('rule', 'officer_crm')->get();
         return view('/admin/customer/insert_customer',$data);
     }
     public function store(Request $request)
@@ -58,10 +59,10 @@ class CustomerController extends Controller
       
 
       if ($customer->save()){
-        return redirect('/insert_customer')->with('success', 'item berhasil ditambahkan');
+        return redirect('/admin/insert_customer')->with('success', 'item berhasil ditambahkan');
       }
       else{
-        return redirect('/insert_customer')->with('error', 'item gagal ditambahkan');
+        return redirect('admin/insert_customer')->with('error', 'item gagal ditambahkan');
       }
     }
     public function delete($kode_customer){

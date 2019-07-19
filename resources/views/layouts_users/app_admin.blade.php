@@ -369,7 +369,7 @@
             <li class="active"><a href="{{asset('/admin/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
-{{--         
+        
         <li class="treeview">
           <a href="">
             <i class="fa fa-plus"></i> <span>Master CRM Shelter</span>
@@ -378,11 +378,9 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Insert Bisnis Unit</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Insert Area</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Insert User</a></li>
+              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i> Insert Customer</a></li>
             </ul>
-        </li> --}}
+        </li>
         <li class="treeview">
           <a href="">
             <i class="fa fa-plus"></i> <span>Insert Laporan</span>

@@ -32,16 +32,6 @@
                         </ul>
                       </div>
                   @endif
-                  <div>
-                      <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active_tab1" style="border:1px solid #ccc" href="{{asset('/admin/insert_user')}}">Insert User CRM</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="border:1px solid #ccc" href="{{asset('/admin/insert_customer')}}">Insert Customer</a>
-                        </li>
-                      </ul>
-                    </div>
                   <br>
 
                 <form action="{{route('store.user')}}" method="post">

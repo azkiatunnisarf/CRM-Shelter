@@ -29,39 +29,7 @@
             </div>
         </div>
     </a>
-    <a href="user">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="fa fa-user"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text">User</span>
-                <span class="info-box-number">{{$users}}</span>
-            </div>
-            </div>
-        </div>
-    </a>
-    <a href="wilayah">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-map-o"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text">Wilayah</span>
-                <span class="info-box-number">{{$wilayah}}</span>
-            </div>
-            </div>
-        </div>
-    </a>
-    <a href="customer">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-envelope-o"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text">Apa enak nya ini</span>
-                <span class="info-box-number">9999999?</span>
-            </div>
-            </div>
-        </div>
-    </a>
+
 </div>
 <div class="row">
     <div class="col-md-9">
