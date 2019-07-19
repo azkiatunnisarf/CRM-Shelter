@@ -1,4 +1,4 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_superadmin')
 
 @section('content_header')
 <div class="row">
@@ -61,7 +61,7 @@
                       <div class="form-group">
                         <label>Password :</label>
                         <div>
-                          <input type="text" class="form-control" name="password" value="{{ $user->password}}"required>
+                          <input type="text" class="form-control" name="password" value="{{ $user->password}}"disabled>
                         </div>
                       </div>
                       <div class="form-group">
@@ -71,21 +71,17 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label>Area/Cabang :</label>
-                        <div>
-                          <input type="text" class="form-control" name="cabang" value="{{ $user->cabang}}"required>
-                        </div>
-                      </div>
-                      <div class="form-group">
                         <label>Wilayah Supervisi :</label>
                         <div>
-                          <input type="text" class="form-control" name="wilayah_supervisi" value="{{ $user->wilayah_supervisi}}"required>
+                          <input type="text" class="form-control" name="nama_wilayah" value="{{ $user->wilayah->nama_wilayah}}" disabled>
                         </div>
                       </div>
                     <div class="form-group">
                         <label>Rule :</label>
                         <div>
                             <select class="form-control" name="rule">
+                                <option>Pilih Role</option>
+                                <option value="superadmin">Admin</option>
                                 <option value="admin">Admin</option>
                                 <option value="Officer_crm">Officer CRM</option>
                                 <option value="manager_crm">Manager Officer</option>

@@ -1,4 +1,4 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_superadmin')
 
 @section('content_header')
 <div class="row">
@@ -58,7 +58,6 @@
                                     <th>Nama Belakang</th>
                                     <th>Email</th>
                                     <th>Nomor HP</th>
-                                    {{-- <th>Password</th> --}}
                                     <th>Area/Cabang</th>
                                     <th>Wilayah Supervisi</th>
                                     <th>Role</th>
@@ -73,9 +72,8 @@
                                         <td>{{ $user->nama_belakang }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->no_hp }}</td>
-                                        {{-- <td>{{ $user->password }}</td> --}}
-                                        <td>{{ $user->cabang }}</td>
-                                        <td>{{ $user->wilayah_supervisi }}</td>
+                                        <td>{{ $user->wilayah->area->nama_area }}</td>
+                                        <td>{{ $user->wilayah->nama_wilayah }}</td>
                                         <td>{{ $user->rule }}</td>
                                         <td>
                                             <a href="{{route('edit.user',$user->email)}}" class="btn btn-info btn-sm">

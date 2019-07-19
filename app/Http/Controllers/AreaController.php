@@ -29,10 +29,10 @@ class AreaController extends Controller
       
 
       if ($area->save()){
-        return redirect('/insert_area')->with('success', 'item berhasil ditambahkan');
+        return redirect('/superadmin/insert_area')->with('success', 'item berhasil ditambahkan');
       }
       else{
-        return redirect('/insert_area')->with('error', 'item gagal ditambahkan');
+        return redirect('/superadmin/insert_area')->with('error', 'item gagal ditambahkan');
       }
     }
     public function delete($area_id){

@@ -18,4 +18,13 @@ class AdminController extends Controller
 
         return view('/admin/dashboard_admin',$data);
     }
+    public function superadmin()
+    {
+        $data['bisnis_unit'] = DB::table('bisnis_unit')->count();
+        $data['wilayah'] = DB::table('wilayah')->count();
+        $data['area'] = DB::table('area')->count();
+        $data['users'] = DB::table('users')->count();
+
+        return view('/admin/dashboard_superadmin',$data);
+    }
 }

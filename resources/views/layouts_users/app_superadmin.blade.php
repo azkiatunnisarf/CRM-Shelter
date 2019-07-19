@@ -269,7 +269,7 @@
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="user-image" alt="User Image">
-              <span class="hidden-xs"> {{ Auth::user()->nama_depan }}</span>
+              <span class="hidden-xs"> Super Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -277,8 +277,8 @@
                 <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
 
                 <p>
-                    Admin<br>
-                    {{ Auth::user()->nama_depan }}{{ Auth::user()->nama_belakang }}
+                    Super Admin<br>
+                    {{ Auth::user()->nama_depan }}
                   <small></small>
                 </p>
               </li>
@@ -338,8 +338,8 @@
           <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Admin</p>
-          {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
+          <p>Super Admin</p>
+          {{ Auth::user()->nama_depan }}
         </div>
       </div>
       <!-- search form -->
@@ -366,10 +366,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{asset('/admin/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="{{asset('/superadmin/home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
-{{--         
+        
         <li class="treeview">
           <a href="">
             <i class="fa fa-plus"></i> <span>Master CRM Shelter</span>
@@ -378,29 +378,13 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="{{asset('/admin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Insert Bisnis Unit</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_area')}}"><i class="fa fa-circle-o"></i> Insert Area</a></li>
-              <li class="active"><a href="{{asset('/admin/insert_user')}}"><i class="fa fa-circle-o"></i> Insert User</a></li>
-            </ul>
-        </li> --}}
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-plus"></i> <span>Insert Laporan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="{{asset('/admin/insert_customer')}}"><i class="fa fa-circle-o"></i>Insert Laporan Customer</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Kontrak</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan visit</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Call</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Keluhan</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Insert Laporan Data MOU</a></li>
+              <li class="active"><a href="{{asset('/superadmin/insert_bisnis_unit')}}"><i class="fa fa-circle-o"></i> Insert Bisnis Unit</a></li>
+              <li class="active"><a href="{{asset('/superadmin/insert_area')}}"><i class="fa fa-circle-o"></i> Insert Area</a></li>
+              <li class="active"><a href="{{asset('/superadmin/insert_user')}}"><i class="fa fa-circle-o"></i> Insert User</a></li>
             </ul>
         </li>
 
-        {{-- <li class="treeview">
+        <li class="treeview">
             <a href="">
               <i class="fa fa-database"></i> <span>Wilayah dan Bisnis Unit</span>
               <span class="pull-right-container">
@@ -408,77 +392,26 @@
               </span>
             </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{asset('/admin/bisnis_unit')}}"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
-                <li class="active"><a href="{{asset('/admin/area')}}"><i class="fa fa-circle-o"></i> Daftar area</a></li>
-                <li class="active"><a href="{{asset('/admin/wilayah')}}"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
+                <li class="active"><a href="{{asset('/superadmin/bisnis_unit')}}"><i class="fa fa-circle-o"></i> Daftar Bisnis Unit</a></li>
+                <li class="active"><a href="{{asset('/superadmin/area')}}"><i class="fa fa-circle-o"></i> Daftar area</a></li>
+                <li class="active"><a href="{{asset('/superadmin/wilayah')}}"><i class="fa fa-circle-o"></i> Daftar Wilayah</a></li>
               </ul>
-          </li> --}}
+          </li>
+
+
 
         <li class="treeview">
           <a href="">
-            <i class="fa fa-database"></i> <span>Daftar Laporan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="{{asset('/admin/customer')}}"><i class="fa fa-circle-o"></i> Laporan Customer</a></li>
-              <li class="active"><a href="{{asset('/admin/kontrak')}}"><i class="fa fa-circle-o"></i> Laporan Kontrak</a></li>
-              <li class="active"><a href="{{asset('/admin/visit')}}"><i class="fa fa-circle-o"></i> Laporan visit</a></li>
-              <li class="active"><a href="{{asset('/admin/call')}}"><i class="fa fa-circle-o"></i> Laporan Call</a></li>
-              <li class="active"><a href="{{asset('/admin/keluhan')}}"><i class="fa fa-circle-o"></i> Laporan Keluhan</a></li>
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Laporan Data MOU</a></li>
-            </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-database"></i> <span>Kelola Customer</span>
+            <i class="fa fa-database"></i> <span>Kelola User</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            {{-- <li><a href="{{asset('/admin/user')}}"><i class="fa fa-circle-o"></i> User CRM</a></li> --}}
-            <li><a href="{{asset('/admin/customer')}}"><i class="fa fa-circle-o"></i> Customer</a></li>
+            <li><a href="{{asset('/superadmin/user')}}"><i class="fa fa-circle-o"></i> User CRM</a></li>
+            {{-- <li><a href="{{asset('/admin/customer')}}"><i class="fa fa-circle-o"></i> Customer</a></li> --}}
           </ul>
         </li>
-
-        
-        
-        {{-- <li class="treeview">
-          <a href="">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li class="treeview">
-              <a href=""><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href=""><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
-        </li> --}}
 
       </ul>
     </section>

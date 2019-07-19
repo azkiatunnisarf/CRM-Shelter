@@ -29,10 +29,10 @@ class BisnisController extends Controller
       
 
       if ($bisnis_unit->save()){
-        return redirect('/insert_bisnis_unit')->with('success', 'item berhasil ditambahkan');
+        return redirect('/superadmin/insert_bisnis_unit')->with('success', 'item berhasil ditambahkan');
       }
       else{
-        return redirect('/insert_bisnis_unit')->with('error', 'item gagal ditambahkan');
+        return redirect('/superadmin/insert_bisnis_unit')->with('error', 'item gagal ditambahkan');
       }
     }
     public function delete($bu_id){

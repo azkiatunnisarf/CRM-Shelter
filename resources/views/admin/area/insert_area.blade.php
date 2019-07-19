@@ -1,4 +1,4 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_superadmin')
 
 @section('content_header')
 <div class="row">
@@ -35,10 +35,10 @@
                   <div>
                     <ul class="nav nav-tabs">
                       <li class="nav-item">
-                          <a class="nav-link active_tab1" style="border:1px solid #ccc" href="{{asset('/admin/insert_area')}}">Insert Area</a>
+                          <a class="nav-link active_tab1" style="border:1px solid #ccc" href="{{asset('/superadmin/insert_area')}}">Insert Area</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" style="border:1px solid #ccc" href="{{asset('/admin/insert_wilayah')}}">Insert wilayah</a>
+                          <a class="nav-link" style="border:1px solid #ccc" href="{{asset('/superadmin/insert_wilayah')}}">Insert wilayah</a>
                       </li>
                     </ul>
                   </div>

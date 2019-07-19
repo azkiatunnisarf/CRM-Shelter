@@ -53,11 +53,9 @@ Route::group(['prefix' => 'officer_crm',  'middleware' => 'is_officer_crm'], fun
 
 });
 
+Route::group(['prefix' => 'superadmin',  'middleware' => 'is_superadmin'], function(){
+    Route::get('/home', 'AdminController@superadmin')->name('home'); //Dashboard 
 
-Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
-
-    Route::get('/home', 'AdminController@index')->name('home'); //Dashboard Admin
-    
     //--------- bisnis unit
     Route::get('/insert_bisnis_unit', 'BisnisController@insert')->name('insert.bisnis_unit'); //show form insert
     Route::get('/bisnis_unit', 'BisnisController@index')->name('index.bisnis_unit');
@@ -83,7 +81,6 @@ Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     Route::put('/update/wilayah{id}','WilayahController@update')->name('update.wilayah');
     Route::post('/filter/wilayah', 'WilayahController@filter')->name('filter.wilayah');
 
-
     // user
     Route::get('/insert_user', 'UserController@insert')->name('insert.user'); //show form insert
     Route::get('/user', 'UserController@index')->name('index.user');
@@ -91,7 +88,12 @@ Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
     Route::get('/delete/user{id}','UserController@delete')->name('delete.user');
     Route::get('/edit/user{id}','UserController@edit')->name('edit.user');
     Route::put('/update/user{id}','UserController@update')->name('update.user');
+});
 
+Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
+
+    Route::get('/home', 'AdminController@index')->name('home'); //Dashboard Admin
+    
     // customer
     Route::get('/insert_customer', 'CustomerController@insert')->name('insert.user'); //show form insert
     Route::get('/customer', 'CustomerController@index')->name('index.customer');

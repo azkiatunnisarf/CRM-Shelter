@@ -1,4 +1,4 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_superadmin')
 
 @section('content_header')
 <div class="row">
@@ -70,18 +70,25 @@
                       <label>Nomor HP :</label>
                       <div><input type="text" class="form-control"  name="no_hp" required></div>
                     </div>
-                    <div class="form-group">
-                      <label>Area/Cabang :</label>
-                      <div><input type="text" class="form-control"  name="cabang" required></div>
-                    </div>
+
                     <div class="form-group">
                       <label>Wilayah Supervisi :</label>
-                      <div><input type="text" class="form-control"  name="wilayah_supervisi" required></div>
-                    </div>
+                      {{-- <div><input type="text" class="form-control"  name="wilayah_id" required></div> --}}
+                      <div>
+                          <select class="form-control" name="wilayah_id">
+                              <option value="">pilih wilayah</option>
+                          @foreach($wilayahs as $wilayah)
+                              <option value="{{ $wilayah->wilayah_id }}">{{ $wilayah->nama_wilayah }}</option>
+                          @endforeach
+                          </select>
+                      </div>
+                  </div>
                     <div class="form-group">
                         <label>Rule :</label>
                         <div>
                             <select class="form-control" name="rule">
+                                <option">Pilih role</option>
+                                <option value="superadmin">Super Admin</option>
                                 <option value="admin">Admin</option>
                                 <option value="officer_crm">Officer CRM</option>
                                 <option value="manager_crm">Manager Officer</option>
