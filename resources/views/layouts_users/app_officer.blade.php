@@ -275,9 +275,10 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="admin_lte/dist/img/avatar3.png" class="img-circle" alt="User Image">
-
+                <span class="hidden-xs"> {{ Auth::user()->nama_depan }}</span>
                 <p>
-                    Officer CRM
+                    Officer CRM<br>
+                    {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} 
                   <small></small>
                 </p>
               </li>
@@ -338,6 +339,7 @@
         </div>
         <div class="pull-left info">
           <p>Officer CRM</p>
+          {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
           <a href=""><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -368,7 +370,7 @@
             <li class="active"><a href="{{asset('home')}}"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
-        
+        @if(Auth::user()->rule == 'officer_crm')
         <li class="treeview">
           <a href="">
             <i class="fa fa-plus"></i> <span>Insert Laporan</span>
@@ -385,6 +387,7 @@
 
             </ul>
         </li>
+        @endif
 
         <li class="treeview">
           <a href="">

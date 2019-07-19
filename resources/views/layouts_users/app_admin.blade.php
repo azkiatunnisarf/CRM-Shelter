@@ -269,7 +269,7 @@
           <li class="dropdown user user-menu">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{asset('admin_lte/dist/img/avatar04.png')}}" class="user-image" alt="User Image">
-              <span class="hidden-xs"> {{ Auth::user()->nama_depan }}</span>
+               <span class="hidden-xs"> {{ Auth::user()->nama_depan }}</span> 
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -278,7 +278,7 @@
 
                 <p>
                     Admin<br>
-                    {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
+                    {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} 
                   <small></small>
                 </p>
               </li>
@@ -339,7 +339,7 @@
         </div>
         <div class="pull-left info">
           <p>Admin</p>
-          {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
+           {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} 
         </div>
       </div>
       <!-- search form -->

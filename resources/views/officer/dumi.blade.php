@@ -15,3 +15,7 @@ tabel call
                                         </td>
                                     </tr>
                                     @endforeach
+
+                                    <!-- {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} -->
+                                    <!-- <span class="hidden-xs"> {{ Auth::user()->nama_depan }}</span> -->
+                                    <!-- {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} -->
