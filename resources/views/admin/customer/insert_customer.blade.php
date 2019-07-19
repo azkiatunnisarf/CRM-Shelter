@@ -32,7 +32,6 @@
                         </ul>
                       </div>
                   @endif
-
                   <br>
 
                 <form action="{{route('store.customer')}}" method="post">

@@ -1,4 +1,4 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_superadmin')
 
 @section('content_header')
 <div class="row">
@@ -32,7 +32,16 @@
                         </ul>
                       </div>
                   @endif
-
+                  <div>
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                          <a class="nav-link" style="border:1px solid #ccc" href="{{asset('/superadmin/insert_area')}}">Insert Area</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active_tab1" style="border:1px solid #ccc" href="{{asset('/superadmin/insert_wilayah')}}">Insert Wilayah</a>
+                      </li>
+                    </ul>
+                  </div>
                   <br>
 
                 <form action="{{route('store.wilayah')}}" method="post">
@@ -41,6 +50,7 @@
                         <label>Nama Area :</label>
                         <div>
                             <select class="form-control" name="area_id">
+                                <option>Pilih Area</option>
                             @foreach($areas as $area)
                                 <option value="{{ $area->area_id }}">{{ $area->nama_area }}</option>
                             @endforeach

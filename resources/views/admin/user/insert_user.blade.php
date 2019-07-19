@@ -1,4 +1,4 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_superadmin')
 
 @section('content_header')
 <div class="row">
@@ -32,7 +32,6 @@
                         </ul>
                       </div>
                   @endif
-
                   <br>
 
                 <form action="{{route('store.user')}}" method="post">
@@ -61,42 +60,27 @@
                       <label>Nomor HP :</label>
                       <div><input type="text" class="form-control"  name="no_hp" required></div>
                     </div>
+
                     <div class="form-group">
-                        <label>Nama Area :</label>
-                        <div>
-                            <select class="form-control" name="nama_area">
-                            @foreach($areas as $area)
-                                <option value="{{ $area->nama_area }}">{{ $area->nama_area }}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Nama Wilayah :</label>
-                        <div>
-                            <select class="form-control" name="wilayah_id">
-                            @foreach($wilayahs as $wilayah)
-                                <option value="{{ $wilayah->wilayah_id }}">{{ $wilayah->nama_wilayah }}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Wilayah Supervisi :</label>
-                        <div>
-                            <select class="form-control" name="nama_wilayah">
-                            @foreach($wilayahs as $wilayah)
-                                <option value="{{ $wilayah->nama_wilayah }}">{{ $wilayah->nama_wilayah }}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                    </div>
+                      <label>Wilayah Supervisi :</label>
+                      {{-- <div><input type="text" class="form-control"  name="wilayah_id" required></div> --}}
+                      <div>
+                          <select class="form-control" name="wilayah_id">
+                              <option value="">pilih wilayah</option>
+                          @foreach($wilayahs as $wilayah)
+                              <option value="{{ $wilayah->wilayah_id }}">{{ $wilayah->nama_wilayah }}</option>
+                          @endforeach
+                          </select>
+                      </div>
+                  </div>
                     <div class="form-group">
                         <label>Rule :</label>
                         <div>
                             <select class="form-control" name="rule">
+                                <option">Pilih role</option>
+                                <option value="superadmin">Super Admin</option>
                                 <option value="admin">Admin</option>
-                                <option value="Officer_crm">Officer CRM</option>
+                                <option value="officer_crm">Officer CRM</option>
                                 <option value="manager_crm">Manager Officer</option>
                                 <option value="manager_non_crm">Manager Non CRM</option>
                                 <option value="direktur">Direktur</option>

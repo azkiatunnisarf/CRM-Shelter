@@ -25,8 +25,6 @@ class User extends Authenticatable
         ,'email'
         ,'wilayah_id'
         ,'no_hp'
-        ,'nama_area'
-        ,'nama_wilayah'
         ,'rule'
         ,
     ];
@@ -55,19 +53,33 @@ class User extends Authenticatable
     }
 
     const ADMIN_TYPE = 'admin';
-    const OFFICER_TYPE = 'officer';
+    const SUPERADMIN_TYPE = 'superadmin';
+    const OFFICER_CRM_TYPE = 'officer_crm';
     const MANAGER_CRM_TYPE = 'manager_crm';
+    const DIREKTUR_TYPE = 'direktur';
+    const MANAGER_NON_CRM_TYPE = 'manager_non_crm';
+
+
 
 
     public function isAdmin()    {        
         return $this->rule === self::ADMIN_TYPE;    
     }
-
-    public function isOfficer()    {        
-        return $this->rule === self::OFFICER_TYPE;    
+    public function isSuperAdmin()    {        
+        return $this->rule === self::SUPERADMIN_TYPE;    
     }
+    public function isOfficerCRM()    {        
+        return $this->rule === self::OFFICER_CRM_TYPE;    
+    }
+
     public function isManagerCRM()    {        
         return $this->rule === self::MANAGER_CRM_TYPE;    
+    }
+    public function isDirektur()    {        
+        return $this->rule === self::DIREKTUR_TYPE;    
+    }
+    public function isManagerNonCRM()    {        
+        return $this->rule === self::MANAGER_NON_CRM_TYPE;    
     }
 
 

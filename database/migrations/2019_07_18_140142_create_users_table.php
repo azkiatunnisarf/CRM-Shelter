@@ -21,8 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('wilayah_id')->unsigned();
             $table->string('no_hp');
             $table->string('password');
-            $table->string('nama_area');
-            $table->string('nama_wilayah');
+            // $table->string('nama_area');
             $table->string('rule');
             $table->rememberToken();
             $table->timestamps();

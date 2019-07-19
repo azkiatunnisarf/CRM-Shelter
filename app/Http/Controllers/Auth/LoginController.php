@@ -25,13 +25,29 @@ class LoginController extends Controller
         {
             return redirect('/admin/home');
         }
-        elseif ( $user->isOfficer() ) 
+        if ( $user->issuperadmin() ) 
         {
-            return redirect('/officer/dashboard_officer');
+            return redirect('/superadmin/home');
         }
-        else {
-            return redirect('/login');
+        if ( $user->isofficercrm() ) 
+        {
+            return redirect('/officer_crm/home');
         }
+        if ( $user->ismanagercrm() ) 
+        {
+            return redirect('/manager_crm/home');
+        }
+        if ( $user->isdirektur() ) 
+        {
+            return redirect('/direktur/home');
+        }
+        if ( $user->ismanagernoncrm() ) 
+        {
+            return redirect('/manager_non_crm/home');
+        }
+        // else {
+        //     return redirect('/');
+        // }
     }
     
 

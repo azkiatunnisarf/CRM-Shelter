@@ -1,4 +1,4 @@
-@extends('layouts_users.app_admin')
+@extends('layouts_users.app_superadmin')
 
 @section('content_header')
 <div class="row">
@@ -61,7 +61,7 @@
                       <div class="form-group">
                         <label>Password :</label>
                         <div>
-                          <input type="text" class="form-control" name="password" value="{{ $user->password}}"required>
+                          <input type="text" class="form-control" name="password" value="{{ $user->password}}"disabled>
                         </div>
                       </div>
                       <div class="form-group">
@@ -71,39 +71,17 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label>Nama Area :</label>
-                        <div>
-                            <select class="form-control" name="nama_area">
-                            @foreach($areas as $area)
-                                <option value="{{ $area->nama_area }}">{{ $area->nama_area }}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Nama Wilayah :</label>
-                        <div>
-                            <select class="form-control" name="wilayah_id">
-                            @foreach($wilayahs as $wilayah)
-                                <option value="{{ $wilayah->wilayah_id }}">{{ $wilayah->nama_wilayah }}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label>Wilayah Supervisi :</label>
                         <div>
-                            <select class="form-control" name="nama_wilayah">
-                            @foreach($wilayahs as $wilayah)
-                                <option value="{{ $wilayah->nama_wilayah }}">{{ $wilayah->nama_wilayah }}</option>
-                            @endforeach
-                            </select>
+                          <input type="text" class="form-control" name="nama_wilayah" value="{{ $user->wilayah->nama_wilayah}}" disabled>
                         </div>
-                    </div>
+                      </div>
                     <div class="form-group">
                         <label>Rule :</label>
                         <div>
                             <select class="form-control" name="rule">
+                                <option>Pilih Role</option>
+                                <option value="superadmin">Admin</option>
                                 <option value="admin">Admin</option>
                                 <option value="Officer_crm">Officer CRM</option>
                                 <option value="manager_crm">Manager Officer</option>
